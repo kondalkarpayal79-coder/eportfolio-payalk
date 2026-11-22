@@ -1,0 +1,3739 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Payal Kondalkar | Web Developer e-Portfolio</title>
+<meta name="description" content="e-Portfolio of Payal Kondalkar, MCA student: web development, databases, payment gateway, WhatsApp API and chatbot projects.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=DM+Sans:wght@400;500;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<script>try{var t=localStorage.getItem("payal_theme");if(t)document.documentElement.setAttribute("data-theme",t);}catch(e){}</script>
+<style>
+:root{
+  --bg:#f1f5ef; --surface:#ffffff; --ink:#12261f; --muted:#4b6158; --line:#d3ddd2;
+  --brand:#0f766e; --brand-ink:#ffffff; --accent:#f2a900; --ok:#0f766e;
+  --radius:12px;
+}
+@media (prefers-color-scheme:dark){
+  :root{--bg:#0e1a16; --surface:#15251f; --ink:#e9f3ee; --muted:#9db4a9; --line:#2a4036; --brand:#3ccfbd; --brand-ink:#08211c; --accent:#ffc83d; --ok:#3ccfbd;}
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:76px}
+body{font-family:"DM Sans",system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.65}
+h1,h2,h3,h4{font-family:"Space Grotesk","DM Sans",sans-serif;line-height:1.15}
+a{color:var(--brand)}
+:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+section{padding:68px 0}
+h2{font-size:clamp(1.7rem,4vw,2.4rem);margin-bottom:10px}
+.lead{color:var(--muted);max-width:62ch;margin-bottom:32px}
+
+/* header */
+header{position:sticky;top:0;z-index:30;background:var(--bg);border-bottom:2px solid var(--ink)}
+nav{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:12px 0;flex-wrap:wrap}
+.logo{font-family:"Space Grotesk",sans-serif;font-weight:700;text-decoration:none;color:var(--ink);font-size:1.2rem}
+.logo b{background:var(--accent);color:#12261f;padding:1px 8px;border-radius:6px;margin-right:6px}
+nav ul{display:flex;gap:6px;list-style:none;flex-wrap:wrap}
+nav ul a{display:block;padding:6px 12px;border-radius:8px;text-decoration:none;color:var(--ink);font-weight:500;font-size:.95rem}
+nav ul a:hover{background:var(--surface)}
+
+nav ul a.gh{background:var(--accent);color:#12261f;border:2px solid var(--ink);font-weight:700}
+nav ul a.gh:hover{background:var(--accent);filter:brightness(.95)}
+/* buttons */
+.btn{display:inline-block;padding:11px 20px;border-radius:10px;font-weight:700;text-decoration:none;border:2px solid var(--ink);cursor:pointer;font-size:.95rem;font-family:inherit;box-shadow:3px 3px 0 var(--ink);transition:transform .12s,box-shadow .12s}
+.btn:hover{transform:translate(2px,2px);box-shadow:1px 1px 0 var(--ink)}
+.btn.primary{background:var(--brand);color:var(--brand-ink)}
+.btn.ghost{background:var(--surface);color:var(--ink)}
+.btn.wa{background:#25d366;color:#0b2e1a}
+.btns{display:flex;gap:14px;flex-wrap:wrap}
+
+/* hero */
+.hero{padding:72px 0 56px}
+.hero-grid{display:grid;grid-template-columns:1.15fr 1fr;gap:44px;align-items:center}
+.hero h1{font-size:clamp(2.3rem,6vw,3.9rem);font-weight:700;margin-bottom:16px}
+.hero p{color:var(--muted);max-width:52ch;margin-bottom:26px;font-size:1.05rem}
+.code{background:#0b1512;color:#cfe9df;border-radius:var(--radius);border:2px solid var(--ink);box-shadow:6px 6px 0 var(--accent);font-family:"JetBrains Mono",monospace;font-size:.86rem;overflow:hidden}
+.code-bar{display:flex;gap:6px;align-items:center;padding:10px 14px;background:#16261f;color:#8fb0a2;font-size:.78rem}
+.code-bar i{width:10px;height:10px;border-radius:50%;background:#3b5a4c;display:inline-block}
+.code pre{padding:18px;overflow-x:auto;line-height:1.8}
+.k{color:#ffc83d}.s{color:#7ee0c7}.c{color:#6f9486}
+
+/* cards */
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px}
+.card{background:var(--surface);border:2px solid var(--ink);border-radius:var(--radius);padding:24px}
+.card h3{font-size:1.15rem;margin-bottom:8px}
+.card p{color:var(--muted);font-size:.95rem}
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+.tag{font-size:.78rem;padding:3px 10px;border-radius:6px;background:var(--bg);border:1px solid var(--line);color:var(--muted);font-family:"JetBrains Mono",monospace}
+.skills{display:flex;flex-wrap:wrap;gap:10px}
+.skills span{background:var(--surface);border:2px solid var(--ink);padding:7px 16px;border-radius:99px;font-weight:500}
+
+/* modules */
+.module{display:grid;grid-template-columns:210px 1fr;gap:28px;background:var(--surface);border:2px solid var(--ink);border-radius:var(--radius);padding:28px;margin-bottom:22px}
+.module h3{font-size:1.25rem}
+.module small{color:var(--muted)}
+.module ul{margin:10px 0 0 18px;color:var(--muted);font-size:.95rem}
+.demo{margin-top:18px;padding:18px;border:2px dashed var(--line);border-radius:10px;background:var(--bg)}
+.demo h4{font-size:.95rem;margin-bottom:10px}
+label{display:block;font-size:.85rem;font-weight:700;margin:10px 0 4px}
+input,textarea,select{width:100%;padding:10px 12px;border:2px solid var(--line);border-radius:8px;background:var(--surface);color:var(--ink);font:inherit}
+input:focus,textarea:focus,select:focus{border-color:var(--brand);outline:none}
+textarea{min-height:90px;resize:vertical}
+.row{display:flex;gap:12px;flex-wrap:wrap}
+.row > *{flex:1;min-width:140px}
+.msg{font-size:.9rem;margin-top:10px;color:var(--ok);min-height:1.2em;font-weight:500}
+.entries{list-style:none;margin-top:14px;display:grid;gap:8px}
+.entries li{background:var(--surface);border:1px solid var(--line);padding:10px 14px;border-radius:8px;font-size:.9rem}
+.entries b{display:block}
+.price{font-family:"Space Grotesk",sans-serif;font-size:1.7rem;font-weight:700}
+.note{font-size:.82rem;color:var(--muted);margin-top:10px}
+code{font-family:"JetBrains Mono",monospace;font-size:.85em;background:var(--bg);padding:1px 5px;border-radius:4px}
+
+/* contact */
+.contact-grid{display:grid;grid-template-columns:1fr 1.2fr;gap:24px;align-items:start}
+.contact-list{display:grid;gap:14px}
+.contact-list .card{display:flex;gap:14px;align-items:center;padding:18px}
+.ico{font-size:1.6rem;width:48px;height:48px;display:grid;place-items:center;background:var(--accent);border-radius:10px;border:2px solid var(--ink);flex-shrink:0}
+.contact-list h3{font-size:1rem;margin-bottom:2px}
+.contact-list a{font-weight:700;word-break:break-all}
+
+/* chatbot */
+#chat-toggle{position:fixed;right:20px;bottom:20px;z-index:40;width:58px;height:58px;border-radius:50%;border:2px solid var(--ink);background:var(--accent);color:#12261f;font-size:1.5rem;cursor:pointer;box-shadow:3px 3px 0 var(--ink)}
+#chat{position:fixed;right:20px;bottom:90px;z-index:40;width:min(350px,calc(100vw - 40px));height:430px;background:var(--surface);border:2px solid var(--ink);border-radius:var(--radius);display:none;flex-direction:column;overflow:hidden;box-shadow:6px 6px 0 var(--ink)}
+#chat.open{display:flex}
+.chat-head{background:var(--brand);color:var(--brand-ink);padding:12px 16px;font-weight:700;font-family:"Space Grotesk",sans-serif}
+#chat-log{flex:1;overflow-y:auto;padding:14px;display:flex;flex-direction:column;gap:8px}
+.bubble{max-width:86%;padding:8px 12px;border-radius:12px;font-size:.9rem}
+.bot{background:var(--bg);align-self:flex-start}
+.me{background:var(--brand);color:var(--brand-ink);align-self:flex-end}
+.chips{display:flex;gap:6px;flex-wrap:wrap;padding:0 14px 8px}
+.chips button{font:inherit;font-size:.78rem;padding:4px 10px;border-radius:99px;border:1px solid var(--ink);background:var(--surface);color:var(--ink);cursor:pointer}
+#chat-form{display:flex;gap:8px;padding:10px;border-top:2px solid var(--line)}
+#chat-form input{flex:1}
+#chat-form .btn{padding:8px 14px;box-shadow:none}
+
+footer{border-top:2px solid var(--ink);padding:28px 0;color:var(--muted);font-size:.9rem;text-align:center}
+
+
+/* assignments */
+.asg-menu{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:22px}
+.asg-tab{font:inherit;font-weight:700;padding:10px 18px;border:2px solid var(--ink);border-radius:10px;background:var(--surface);color:var(--ink);cursor:pointer}
+.asg-tab.active{background:var(--brand);color:var(--brand-ink);box-shadow:3px 3px 0 var(--ink)}
+.asg-panel{display:none}.asg-panel.active{display:block}
+.tbl{overflow-x:auto;margin-top:14px}
+table{border-collapse:collapse;width:100%;font-size:.92rem}
+th,td{text-align:left;padding:8px 12px;border:1px solid var(--line)}
+th{background:var(--bg)}
+.viewer{margin-top:22px;border:2px solid var(--ink);border-radius:var(--radius);overflow:hidden;background:#0b1512}
+.ftabs{display:flex;gap:4px;flex-wrap:wrap;padding:8px 8px 0;background:#16261f}
+.ftab{font-family:"JetBrains Mono",monospace;font-size:.8rem;padding:7px 12px;border:0;border-radius:8px 8px 0 0;background:transparent;color:#8fb0a2;cursor:pointer}
+.ftab.active{background:#0b1512;color:#ffc83d}
+.vbar{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;padding:8px 14px;background:#0f1d18;color:#8fb0a2;font-family:"JetBrains Mono",monospace;font-size:.78rem}
+.vbtn{font:inherit;font-size:.78rem;padding:4px 12px;border-radius:6px;border:1px solid #3b5a4c;background:#16261f;color:#cfe9df;cursor:pointer;margin-left:6px}
+.vbtn:hover{border-color:#ffc83d;color:#ffc83d}
+.fselwrap{display:flex;align-items:center;gap:10px;flex-wrap:wrap;padding:10px 14px;background:#16261f;color:#8fb0a2;font-size:.85rem}
+.fselwrap label{margin:0;font-weight:500;color:#8fb0a2}
+.fsel{width:auto;max-width:100%;font-family:"JetBrains Mono",monospace;font-size:.82rem;background:#0b1512;color:#ffc83d;border:1px solid #3b5a4c}
+.pane{display:none}.pane.active{display:block}
+.pane pre{margin:0;padding:16px;max-height:520px;overflow:auto;color:#cfe9df;font-family:"JetBrains Mono",monospace;font-size:.8rem;line-height:1.65;tab-size:4}
+
+/* themes (chosen with the Theme button) */
+:root[data-theme="light"]{--bg:#f1f5ef;--surface:#ffffff;--ink:#12261f;--muted:#4b6158;--line:#d3ddd2;--brand:#0f766e;--brand-ink:#ffffff;--accent:#f2a900;--ok:#0f766e;color-scheme:light}
+:root[data-theme="dark"]{--bg:#0e1a16;--surface:#15251f;--ink:#e9f3ee;--muted:#9db4a9;--line:#2a4036;--brand:#3ccfbd;--brand-ink:#08211c;--accent:#ffc83d;--ok:#3ccfbd;color-scheme:dark}
+:root[data-theme="purple"]{--bg:#f6f3fb;--surface:#ffffff;--ink:#1d1633;--muted:#5d5675;--line:#e0daee;--brand:#5b3df5;--brand-ink:#ffffff;--accent:#ff6b8b;--ok:#13795b;color-scheme:light}
+:root[data-theme="sunset"]{--bg:#fff4e8;--surface:#fffaf4;--ink:#3a1d0f;--muted:#7a5a48;--line:#f0d9c4;--brand:#d9480f;--brand-ink:#ffffff;--accent:#ffb703;--ok:#2b8a3e;color-scheme:light}
+:root[data-theme="ocean"]{--bg:#eaf4fb;--surface:#ffffff;--ink:#0b2540;--muted:#46627d;--line:#c9deee;--brand:#0b6bcb;--brand-ink:#ffffff;--accent:#ffd166;--ok:#0b7a4b;color-scheme:light}
+:root[data-theme="rose"]{--bg:#fdf0f3;--surface:#ffffff;--ink:#3b1020;--muted:#7a4a5a;--line:#f3d3dc;--brand:#c2185b;--brand-ink:#ffffff;--accent:#ffd24a;--ok:#2e7d32;color-scheme:light}
+:root[data-theme="midnight"]{--bg:#0d1020;--surface:#161a33;--ink:#e8ebff;--muted:#9aa3d1;--line:#2b3163;--brand:#8aa4ff;--brand-ink:#0d1020;--accent:#ffcf5c;--ok:#5fe0a8;color-scheme:dark}
+.theme-wrap{position:relative}
+.btn.sm{padding:6px 12px;font-size:.85rem;box-shadow:2px 2px 0 var(--ink)}
+.theme-panel{position:absolute;right:0;top:calc(100% + 10px);z-index:60;width:270px;background:var(--surface);border:2px solid var(--ink);border-radius:var(--radius);padding:12px;box-shadow:5px 5px 0 var(--ink)}
+.theme-panel[hidden]{display:none}
+.theme-panel h4{font-size:.85rem;margin:0 0 10px;color:var(--muted)}
+.theme-opts{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.sw{display:flex;align-items:center;gap:8px;font:inherit;font-size:.85rem;font-weight:500;padding:7px 9px;border:2px solid var(--line);border-radius:10px;background:var(--bg);color:var(--ink);cursor:pointer;text-align:left}
+.sw:hover{border-color:var(--ink)}
+.sw[aria-pressed="true"]{border-color:var(--brand);background:var(--surface);box-shadow:0 0 0 2px var(--brand)}
+.sw i{width:26px;height:26px;border-radius:50%;border:2px solid var(--ink);flex-shrink:0}
+
+@media (max-width:800px){
+  .hero-grid,.contact-grid{grid-template-columns:1fr}
+  .module{grid-template-columns:1fr;gap:10px}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn{transition:none}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <nav aria-label="Main">
+      <a class="logo" href="#top"><b>PK</b>Payal Kondalkar</a>
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#webdev">Web Dev</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#assignments">Assignments</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a class="gh" href="https://github.com/kondalkarpayal79-coder/eportfolio/blob/main/index.html" target="_blank" rel="noopener">GitHub</a></li>
+      </ul>
+      <div class="theme-wrap">
+        <button type="button" class="btn ghost sm" id="theme-btn" aria-haspopup="true" aria-expanded="false" aria-controls="theme-panel">🎨 Theme</button>
+        <div class="theme-panel" id="theme-panel" role="group" aria-label="Choose a theme" hidden>
+          <h4>Choose a theme</h4>
+          <div class="theme-opts">
+          <button type="button" class="sw" data-t="auto" aria-pressed="false"><i style="background:linear-gradient(135deg,#f1f5ef 50%,#0e1a16 50%)"></i>System</button>
+          <button type="button" class="sw" data-t="light" aria-pressed="false"><i style="background:linear-gradient(135deg,#0f766e 50%,#f2a900 50%)"></i>Mint</button>
+          <button type="button" class="sw" data-t="dark" aria-pressed="false"><i style="background:linear-gradient(135deg,#3ccfbd 50%,#0e1a16 50%)"></i>Mint dark</button>
+          <button type="button" class="sw" data-t="purple" aria-pressed="false"><i style="background:linear-gradient(135deg,#5b3df5 50%,#ff6b8b 50%)"></i>Purple</button>
+          <button type="button" class="sw" data-t="sunset" aria-pressed="false"><i style="background:linear-gradient(135deg,#d9480f 50%,#ffb703 50%)"></i>Sunset</button>
+          <button type="button" class="sw" data-t="ocean" aria-pressed="false"><i style="background:linear-gradient(135deg,#0b6bcb 50%,#ffd166 50%)"></i>Ocean</button>
+          <button type="button" class="sw" data-t="rose" aria-pressed="false"><i style="background:linear-gradient(135deg,#c2185b 50%,#ffd24a 50%)"></i>Rose</button>
+          <button type="button" class="sw" data-t="midnight" aria-pressed="false"><i style="background:linear-gradient(135deg,#8aa4ff 50%,#0d1020 50%)"></i>Midnight</button>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <h1>Hi, I'm Payal Kondalkar.</h1>
+      <p>I'm an MCA first-year student who builds web and database projects with Python, SQL and JavaScript. This e-portfolio shows my work with an AI website builder, database integration, a payment gateway, the WhatsApp API and a chatbot.</p>
+      <div class="btns">
+        <a class="btn primary" href="#webdev">See my work</a>
+        <a class="btn ghost" href="#contact">Contact me</a>
+      </div>
+    </div>
+    <div class="code" aria-hidden="true">
+      <div class="code-bar"><i></i><i></i><i></i><span>&nbsp;payal.js</span></div>
+<pre><span class="k">const</span> payal = {
+  course: <span class="s">"MCA, 1st year"</span>,
+  stack: [<span class="s">"Python"</span>, <span class="s">"Flask"</span>,
+          <span class="s">"SQL"</span>, <span class="s">"JavaScript"</span>],
+  building: <span class="s">"web + database apps"</span>,
+  portfolio: [<span class="s">"AI builder"</span>, <span class="s">"Database"</span>,
+              <span class="s">"Payments"</span>, <span class="s">"WhatsApp"</span>,
+              <span class="s">"Chatbot"</span>]
+};
+<span class="c">// say hello below</span></pre>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="wrap">
+    <h2>About me</h2>
+    <p class="lead">I'm pursuing a Master of Computer Applications (MCA). I like turning coursework into working projects: databases, web apps and automation.</p>
+    <div class="grid">
+      <div class="card"><h3>Education</h3><p>MCA, first year. Focus on programming, DBMS and web development.</p></div>
+      <div class="card"><h3>Learning now</h3><p>Python with Flask, SQL and ER design, HTML, CSS, JavaScript and API integration.</p></div>
+      <div class="card"><h3>Goal</h3><p>Build real-world apps that connect a front end, a database, payments and messaging.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="wrap">
+    <h2>Skills</h2>
+    <p class="lead">Tools I use in my coursework and projects.</p>
+    <div class="skills">
+      <span>Python</span><span>Flask</span><span>HTML5</span><span>CSS3</span><span>JavaScript</span>
+      <span>SQL / MySQL</span><span>ER diagrams</span><span>REST APIs</span><span>Git &amp; GitHub</span><span>AI website builders</span>
+    </div>
+  </div>
+</section>
+
+<!-- WEB DEV -->
+<section id="webdev">
+  <div class="wrap">
+    <h2>Web Development e-Portfolio</h2>
+    <p class="lead">Five modules from my Web Dev course. Each has a short summary and a demo you can try on this page.</p>
+
+    <article class="module" id="ai-builder">
+      <div><h3>1. Working with an AI builder</h3><small>Design and generate</small></div>
+      <div>
+        <p>I use an AI builder to turn a plain-language brief into a working page, then edit the generated HTML and CSS by hand to fix layout, accessibility and content.</p>
+        <ul>
+          <li>Write a clear prompt: purpose, audience, sections and colours</li>
+          <li>Review the generated code and remove what I don't need</li>
+          <li>Test on mobile and fix spacing and contrast</li>
+        </ul>
+        <div class="tags"><span class="tag">Prompting</span><span class="tag">HTML/CSS</span><span class="tag">Code review</span></div>
+      </div>
+    </article>
+
+    <article class="module" id="database">
+      <div><h3>2. Database integration</h3><small>Store and read data</small></div>
+      <div>
+        <p>A web form sends data to a database table and the page reads it back. My bank and railway reservation databases in DBMS use the same ideas: tables, keys and queries.</p>
+        <div class="demo">
+          <h4>Demo: Guestbook (saved in your browser)</h4>
+          <form id="guest-form">
+            <div class="row">
+              <div><label for="g-name">Name</label><input id="g-name" required maxlength="40"></div>
+              <div><label for="g-msg">Message</label><input id="g-msg" required maxlength="120"></div>
+            </div>
+            <div class="btns" style="margin-top:14px">
+              <button class="btn primary" type="submit">Save entry</button>
+              <button class="btn ghost" type="button" id="g-clear">Clear all</button>
+            </div>
+          </form>
+          <ul class="entries" id="g-list"></ul>
+          <p class="note">This demo uses the browser's localStorage. A real site posts the form to a Flask backend that runs <code>INSERT INTO guestbook (name, message) VALUES (...)</code> on MySQL.</p>
+        </div>
+        <div class="tags"><span class="tag">MySQL</span><span class="tag">SQL</span><span class="tag">Flask</span><span class="tag">localStorage</span></div>
+      </div>
+    </article>
+
+    <article class="module" id="payment">
+      <div><h3>3. Payment gateway</h3><small>Accept online payments</small></div>
+      <div>
+        <p>The standard checkout flow: the server creates an order, the gateway (for example Razorpay) opens a secure payment window, then the server verifies the payment signature before confirming.</p>
+        <div class="demo">
+          <h4>Demo: Checkout (no real money)</h4>
+          <div>Project report (PDF)<div class="price">₹199</div></div>
+          <label for="p-method">Payment method</label>
+          <select id="p-method"><option>UPI</option><option>Debit / credit card</option><option>Net banking</option></select>
+          <button class="btn primary" style="margin-top:14px" id="pay-btn" type="button">Pay ₹199</button>
+          <p class="msg" id="pay-msg" role="status"></p>
+          <p class="note">This is a simulation. To go live, replace the click handler with Razorpay Checkout and verify the signature on the server with your secret key.</p>
+        </div>
+        <div class="tags"><span class="tag">Razorpay</span><span class="tag">Order flow</span><span class="tag">Signature check</span></div>
+      </div>
+    </article>
+
+    <article class="module" id="whatsapp">
+      <div><h3>4. WhatsApp API</h3><small>Message customers</small></div>
+      <div>
+        <p>Two levels: a click-to-chat link that needs no setup, and the WhatsApp Business Cloud API, which lets a server send template messages such as order confirmations.</p>
+        <div class="demo">
+          <h4>Demo: Click-to-chat link</h4>
+          <label for="wa-text">Your message</label>
+          <textarea id="wa-text">Hello Payal, I saw your portfolio and would like to connect.</textarea>
+          <a class="btn wa" style="margin-top:14px" id="wa-link" href="#" target="_blank" rel="noopener">Open WhatsApp</a>
+          <p class="note">The button opens a chat with Payal on WhatsApp with your message filled in.</p>
+        </div>
+        <div class="tags"><span class="tag">wa.me link</span><span class="tag">Cloud API</span><span class="tag">Templates</span></div>
+      </div>
+    </article>
+
+    <article class="module" id="chatbot">
+      <div><h3>5. Chatbot</h3><small>Answer questions automatically</small></div>
+      <div>
+        <p>A rule-based chatbot matches keywords and replies with answers about me. A production version can call an AI model through an API to handle open questions.</p>
+        <div class="demo">
+          <h4>Demo</h4>
+          <p>Open the chat and ask about my skills, projects or how to contact me.</p>
+          <button class="btn primary" style="margin-top:14px" type="button" id="open-chat">Open chatbot</button>
+        </div>
+        <div class="tags"><span class="tag">JavaScript</span><span class="tag">Keyword matching</span><span class="tag">AI API ready</span></div>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="wrap">
+    <h2>Projects</h2>
+    <p class="lead">Coursework and competition work from my MCA.</p>
+    <div class="grid">
+      <div class="card"><h3>Website Performance Tester</h3><p>MCA mini project that checks how fast a website responds and shows the results in charts.</p><div class="tags"><span class="tag">Python</span><span class="tag">Flask</span><span class="tag">Requests</span><span class="tag">Charts</span></div></div>
+      <div class="card"><h3>Internet Cafe Website</h3><p>Website for an internet cafe that lists its services and contact details.</p><div class="tags"><span class="tag">Web design</span><span class="tag">HTML/CSS</span></div></div>
+      <div class="card"><h3>Bank database</h3><p>Database design for a bank with an ER diagram, tables and SQL queries.</p><div class="tags"><span class="tag">SQL</span><span class="tag">ERD</span></div></div>
+      <div class="card"><h3>Railway reservation database</h3><p>Database for train booking with relationships, queries and an ER diagram.</p><div class="tags"><span class="tag">SQL</span><span class="tag">ERD</span></div></div>
+      <div class="card"><h3>Smart India Hackathon 2026</h3><p>Researched problem statements on an academia-industry portal and AICTE validation.</p><div class="tags"><span class="tag">Research</span><span class="tag">Teamwork</span></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ASSIGNMENTS -->
+<section id="assignments">
+  <div class="wrap">
+    <h2>Assignments</h2>
+    <p class="lead">Pick an assignment from the menu to read about it and see all of its code. Every file can be copied or downloaded.</p>
+
+    <div class="asg-menu" role="tablist" aria-label="Assignments">
+      <button type="button" class="asg-tab active" data-p="asg1" role="tab">Assignment 1: Web Lab</button>
+      <button type="button" class="asg-tab" data-p="asg2" role="tab">Web Lab Session 2: Tables</button>
+      <button type="button" class="asg-tab" data-p="asg3" role="tab">Assignment 3: HTML Forms</button>
+      <button type="button" class="asg-tab" data-p="asg4" role="tab">Assignment 4: HTML5</button>
+      <button type="button" class="asg-tab" data-p="asg6" role="tab">Web Dev e-Portfolio modules</button>
+    </div>
+
+    <!-- Assignment 1 -->
+    <div class="asg-panel active" id="asg1">
+      <div class="card">
+        <h3>Assignment 1: HTML Web Lab (Labs 01 to 19)</h3>
+        <p>Nineteen lab exercises on HTML: first page, basics, notice, curriculum, hyperlinks, images, tables, multimedia, registration and admission forms, semantic HTML, HTML5 elements, iframes, entities and symbols, a tutorials page, a portfolio page, a product catalogue, and two small multi-page websites (a college website in lab 17 and a restaurant website in lab 19).</p>
+        <div class="tags"><span class="tag">HTML5</span><span class="tag">Forms</span><span class="tag">Tables</span><span class="tag">Multimedia</span><span class="tag">Multi-page sites</span></div>
+      </div>
+      <div class="viewer" id="v-a1">
+          <div class="fselwrap"><label for="v-a1-sel">File (25 files)</label><select class="fsel" id="v-a1-sel"><option value="0">lab01.html</option><option value="1">lab02.html</option><option value="2">lab03.html</option><option value="3">lab04.html</option><option value="4">lab05.html</option><option value="5">lab06.html</option><option value="6">lab07.html</option><option value="7">lab08.html</option><option value="8">lab09.html</option><option value="9">lab10.html</option><option value="10">lab11.html</option><option value="11">lab12.html</option><option value="12">lab13.html</option><option value="13">lab14.html</option><option value="14">lab15.html</option><option value="15">lab16.html</option><option value="16">lab17_college_website/index.html</option><option value="17">lab17_college_website/about.html</option><option value="18">lab17_college_website/courses.html</option><option value="19">lab17_college_website/contact.html</option><option value="20">lab18.html</option><option value="21">lab19_restaurant_website/index.html</option><option value="22">lab19_restaurant_website/menu.html</option><option value="23">lab19_restaurant_website/book.html</option><option value="24">lab19_restaurant_website/contact.html</option></select></div>
+          <div class="vbar"><span class="vname"></span>
+            <span><button type="button" class="vbtn" data-act="copy">Copy code</button>
+            <button type="button" class="vbtn" data-act="download">Download</button></span></div>
+          <div class="pane active" data-name="lab01.html"><pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+  &lt;meta charset="UTF-8"&gt;
+  &lt;title&gt;My First Page&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;h1&gt;Hello, World!&lt;/h1&gt;
+  &lt;p&gt;My VS Code, Live Server and browser are set up correctly.&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre></div><div class="pane" data-name="lab02.html"><pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+  &lt;meta charset="UTF-8"&gt;
+  &lt;title&gt;HTML Basics&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;!-- This is a comment: it is not shown in the browser --&gt;
+  &lt;h1&gt;Heading 1&lt;/h1&gt;
+  &lt;h2&gt;Heading 2&lt;/h2&gt;
+  &lt;h3&gt;Heading 3&lt;/h3&gt;
+  &lt;h4&gt;Heading 4&lt;/h4&gt;
+  &lt;h5&gt;Heading 5&lt;/h5&gt;
+  &lt;h6&gt;Heading 6&lt;/h6&gt;
+  &lt;hr&gt;
+  &lt;p&gt;This is the first paragraph. HTML stands for HyperText Markup Language.&lt;/p&gt;
+  &lt;p&gt;This is the second paragraph.&lt;br&gt;This line starts after a line break.&lt;/p&gt;
+  &lt;hr&gt;
+  &lt;p&gt;End of page.&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre></div><div class="pane" data-name="lab03.html"><pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+  &lt;meta charset="UTF-8"&gt;
+  &lt;title&gt;College Notice&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;h1&gt;ABC College of Engineering&lt;/h1&gt;
+  &lt;h2&gt;&lt;u&gt;NOTICE&lt;/u&gt;&lt;/h2&gt;
+  &lt;p&gt;&lt;b&gt;Date:&lt;/b&gt; 18 November 2026&lt;/p&gt;
+  &lt;p&gt;All students of &lt;i&gt;MCA Semester I&lt;/i&gt; are informed that the &lt;b&gt;internal exam&lt;/b&gt; will start from 25&lt;sup&gt;th&lt;/sup&gt; November.&lt;/p&gt;
+  &lt;p&gt;Chemical formula example: H&lt;sub&gt;2&lt;/sub&gt;O and area = r&lt;sup&gt;2&lt;/sup&gt;&lt;/p&gt;
+  &lt;blockquote&gt;"Education is the most powerful weapon which you can use to change the world."&lt;/blockquote&gt;
+  &lt;p&gt;As said by &lt;q&gt;Nelson Mandela&lt;/q&gt;.&lt;/p&gt;
+  &lt;p&gt;To print a message in Python use: &lt;code&gt;print("Hello")&lt;/code&gt;&lt;/p&gt;
+  &lt;pre&gt;
+for i in range(3):
+    print(i)
+  &lt;/pre&gt;
+  &lt;p&gt;&lt;strong&gt;Principal&lt;/strong&gt;&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre></div><div class="pane" data-name="lab04.html"><pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+  &lt;meta charset="UTF-8"&gt;
+  &lt;title&gt;Course Curriculum&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;h1&gt;MCA Curriculum&lt;/h1&gt;
+
+  &lt;h2&gt;Ordered List – Semester Order&lt;/h2&gt;
+  &lt;ol&gt;
+    &lt;li&gt;Semester I&lt;/li&gt;
+    &lt;li&gt;Semester II&lt;/li&gt;
+    &lt;li&gt;Semester III&lt;/li&gt;
+    &lt;li&gt;Semester IV&lt;/li&gt;
+  &lt;/ol&gt;
+
+  &lt;h2&gt;Unordered List – Subjects&lt;/h2&gt;
+  &lt;ul&gt;
+    &lt;li&gt;Web Technology&lt;/li&gt;
+    &lt;li&gt;Python Programming&lt;/li&gt;
+    &lt;li&gt;Database Management&lt;/li&gt;
+    &lt;ul&gt;
+      &lt;li&gt;SQL&lt;/li&gt;
+      &lt;li&gt;NoSQL&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/ul&gt;
+
+  &lt;h2&gt;Description List – Terms&lt;/h2&gt;
+  &lt;dl&gt;
+    &lt;dt&gt;HTML&lt;/dt&gt;
+    &lt;dd&gt;Markup language used to create web pages.&lt;/dd&gt;
+    &lt;dt&gt;CSS&lt;/dt&gt;
+    &lt;dd&gt;Language used to style web pages.&lt;/dd&gt;
+    &lt;dt&gt;JavaScript&lt;/dt&gt;
+    &lt;dd&gt;Language used to add behaviour to web pages.&lt;/dd&gt;
+  &lt;/dl&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre></div><div class="pane" data-name="lab05.html"><pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+  &lt;meta charset="UTF-8"&gt;
+  &lt;title&gt;Hyperlinks&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;h1 id="top"&gt;Hyperlinks Demo&lt;/h1&gt;
+
+  &lt;h3&gt;Bookmark links&lt;/h3&gt;
+  &lt;a href="#section1"&gt;Go to Section 1&lt;/a&gt; |
+  &lt;a href="#section2"&gt;Go to Section 2&lt;/a&gt;
+
+  &lt;h3&gt;Internal link&lt;/h3&gt;
+  &lt;a href="lab01.html"&gt;Open Lab 1 page&lt;/a&gt;
+
+  &lt;h3&gt;External link&lt;/h3&gt;
+  &lt;a href="https://www.google.com" target="_blank"&gt;Open Google&lt;/a&gt;
+
+  &lt;h3&gt;Email link&lt;/h3&gt;
+  &lt;a href="mailto:student@example.com"&gt;Send Email&lt;/a&gt;
+
+  &lt;h2 id="section1"&gt;Section 1&lt;/h2&gt;
+  &lt;p&gt;Some text for section one. Lorem ipsum dolor sit amet.&lt;/p&gt;
+  &lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;
+
+  &lt;h2 id="section2"&gt;Section 2&lt;/h2&gt;
+  &lt;p&gt;Some text for section two.&lt;/p&gt;
+  &lt;a href="#top"&gt;Back to top&lt;/a&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre></div><div class="pane" data-name="lab06.html"><pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+  &lt;meta charset="UTF-8"&gt;
+  &lt;title&gt;Images&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;h1&gt;Images Demo&lt;/h1&gt;
+
+  &lt;h3&gt;Normal and resized image&lt;/h3&gt;
+  &lt;img src="images/photo.jpg" alt="Sample photo" width="300" height="200"&gt;
+
+  &lt;h3&gt;Aligned image&lt;/h3&gt;
+  &lt;img src="images/photo.jpg" alt="Right aligned" width="150" style="float:right"&gt;
+  &lt;p&gt;This paragraph wraps around the image placed on the right side.&lt;/p&gt;
+
+  &lt;h3 style="clear:both"&gt;Image as hyperlink&lt;/h3&gt;
+  &lt;a href="https://www.wikipedia.org" target="_blank"&gt;
+    &lt;img src="images/logo.png" alt="Click to open Wikipedia" width="120"&gt;
+  &lt;/a&gt;
+
+  &lt;h3&gt;Image gallery&lt;/h3&gt;
+  &lt;img src="images/img1.jpg" alt="Image 1" width="200"&gt;
+  &lt;img src="images/img2.jpg" alt="Image 2" width="200"&gt;
+  &lt;img src="images/img3.jpg" alt="Image 3" width="200"&gt;
+  &lt;img src="images/img4.jpg" alt="Image 4" width="200"&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre></div><div class="pane" data-name="lab07.html"><pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+  &lt;meta charset="UTF-8"&gt;
+  &lt;title&gt;Tables&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;h2&gt;Student Marksheet&lt;/h2&gt;
+  &lt;table border="1" cellpadding="8" cellspacing="0"&gt;
+    &lt;tr&gt;&lt;th&gt;Subject&lt;/th&gt;&lt;th&gt;Max Marks&lt;/th&gt;&lt;th&gt;Marks Obtained&lt;/th&gt;&lt;/tr&gt;
+    &lt;tr&gt;&lt;td&gt;Web Technology&lt;/td&gt;&lt;td&gt;100&lt;/td&gt;&lt;td&gt;85&lt;/td&gt;&lt;/tr&gt;
+    &lt;tr&gt;&lt;td&gt;Python&lt;/td&gt;&lt;td&gt;100&lt;/td&gt;&lt;td&gt;90&lt;/td&gt;&lt;/tr&gt;
+    &lt;tr&gt;&lt;td&gt;DBMS&lt;/td&gt;&lt;td&gt;100&lt;/td&gt;&lt;td&gt;78&lt;/td&gt;&lt;/tr&gt;
+    &lt;tr&gt;&lt;th&gt;Total&lt;/th&gt;&lt;th&gt;300&lt;/th&gt;&lt;th&gt;253&lt;/th&gt;&lt;/tr&gt;
+  &lt;/table&gt;
+
+  &lt;h2&gt;Timetable&lt;/h2&gt;
+  &lt;table border="1" cellpadding="8" cellspacing="0"&gt;
+    &lt;tr&gt;&lt;th&gt;Day&lt;/th&gt;&lt;th&gt;9-10&lt;/th&gt;&lt;th&gt;10-11&lt;/th&gt;&lt;th&gt;11-12&lt;/th&gt;&lt;/tr&gt;
+    &lt;tr&gt;&lt;td&gt;Monday&lt;/td&gt;&lt;td&gt;Web&lt;/td&gt;&lt;td&gt;Python&lt;/td&gt;&lt;td&gt;DBMS&lt;/td&gt;&lt;/tr&gt;
+    &lt;tr&gt;&lt;td&gt;Tuesday&lt;/td&gt;&lt;td&gt;Python&lt;/td&gt;&lt;td colspan="2"&gt;Lab&lt;/td&gt;&lt;/tr&gt;
+    &lt;tr&gt;&lt;td&gt;Wednesday&lt;/td&gt;&lt;td&gt;DBMS&lt;/td&gt;&lt;td&gt;Web&lt;/td&gt;&lt;td&gt;Python&lt;/td&gt;&lt;/tr&gt;
+  &lt;/table&gt;
+
+  &lt;h2&gt;Fee Receipt&lt;/h2&gt;
+  &lt;table border="1" cellpadding="8" cellspacing="0"&gt;
+    &lt;caption&gt;Receipt No: 1001&lt;/caption&gt;
+    &lt;tr&gt;&lt;td&gt;Name&lt;/td&gt;&lt;td colspan="2"&gt;Vishwajeet Jadhav&lt;/td&gt;&lt;/tr&gt;
+    &lt;tr&gt;&lt;th&gt;Fee Type&lt;/th&gt;&lt;th&gt;Amount (Rs.)&lt;/th&gt;&lt;th&gt;Status&lt;/th&gt;&lt;/tr&gt;
+    &lt;tr&gt;&lt;td&gt;Tuition Fee&lt;/td&gt;&lt;td&gt;40000&lt;/td&gt;&lt;td&gt;Paid&lt;/td&gt;&lt;/tr&gt;
+    &lt;tr&gt;&lt;td&gt;Library Fee&lt;/td&gt;&lt;td&gt;1000&lt;/td&gt;&lt;td&gt;Paid&lt;/td&gt;&lt;/tr&gt;
+    &lt;tr&gt;&lt;th&gt;Total&lt;/th&gt;&lt;th colspan="2"&gt;41000&lt;/th&gt;&lt;/tr&gt;
+  &lt;/table&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre></div><div class="pane" data-name="lab08.html"><pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+  &lt;meta charset="UTF-8"&gt;
+  &lt;title&gt;Multimedia&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;h1&gt;Multimedia Demo&lt;/h1&gt;
+
+  &lt;h3&gt;Audio&lt;/h3&gt;
+  &lt;audio controls&gt;
+    &lt;source src="media/song.mp3" type="audio/mpeg"&gt;
+    Your browser does not support audio.
+  &lt;/audio&gt;
+
+  &lt;h3&gt;Video&lt;/h3&gt;
+  &lt;video width="420" controls&gt;
+    &lt;source src="media/video.mp4" type="video/mp4"&gt;
+    Your browser does not support video.
+  &lt;/video&gt;
+
+  &lt;h3&gt;YouTube Video&lt;/h3&gt;
+  &lt;iframe width="420" height="260"
+    src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+    title="YouTube video" allowfullscreen&gt;&lt;/iframe&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre></div><div class="pane" data-name="lab09.html"><pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+  &lt;meta charset="UTF-8"&gt;
+  &lt;title&gt;Student Registration&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;h1&gt;Student Registration Form&lt;/h1&gt;
+  &lt;form action="#" method="post"&gt;
+    &lt;p&gt;Name: &lt;input type="text" name="name" placeholder="Full name"&gt;&lt;/p&gt;
+    &lt;p&gt;Password: &lt;input type="password" name="pass"&gt;&lt;/p&gt;
+    &lt;p&gt;Email: &lt;input type="email" name="email"&gt;&lt;/p&gt;
+    &lt;p&gt;Phone: &lt;input type="tel" name="phone"&gt;&lt;/p&gt;
+    &lt;p&gt;Date of Birth: &lt;input type="date" name="dob"&gt;&lt;/p&gt;
+    &lt;p&gt;Age: &lt;input type="number" name="age" min="15" max="60"&gt;&lt;/p&gt;
+    &lt;p&gt;Gender:
+      &lt;input type="radio" name="gender" value="male"&gt; Male
+      &lt;input type="radio" name="gender" value="female"&gt; Female
+      &lt;input type="radio" name="gender" value="other"&gt; Other
+    &lt;/p&gt;
+    &lt;p&gt;Hobbies:
+      &lt;input type="checkbox" name="hobby" value="reading"&gt; Reading
+      &lt;input type="checkbox" name="hobby" value="music"&gt; Music
+      &lt;input type="checkbox" name="hobby" value="sports"&gt; Sports
+    &lt;/p&gt;
+    &lt;p&gt;Course:
+      &lt;select name="course"&gt;
+        &lt;option&gt;MCA&lt;/option&gt;
+        &lt;option&gt;MBA&lt;/option&gt;
+        &lt;option&gt;BCA&lt;/option&gt;
+      &lt;/select&gt;
+    &lt;/p&gt;
+    &lt;p&gt;Address:&lt;br&gt;&lt;textarea name="address" rows="3" cols="30"&gt;&lt;/textarea&gt;&lt;/p&gt;
+    &lt;p&gt;Photo: &lt;input type="file" name="photo"&gt;&lt;/p&gt;
+    &lt;p&gt;Favourite colour: &lt;input type="color" name="color"&gt;&lt;/p&gt;
+    &lt;input type="submit" value="Register"&gt;
+    &lt;input type="reset" value="Clear"&gt;
+  &lt;/form&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre></div><div class="pane" data-name="lab10.html"><pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+  &lt;meta charset="UTF-8"&gt;
+  &lt;title&gt;Admission Form&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;h1&gt;Online Admission Form&lt;/h1&gt;
+  &lt;form action="#" method="post"&gt;
+    &lt;p&gt;&lt;label&gt;Full Name*:
+      &lt;input type="text" name="name" required minlength="3" maxlength="50"&gt;
+    &lt;/label&gt;&lt;/p&gt;
+    &lt;p&gt;&lt;label&gt;Email*:
+      &lt;input type="email" name="email" required&gt;
+    &lt;/label&gt;&lt;/p&gt;
+    &lt;p&gt;&lt;label&gt;Mobile* (10 digits):
+      &lt;input type="tel" name="mobile" required pattern="[0-9]{10}" title="Enter 10 digit number"&gt;
+    &lt;/label&gt;&lt;/p&gt;
+    &lt;p&gt;&lt;label&gt;Percentage in last exam*:
+      &lt;input type="number" name="percent" required min="35" max="100" step="0.01"&gt;
+    &lt;/label&gt;&lt;/p&gt;
+    &lt;p&gt;&lt;label&gt;Date of Birth*:
+      &lt;input type="date" name="dob" required&gt;
+    &lt;/label&gt;&lt;/p&gt;
+    &lt;p&gt;&lt;label&gt;Course*:
+      &lt;select name="course" required&gt;
+        &lt;option value=""&gt;-- Select --&lt;/option&gt;
+        &lt;option&gt;MCA&lt;/option&gt;
+        &lt;option&gt;MBA&lt;/option&gt;
+      &lt;/select&gt;
+    &lt;/label&gt;&lt;/p&gt;
+    &lt;p&gt;&lt;label&gt;Website:
+      &lt;input type="url" name="site" placeholder="https://"&gt;
+    &lt;/label&gt;&lt;/p&gt;
+    &lt;p&gt;&lt;label&gt;Address*:&lt;br&gt;
+      &lt;textarea name="address" rows="3" cols="30" required&gt;&lt;/textarea&gt;
+    &lt;/label&gt;&lt;/p&gt;
+    &lt;p&gt;&lt;input type="checkbox" required&gt; I agree to the terms and conditions&lt;/p&gt;
+    &lt;button type="submit"&gt;Submit Application&lt;/button&gt;
+  &lt;/form&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre></div><div class="pane" data-name="lab11.html"><pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+  &lt;meta charset="UTF-8"&gt;
+  &lt;title&gt;Semantic HTML&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;header&gt;
+    &lt;h1&gt;My Tech Blog&lt;/h1&gt;
+  &lt;/header&gt;
+
+  &lt;nav&gt;
+    &lt;a href="#home"&gt;Home&lt;/a&gt; |
+    &lt;a href="#articles"&gt;Articles&lt;/a&gt; |
+    &lt;a href="#contact"&gt;Contact&lt;/a&gt;
+  &lt;/nav&gt;
+
+  &lt;section id="articles"&gt;
+    &lt;h2&gt;Latest Articles&lt;/h2&gt;
+    &lt;article&gt;
+      &lt;h3&gt;What is HTML?&lt;/h3&gt;
+      &lt;p&gt;HTML is the standard markup language for creating web pages.&lt;/p&gt;
+    &lt;/article&gt;
+    &lt;article&gt;
+      &lt;h3&gt;What is CSS?&lt;/h3&gt;
+      &lt;p&gt;CSS is used to style and layout web pages.&lt;/p&gt;
+    &lt;/article&gt;
+  &lt;/section&gt;
+
+  &lt;aside&gt;
+    &lt;h3&gt;Related Links&lt;/h3&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href="https://developer.mozilla.org"&gt;MDN Docs&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/aside&gt;
+
+  &lt;footer&gt;
+    &lt;p&gt;&amp;copy; 2026 Vishwajeet Jadhav. All rights reserved.&lt;/p&gt;
+  &lt;/footer&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre></div><div class="pane" data-name="lab12.html"><pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+  &lt;meta charset="UTF-8"&gt;
+  &lt;title&gt;HTML5 Elements&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;h1&gt;HTML5 Elements&lt;/h1&gt;
+
+  &lt;h3&gt;details and summary&lt;/h3&gt;
+  &lt;details&gt;
+    &lt;summary&gt;Click to read more&lt;/summary&gt;
+    &lt;p&gt;This hidden text appears when you click the summary.&lt;/p&gt;
+  &lt;/details&gt;
+
+  &lt;h3&gt;progress&lt;/h3&gt;
+  Download: &lt;progress value="70" max="100"&gt;70%&lt;/progress&gt;
+
+  &lt;h3&gt;meter&lt;/h3&gt;
+  Disk usage: &lt;meter value="6" min="0" max="10"&gt;6 out of 10&lt;/meter&gt;
+
+  &lt;h3&gt;dialog&lt;/h3&gt;
+  &lt;dialog id="myDialog"&gt;
+    &lt;p&gt;Hello! I am a dialog box.&lt;/p&gt;
+    &lt;button onclick="document.getElementById('myDialog').close()"&gt;Close&lt;/button&gt;
+  &lt;/dialog&gt;
+  &lt;button onclick="document.getElementById('myDialog').showModal()"&gt;Open Dialog&lt;/button&gt;
+
+  &lt;h3&gt;figure and figcaption&lt;/h3&gt;
+  &lt;figure&gt;
+    &lt;img src="images/photo.jpg" alt="Sample" width="250"&gt;
+    &lt;figcaption&gt;Figure 1: A sample photo&lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre></div><div class="pane" data-name="lab13.html"><pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+  &lt;meta charset="UTF-8"&gt;
+  &lt;title&gt;Iframes&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;h1&gt;Iframe Demo&lt;/h1&gt;
+
+  &lt;h3&gt;Google Maps&lt;/h3&gt;
+  &lt;iframe
+    src="https://www.google.com/maps?q=Ichalkaranji&amp;output=embed"
+    width="500" height="300" style="border:0" loading="lazy"&gt;&lt;/iframe&gt;
+
+  &lt;h3&gt;Website&lt;/h3&gt;
+  &lt;iframe src="https://www.wikipedia.org" width="500" height="300"
+    title="Wikipedia"&gt;&lt;/iframe&gt;
+
+  &lt;h3&gt;YouTube Video&lt;/h3&gt;
+  &lt;iframe width="500" height="300"
+    src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+    title="YouTube video" allowfullscreen&gt;&lt;/iframe&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre></div><div class="pane" data-name="lab14.html"><pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+  &lt;meta charset="UTF-8"&gt;
+  &lt;title&gt;Entities and Symbols&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;h1&gt;HTML Entities &amp;amp; Symbols&lt;/h1&gt;
+
+  &lt;h3&gt;Reserved characters&lt;/h3&gt;
+  &lt;p&gt;&amp;lt;p&amp;gt; is a paragraph tag. 5 &amp;gt; 3 and 2 &amp;lt; 4.&lt;/p&gt;
+  &lt;p&gt;Non&amp;nbsp;&amp;nbsp;&amp;nbsp;breaking spaces.&lt;/p&gt;
+
+  &lt;h3&gt;Common symbols&lt;/h3&gt;
+  &lt;p&gt;&amp;copy; Copyright &amp;nbsp; &amp;reg; Registered &amp;nbsp; &amp;trade; Trademark&lt;/p&gt;
+  &lt;p&gt;&amp;euro; Euro &amp;nbsp; &amp;pound; Pound &amp;nbsp; &amp;yen; Yen &amp;nbsp; &amp;#8377; Rupee&lt;/p&gt;
+  &lt;p&gt;&amp;hearts; &amp;spades; &amp;clubs; &amp;diams; &amp;larr; &amp;rarr; &amp;uarr; &amp;darr;&lt;/p&gt;
+  &lt;p&gt;&amp;frac12; &amp;frac14; &amp;deg; &amp;plusmn; &amp;times; &amp;divide; &amp;infin; &amp;pi;&lt;/p&gt;
+
+  &lt;h3&gt;Emojis&lt;/h3&gt;
+  &lt;p&gt;&amp;#128512; &amp;#128525; &amp;#128077; &amp;#127881; &amp;#128640;&lt;/p&gt;
+  &lt;p&gt;😀 ❤️ 👍 🎓 💻&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre></div><div class="pane" data-name="lab15.html"><pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+  &lt;meta charset="UTF-8"&gt;
+  &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+  &lt;title&gt;Best Web Development Tutorials | Learn HTML Online&lt;/title&gt;
+  &lt;meta name="description" content="Learn HTML, CSS and JavaScript step by step with simple examples and practical labs."&gt;
+  &lt;meta name="keywords" content="HTML, CSS, web development, tutorials, learn HTML"&gt;
+  &lt;meta name="author" content="Vishwajeet Jadhav"&gt;
+  &lt;meta name="robots" content="index, follow"&gt;
+  &lt;link rel="icon" type="image/png" href="images/favicon.png"&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;header&gt;
+    &lt;h1&gt;Learn Web Development&lt;/h1&gt;
+  &lt;/header&gt;
+  &lt;main&gt;
+    &lt;h2&gt;HTML Tutorials&lt;/h2&gt;
+    &lt;p&gt;This page is optimised for search engines using a clear title, meta description, keywords, headings and a favicon.&lt;/p&gt;
+    &lt;img src="images/photo.jpg" alt="Student learning HTML on a laptop" width="300"&gt;
+  &lt;/main&gt;
+  &lt;footer&gt;
+    &lt;p&gt;&amp;copy; 2026 Web Tutorials&lt;/p&gt;
+  &lt;/footer&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre></div><div class="pane" data-name="lab16.html"><pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+  &lt;meta charset="UTF-8"&gt;
+  &lt;title&gt;Vishwajeet Jadhav - Portfolio&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;header&gt;
+    &lt;h1&gt;Vishwajeet Vilas Jadhav&lt;/h1&gt;
+    &lt;p&gt;&lt;i&gt;MCA Student | Web Developer&lt;/i&gt;&lt;/p&gt;
+    &lt;img src="images/photo.jpg" alt="Profile photo" width="150"&gt;
+  &lt;/header&gt;
+
+  &lt;nav&gt;
+    &lt;a href="#about"&gt;About&lt;/a&gt; |
+    &lt;a href="#education"&gt;Education&lt;/a&gt; |
+    &lt;a href="#skills"&gt;Skills&lt;/a&gt; |
+    &lt;a href="#projects"&gt;Projects&lt;/a&gt; |
+    &lt;a href="#contact"&gt;Contact&lt;/a&gt;
+  &lt;/nav&gt;
+  &lt;hr&gt;
+
+  &lt;section id="about"&gt;
+    &lt;h2&gt;About Me&lt;/h2&gt;
+    &lt;p&gt;I am a college student who enjoys building web applications with HTML, Python and Flask.&lt;/p&gt;
+  &lt;/section&gt;
+
+  &lt;section id="education"&gt;
+    &lt;h2&gt;Education&lt;/h2&gt;
+    &lt;table border="1" cellpadding="6" cellspacing="0"&gt;
+      &lt;tr&gt;&lt;th&gt;Course&lt;/th&gt;&lt;th&gt;Institute&lt;/th&gt;&lt;th&gt;Year&lt;/th&gt;&lt;/tr&gt;
+      &lt;tr&gt;&lt;td&gt;MCA&lt;/td&gt;&lt;td&gt;Your College Name&lt;/td&gt;&lt;td&gt;2025-2027&lt;/td&gt;&lt;/tr&gt;
+      &lt;tr&gt;&lt;td&gt;Graduation&lt;/td&gt;&lt;td&gt;Your University&lt;/td&gt;&lt;td&gt;2022-2025&lt;/td&gt;&lt;/tr&gt;
+    &lt;/table&gt;
+  &lt;/section&gt;
+
+  &lt;section id="skills"&gt;
+    &lt;h2&gt;Skills&lt;/h2&gt;
+    &lt;ul&gt;
+      &lt;li&gt;HTML5&lt;/li&gt;
+      &lt;li&gt;Python&lt;/li&gt;
+      &lt;li&gt;Flask&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/section&gt;
+
+  &lt;section id="projects"&gt;
+    &lt;h2&gt;Projects&lt;/h2&gt;
+    &lt;ol&gt;
+      &lt;li&gt;&lt;b&gt;RV Resto&lt;/b&gt; - Restaurant website built with Flask.&lt;/li&gt;
+      &lt;li&gt;&lt;b&gt;RestroFlow&lt;/b&gt; - Restaurant order management system.&lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/section&gt;
+
+  &lt;section id="contact"&gt;
+    &lt;h2&gt;Contact&lt;/h2&gt;
+    &lt;p&gt;Email: &lt;a href="mailto:student@example.com"&gt;student@example.com&lt;/a&gt;&lt;/p&gt;
+    &lt;p&gt;Phone: 9999999999&lt;/p&gt;
+  &lt;/section&gt;
+
+  &lt;footer&gt;
+    &lt;hr&gt;
+    &lt;p&gt;&amp;copy; 2026 Vishwajeet Jadhav&lt;/p&gt;
+  &lt;/footer&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre></div><div class="pane" data-name="lab17_college_website/index.html"><pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+  &lt;meta charset="UTF-8"&gt;
+  &lt;title&gt;ABC College - Home&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;header&gt;
+    &lt;h1&gt;ABC College of Engineering&lt;/h1&gt;
+    &lt;nav&gt;
+      &lt;a href="index.html"&gt;Home&lt;/a&gt; |
+      &lt;a href="about.html"&gt;About&lt;/a&gt; |
+      &lt;a href="courses.html"&gt;Courses&lt;/a&gt; |
+      &lt;a href="contact.html"&gt;Contact&lt;/a&gt;
+    &lt;/nav&gt;
+  &lt;/header&gt;
+  &lt;hr&gt;
+  &lt;main&gt;
+    &lt;h2&gt;Welcome&lt;/h2&gt;
+    &lt;p&gt;We provide quality technical education with excellent placements.&lt;/p&gt;
+    &lt;img src="images/college.jpg" alt="College building" width="400"&gt;
+  &lt;/main&gt;
+  &lt;footer&gt;&lt;hr&gt;&lt;p&gt;&amp;copy; 2026 ABC College&lt;/p&gt;&lt;/footer&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre></div><div class="pane" data-name="lab17_college_website/about.html"><pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+  &lt;meta charset="UTF-8"&gt;
+  &lt;title&gt;ABC College - About&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;header&gt;
+    &lt;h1&gt;ABC College of Engineering&lt;/h1&gt;
+    &lt;nav&gt;
+      &lt;a href="index.html"&gt;Home&lt;/a&gt; |
+      &lt;a href="about.html"&gt;About&lt;/a&gt; |
+      &lt;a href="courses.html"&gt;Courses&lt;/a&gt; |
+      &lt;a href="contact.html"&gt;Contact&lt;/a&gt;
+    &lt;/nav&gt;
+  &lt;/header&gt;
+  &lt;hr&gt;
+  &lt;main&gt;
+    &lt;h2&gt;About Us&lt;/h2&gt;
+    &lt;p&gt;Established in 1995, our college has trained thousands of engineers and IT professionals.&lt;/p&gt;
+    &lt;h3&gt;Vision&lt;/h3&gt;
+    &lt;p&gt;To be a leading institute of technology.&lt;/p&gt;
+    &lt;h3&gt;Mission&lt;/h3&gt;
+    &lt;ul&gt;
+      &lt;li&gt;Quality teaching&lt;/li&gt;
+      &lt;li&gt;Industry training&lt;/li&gt;
+      &lt;li&gt;Research and innovation&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/main&gt;
+  &lt;footer&gt;&lt;hr&gt;&lt;p&gt;&amp;copy; 2026 ABC College&lt;/p&gt;&lt;/footer&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre></div><div class="pane" data-name="lab17_college_website/courses.html"><pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+  &lt;meta charset="UTF-8"&gt;
+  &lt;title&gt;ABC College - Courses&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;header&gt;
+    &lt;h1&gt;ABC College of Engineering&lt;/h1&gt;
+    &lt;nav&gt;
+      &lt;a href="index.html"&gt;Home&lt;/a&gt; |
+      &lt;a href="about.html"&gt;About&lt;/a&gt; |
+      &lt;a href="courses.html"&gt;Courses&lt;/a&gt; |
+      &lt;a href="contact.html"&gt;Contact&lt;/a&gt;
+    &lt;/nav&gt;
+  &lt;/header&gt;
+  &lt;hr&gt;
+  &lt;main&gt;
+    &lt;h2&gt;Courses Offered&lt;/h2&gt;
+    &lt;table border="1" cellpadding="8" cellspacing="0"&gt;
+      &lt;tr&gt;&lt;th&gt;Course&lt;/th&gt;&lt;th&gt;Duration&lt;/th&gt;&lt;th&gt;Seats&lt;/th&gt;&lt;/tr&gt;
+      &lt;tr&gt;&lt;td&gt;MCA&lt;/td&gt;&lt;td&gt;2 Years&lt;/td&gt;&lt;td&gt;60&lt;/td&gt;&lt;/tr&gt;
+      &lt;tr&gt;&lt;td&gt;B.Tech Computer&lt;/td&gt;&lt;td&gt;4 Years&lt;/td&gt;&lt;td&gt;120&lt;/td&gt;&lt;/tr&gt;
+      &lt;tr&gt;&lt;td&gt;B.Tech Mechanical&lt;/td&gt;&lt;td&gt;4 Years&lt;/td&gt;&lt;td&gt;60&lt;/td&gt;&lt;/tr&gt;
+    &lt;/table&gt;
+  &lt;/main&gt;
+  &lt;footer&gt;&lt;hr&gt;&lt;p&gt;&amp;copy; 2026 ABC College&lt;/p&gt;&lt;/footer&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre></div><div class="pane" data-name="lab17_college_website/contact.html"><pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+  &lt;meta charset="UTF-8"&gt;
+  &lt;title&gt;ABC College - Contact&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;header&gt;
+    &lt;h1&gt;ABC College of Engineering&lt;/h1&gt;
+    &lt;nav&gt;
+      &lt;a href="index.html"&gt;Home&lt;/a&gt; |
+      &lt;a href="about.html"&gt;About&lt;/a&gt; |
+      &lt;a href="courses.html"&gt;Courses&lt;/a&gt; |
+      &lt;a href="contact.html"&gt;Contact&lt;/a&gt;
+    &lt;/nav&gt;
+  &lt;/header&gt;
+  &lt;hr&gt;
+  &lt;main&gt;
+    &lt;h2&gt;Contact Us&lt;/h2&gt;
+    &lt;p&gt;Address: Ichalkaranji, Maharashtra&lt;/p&gt;
+    &lt;p&gt;Email: &lt;a href="mailto:info@abccollege.edu"&gt;info@abccollege.edu&lt;/a&gt;&lt;/p&gt;
+    &lt;form action="#" method="post"&gt;
+      &lt;p&gt;Name: &lt;input type="text" name="name" required&gt;&lt;/p&gt;
+      &lt;p&gt;Email: &lt;input type="email" name="email" required&gt;&lt;/p&gt;
+      &lt;p&gt;Message:&lt;br&gt;&lt;textarea name="msg" rows="4" cols="35" required&gt;&lt;/textarea&gt;&lt;/p&gt;
+      &lt;input type="submit" value="Send"&gt;
+    &lt;/form&gt;
+  &lt;/main&gt;
+  &lt;footer&gt;&lt;hr&gt;&lt;p&gt;&amp;copy; 2026 ABC College&lt;/p&gt;&lt;/footer&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre></div><div class="pane" data-name="lab18.html"><pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+  &lt;meta charset="UTF-8"&gt;
+  &lt;title&gt;Product Catalogue&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;header&gt;
+    &lt;h1&gt;TechMart - Product Catalogue&lt;/h1&gt;
+    &lt;nav&gt;
+      &lt;a href="#mobiles"&gt;Mobiles&lt;/a&gt; |
+      &lt;a href="#laptops"&gt;Laptops&lt;/a&gt; |
+      &lt;a href="#accessories"&gt;Accessories&lt;/a&gt;
+    &lt;/nav&gt;
+  &lt;/header&gt;
+  &lt;hr&gt;
+
+  &lt;section id="mobiles"&gt;
+    &lt;h2&gt;Mobiles&lt;/h2&gt;
+    &lt;table border="1" cellpadding="10" cellspacing="0"&gt;
+      &lt;tr&gt;
+        &lt;th&gt;Image&lt;/th&gt;&lt;th&gt;Product&lt;/th&gt;&lt;th&gt;Details&lt;/th&gt;&lt;th&gt;Price&lt;/th&gt;&lt;th&gt;Buy&lt;/th&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td&gt;&lt;img src="images/mobile1.jpg" alt="Phone X" width="80"&gt;&lt;/td&gt;
+        &lt;td&gt;Phone X&lt;/td&gt;
+        &lt;td&gt;6 GB RAM, 128 GB storage&lt;/td&gt;
+        &lt;td&gt;Rs. 15,999&lt;/td&gt;
+        &lt;td&gt;&lt;a href="#"&gt;Add to cart&lt;/a&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td&gt;&lt;img src="images/mobile2.jpg" alt="Phone Y" width="80"&gt;&lt;/td&gt;
+        &lt;td&gt;Phone Y&lt;/td&gt;
+        &lt;td&gt;8 GB RAM, 256 GB storage&lt;/td&gt;
+        &lt;td&gt;Rs. 24,999&lt;/td&gt;
+        &lt;td&gt;&lt;a href="#"&gt;Add to cart&lt;/a&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+    &lt;/table&gt;
+  &lt;/section&gt;
+
+  &lt;section id="laptops"&gt;
+    &lt;h2&gt;Laptops&lt;/h2&gt;
+    &lt;table border="1" cellpadding="10" cellspacing="0"&gt;
+      &lt;tr&gt;
+        &lt;th&gt;Image&lt;/th&gt;&lt;th&gt;Product&lt;/th&gt;&lt;th&gt;Details&lt;/th&gt;&lt;th&gt;Price&lt;/th&gt;&lt;th&gt;Buy&lt;/th&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td&gt;&lt;img src="images/laptop1.jpg" alt="Laptop A" width="80"&gt;&lt;/td&gt;
+        &lt;td&gt;Laptop A&lt;/td&gt;
+        &lt;td&gt;i5, 8 GB RAM, 512 GB SSD&lt;/td&gt;
+        &lt;td&gt;Rs. 52,999&lt;/td&gt;
+        &lt;td&gt;&lt;a href="#"&gt;Add to cart&lt;/a&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+    &lt;/table&gt;
+  &lt;/section&gt;
+
+  &lt;section id="accessories"&gt;
+    &lt;h2&gt;Accessories&lt;/h2&gt;
+    &lt;ul&gt;
+      &lt;li&gt;Wireless Mouse - Rs. 499&lt;/li&gt;
+      &lt;li&gt;Keyboard - Rs. 799&lt;/li&gt;
+      &lt;li&gt;Headphones - Rs. 1,299&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/section&gt;
+
+  &lt;footer&gt;
+    &lt;hr&gt;
+    &lt;p&gt;&amp;copy; 2026 TechMart&lt;/p&gt;
+  &lt;/footer&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre></div><div class="pane" data-name="lab19_restaurant_website/index.html"><pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+  &lt;meta charset="UTF-8"&gt;
+  &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+  &lt;meta name="description" content="Spice Delight - fresh Indian food, table booking and more."&gt;
+  &lt;meta name="keywords" content="restaurant, Indian food, table booking"&gt;
+  &lt;title&gt;Spice Delight Restaurant&lt;/title&gt;
+  &lt;link rel="icon" href="images/favicon.png"&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;header&gt;
+    &lt;h1&gt;&amp;#127835; Spice Delight&lt;/h1&gt;
+    &lt;nav&gt;
+      &lt;a href="index.html"&gt;Home&lt;/a&gt; |
+      &lt;a href="menu.html"&gt;Menu&lt;/a&gt; |
+      &lt;a href="book.html"&gt;Book Table&lt;/a&gt; |
+      &lt;a href="contact.html"&gt;Contact&lt;/a&gt;
+    &lt;/nav&gt;
+  &lt;/header&gt;
+  &lt;hr&gt;
+  &lt;main&gt;
+    &lt;section&gt;
+      &lt;h2&gt;Welcome to Spice Delight&lt;/h2&gt;
+      &lt;p&gt;Enjoy &lt;b&gt;fresh&lt;/b&gt;, &lt;i&gt;authentic&lt;/i&gt; Indian food in a warm setting.&lt;/p&gt;
+      &lt;figure&gt;
+        &lt;img src="images/restaurant.jpg" alt="Restaurant interior" width="400"&gt;
+        &lt;figcaption&gt;Our dining hall&lt;/figcaption&gt;
+      &lt;/figure&gt;
+    &lt;/section&gt;
+    &lt;section&gt;
+      &lt;h2&gt;Why choose us?&lt;/h2&gt;
+      &lt;ul&gt;
+        &lt;li&gt;Fresh ingredients&lt;/li&gt;
+        &lt;li&gt;Experienced chefs&lt;/li&gt;
+        &lt;li&gt;Family-friendly place&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/section&gt;
+    &lt;section&gt;
+      &lt;h2&gt;Find us&lt;/h2&gt;
+      &lt;iframe src="https://www.google.com/maps?q=Ichalkaranji&amp;output=embed"
+        width="400" height="250" style="border:0" loading="lazy"&gt;&lt;/iframe&gt;
+    &lt;/section&gt;
+  &lt;/main&gt;
+  &lt;footer&gt;
+    &lt;hr&gt;
+    &lt;p&gt;&amp;copy; 2026 Spice Delight. All rights reserved.&lt;/p&gt;
+  &lt;/footer&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre></div><div class="pane" data-name="lab19_restaurant_website/menu.html"><pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+  &lt;meta charset="UTF-8"&gt;
+  &lt;title&gt;Menu - Spice Delight&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;header&gt;
+    &lt;h1&gt;&amp;#127835; Spice Delight&lt;/h1&gt;
+    &lt;nav&gt;
+      &lt;a href="index.html"&gt;Home&lt;/a&gt; |
+      &lt;a href="menu.html"&gt;Menu&lt;/a&gt; |
+      &lt;a href="book.html"&gt;Book Table&lt;/a&gt; |
+      &lt;a href="contact.html"&gt;Contact&lt;/a&gt;
+    &lt;/nav&gt;
+  &lt;/header&gt;
+  &lt;hr&gt;
+  &lt;main&gt;
+    &lt;h2&gt;Our Menu&lt;/h2&gt;
+    &lt;table border="1" cellpadding="8" cellspacing="0"&gt;
+      &lt;tr&gt;&lt;th&gt;Dish&lt;/th&gt;&lt;th&gt;Type&lt;/th&gt;&lt;th&gt;Price (Rs.)&lt;/th&gt;&lt;/tr&gt;
+      &lt;tr&gt;&lt;td&gt;Paneer Butter Masala&lt;/td&gt;&lt;td&gt;Veg&lt;/td&gt;&lt;td&gt;220&lt;/td&gt;&lt;/tr&gt;
+      &lt;tr&gt;&lt;td&gt;Chicken Biryani&lt;/td&gt;&lt;td&gt;Non-Veg&lt;/td&gt;&lt;td&gt;280&lt;/td&gt;&lt;/tr&gt;
+      &lt;tr&gt;&lt;td&gt;Dal Tadka&lt;/td&gt;&lt;td&gt;Veg&lt;/td&gt;&lt;td&gt;150&lt;/td&gt;&lt;/tr&gt;
+      &lt;tr&gt;&lt;td&gt;Butter Naan&lt;/td&gt;&lt;td&gt;Veg&lt;/td&gt;&lt;td&gt;40&lt;/td&gt;&lt;/tr&gt;
+    &lt;/table&gt;
+    &lt;details&gt;
+      &lt;summary&gt;Allergy information&lt;/summary&gt;
+      &lt;p&gt;Some dishes contain nuts and dairy. Please inform our staff.&lt;/p&gt;
+    &lt;/details&gt;
+    &lt;p&gt;Chef's special rating: &lt;meter value="4.5" min="0" max="5"&gt;4.5&lt;/meter&gt;&lt;/p&gt;
+  &lt;/main&gt;
+  &lt;footer&gt;&lt;hr&gt;&lt;p&gt;&amp;copy; 2026 Spice Delight&lt;/p&gt;&lt;/footer&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre></div><div class="pane" data-name="lab19_restaurant_website/book.html"><pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+  &lt;meta charset="UTF-8"&gt;
+  &lt;title&gt;Book a Table - Spice Delight&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;header&gt;
+    &lt;h1&gt;&amp;#127835; Spice Delight&lt;/h1&gt;
+    &lt;nav&gt;
+      &lt;a href="index.html"&gt;Home&lt;/a&gt; |
+      &lt;a href="menu.html"&gt;Menu&lt;/a&gt; |
+      &lt;a href="book.html"&gt;Book Table&lt;/a&gt; |
+      &lt;a href="contact.html"&gt;Contact&lt;/a&gt;
+    &lt;/nav&gt;
+  &lt;/header&gt;
+  &lt;hr&gt;
+  &lt;main&gt;
+    &lt;h2&gt;Book a Table&lt;/h2&gt;
+    &lt;form action="#" method="post"&gt;
+      &lt;p&gt;Name*: &lt;input type="text" name="name" required&gt;&lt;/p&gt;
+      &lt;p&gt;Phone*: &lt;input type="tel" name="phone" required pattern="[0-9]{10}"&gt;&lt;/p&gt;
+      &lt;p&gt;Date*: &lt;input type="date" name="date" required&gt;&lt;/p&gt;
+      &lt;p&gt;Time*: &lt;input type="time" name="time" required&gt;&lt;/p&gt;
+      &lt;p&gt;Guests*: &lt;input type="number" name="guests" min="1" max="20" required&gt;&lt;/p&gt;
+      &lt;p&gt;Seating:
+        &lt;input type="radio" name="seat" value="indoor" checked&gt; Indoor
+        &lt;input type="radio" name="seat" value="outdoor"&gt; Outdoor
+      &lt;/p&gt;
+      &lt;p&gt;Special request:&lt;br&gt;&lt;textarea name="note" rows="3" cols="30"&gt;&lt;/textarea&gt;&lt;/p&gt;
+      &lt;button type="submit"&gt;Book Now&lt;/button&gt;
+    &lt;/form&gt;
+  &lt;/main&gt;
+  &lt;footer&gt;&lt;hr&gt;&lt;p&gt;&amp;copy; 2026 Spice Delight&lt;/p&gt;&lt;/footer&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre></div><div class="pane" data-name="lab19_restaurant_website/contact.html"><pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+  &lt;meta charset="UTF-8"&gt;
+  &lt;title&gt;Contact - Spice Delight&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;header&gt;
+    &lt;h1&gt;&amp;#127835; Spice Delight&lt;/h1&gt;
+    &lt;nav&gt;
+      &lt;a href="index.html"&gt;Home&lt;/a&gt; |
+      &lt;a href="menu.html"&gt;Menu&lt;/a&gt; |
+      &lt;a href="book.html"&gt;Book Table&lt;/a&gt; |
+      &lt;a href="contact.html"&gt;Contact&lt;/a&gt;
+    &lt;/nav&gt;
+  &lt;/header&gt;
+  &lt;hr&gt;
+  &lt;main&gt;
+    &lt;h2&gt;Contact Us&lt;/h2&gt;
+    &lt;address&gt;
+      Spice Delight Restaurant&lt;br&gt;
+      Ichalkaranji, Maharashtra&lt;br&gt;
+      Phone: 9999999999&lt;br&gt;
+      Email: &lt;a href="mailto:info@spicedelight.com"&gt;info@spicedelight.com&lt;/a&gt;
+    &lt;/address&gt;
+    &lt;h3&gt;Opening hours&lt;/h3&gt;
+    &lt;ul&gt;
+      &lt;li&gt;Mon - Fri: 11:00 AM - 11:00 PM&lt;/li&gt;
+      &lt;li&gt;Sat - Sun: 10:00 AM - 12:00 AM&lt;/li&gt;
+    &lt;/ul&gt;
+    &lt;h3&gt;Feedback&lt;/h3&gt;
+    &lt;form action="#" method="post"&gt;
+      &lt;p&gt;Name: &lt;input type="text" name="name" required&gt;&lt;/p&gt;
+      &lt;p&gt;Email: &lt;input type="email" name="email" required&gt;&lt;/p&gt;
+      &lt;p&gt;Rating:
+        &lt;select name="rating"&gt;
+          &lt;option&gt;5 - Excellent&lt;/option&gt;
+          &lt;option&gt;4 - Good&lt;/option&gt;
+          &lt;option&gt;3 - Average&lt;/option&gt;
+        &lt;/select&gt;
+      &lt;/p&gt;
+      &lt;p&gt;Comments:&lt;br&gt;&lt;textarea name="comments" rows="3" cols="30"&gt;&lt;/textarea&gt;&lt;/p&gt;
+      &lt;input type="submit" value="Send Feedback"&gt;
+    &lt;/form&gt;
+  &lt;/main&gt;
+  &lt;footer&gt;&lt;hr&gt;&lt;p&gt;&amp;copy; 2026 Spice Delight&lt;/p&gt;&lt;/footer&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre></div>
+        </div>
+    </div>
+
+    <!-- Web Lab Session 2 -->
+    <div class="asg-panel" id="asg2">
+      <div class="card">
+        <h3>Web Lab Session 2: HTML Tables</h3>
+        <p>Ten table exercises: student table, semester subjects with rowspan, merged department table, class timetable, department-wise grouping, marks table with colspan, links in tables, patient table, images and links inside cells, and practice of all table attributes.</p>
+        <div class="tags"><span class="tag">HTML tables</span><span class="tag">rowspan</span><span class="tag">colspan</span><span class="tag">Attributes</span></div>
+      </div>
+      <div class="viewer" id="v-s2">
+          <div class="ftabs" role="tablist"><button type="button" class="ftab active" data-i="0">01_student_table.html</button><button type="button" class="ftab" data-i="1">02_semester_subjects.html</button><button type="button" class="ftab" data-i="2">03_department_students_merged.html</button><button type="button" class="ftab" data-i="3">04_class_timetable.html</button><button type="button" class="ftab" data-i="4">05_department_wise_students.html</button><button type="button" class="ftab" data-i="5">06_marks_table_colspan.html</button><button type="button" class="ftab" data-i="6">07_table_with_hyperlinks.html</button><button type="button" class="ftab" data-i="7">08_patient_table.html</button><button type="button" class="ftab" data-i="8">09_image_and_link_in_table.html</button><button type="button" class="ftab" data-i="9">10_all_table_attributes.html</button></div>
+          <div class="vbar"><span class="vname"></span>
+            <span><button type="button" class="vbtn" data-act="copy">Copy code</button>
+            <button type="button" class="vbtn" data-act="download">Download</button></span></div>
+          <div class="pane active" data-name="01_student_table.html"><pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+  &lt;meta charset="UTF-8"&gt;
+  &lt;title&gt;Student Table&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;h2 align="center"&gt;BHARATI VIDYAPEETH (DEEMED TO BE) UNIVERSITY&lt;/h2&gt;
+  &lt;h3 align="center"&gt;INSTITUTE OF MANAGEMENT AND ENTREPRENEURSHIP DEVELOPMENT&lt;/h3&gt;
+  &lt;h4 align="center"&gt;Subject: Client-Side Web Technologies&lt;/h4&gt;
+  &lt;hr&gt;
+  &lt;h3&gt;Lab Session 2: Student Table&lt;/h3&gt;
+
+  &lt;table border="1" cellpadding="8" cellspacing="0"&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Roll No.&lt;/th&gt;&lt;th&gt;Name&lt;/th&gt;&lt;th&gt;Course&lt;/th&gt;&lt;th&gt;Semester&lt;/th&gt;&lt;th&gt;Division&lt;/th&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;&lt;td&gt;101&lt;/td&gt;&lt;td&gt;Aarav Sharma&lt;/td&gt;&lt;td&gt;MCA&lt;/td&gt;&lt;td&gt;II&lt;/td&gt;&lt;td&gt;A&lt;/td&gt;&lt;/tr&gt;
+    &lt;tr&gt;&lt;td&gt;102&lt;/td&gt;&lt;td&gt;Ananya Patil&lt;/td&gt;&lt;td&gt;MCA&lt;/td&gt;&lt;td&gt;II&lt;/td&gt;&lt;td&gt;A&lt;/td&gt;&lt;/tr&gt;
+    &lt;tr&gt;&lt;td&gt;103&lt;/td&gt;&lt;td&gt;Rohan Mehta&lt;/td&gt;&lt;td&gt;MCA&lt;/td&gt;&lt;td&gt;II&lt;/td&gt;&lt;td&gt;B&lt;/td&gt;&lt;/tr&gt;
+    &lt;tr&gt;&lt;td&gt;104&lt;/td&gt;&lt;td&gt;Sneha Joshi&lt;/td&gt;&lt;td&gt;MCA&lt;/td&gt;&lt;td&gt;II&lt;/td&gt;&lt;td&gt;B&lt;/td&gt;&lt;/tr&gt;
+  &lt;/table&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre></div><div class="pane" data-name="02_semester_subjects.html"><pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+  &lt;meta charset="UTF-8"&gt;
+  &lt;title&gt;Semester Subjects (rowspan)&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;h2 align="center"&gt;BHARATI VIDYAPEETH (DEEMED TO BE) UNIVERSITY&lt;/h2&gt;
+  &lt;h3 align="center"&gt;INSTITUTE OF MANAGEMENT AND ENTREPRENEURSHIP DEVELOPMENT&lt;/h3&gt;
+  &lt;h4 align="center"&gt;Subject: Client-Side Web Technologies&lt;/h4&gt;
+  &lt;hr&gt;
+  &lt;h3&gt;Lab Session 2: Semester Subjects (rowspan)&lt;/h3&gt;
+
+  &lt;table border="1" cellpadding="8" cellspacing="0"&gt;
+    &lt;tr&gt;
+      &lt;th rowspan="4"&gt;MCA II&lt;/th&gt;
+      &lt;th&gt;Sem III&lt;/th&gt;
+      &lt;th&gt;Sem IV&lt;/th&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;&lt;td&gt;Software Engineering&lt;/td&gt;&lt;td&gt;UML &amp;amp; Design Patterns&lt;/td&gt;&lt;/tr&gt;
+    &lt;tr&gt;&lt;td&gt;Networking&lt;/td&gt;&lt;td&gt;Unix &amp;amp; Linux internals&lt;/td&gt;&lt;/tr&gt;
+    &lt;tr&gt;&lt;td&gt;Object Oriented Programming&lt;/td&gt;&lt;td&gt;Internet Programming&lt;/td&gt;&lt;/tr&gt;
+  &lt;/table&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre></div><div class="pane" data-name="03_department_students_merged.html"><pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+  &lt;meta charset="UTF-8"&gt;
+  &lt;title&gt;Department Students (rowspan on Department and Semester)&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;h2 align="center"&gt;BHARATI VIDYAPEETH (DEEMED TO BE) UNIVERSITY&lt;/h2&gt;
+  &lt;h3 align="center"&gt;INSTITUTE OF MANAGEMENT AND ENTREPRENEURSHIP DEVELOPMENT&lt;/h3&gt;
+  &lt;h4 align="center"&gt;Subject: Client-Side Web Technologies&lt;/h4&gt;
+  &lt;hr&gt;
+  &lt;h3&gt;Lab Session 2: Department Students (rowspan on Department and Semester)&lt;/h3&gt;
+
+  &lt;table border="1" cellpadding="8" cellspacing="0"&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Department&lt;/th&gt;&lt;th&gt;Student ID&lt;/th&gt;&lt;th&gt;Student Name&lt;/th&gt;&lt;th&gt;Semester&lt;/th&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td rowspan="3"&gt;MCA&lt;/td&gt;&lt;td&gt;101&lt;/td&gt;&lt;td&gt;A&lt;/td&gt;&lt;td rowspan="2"&gt;II&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;&lt;td&gt;102&lt;/td&gt;&lt;td&gt;B&lt;/td&gt;&lt;/tr&gt;
+    &lt;tr&gt;&lt;td&gt;103&lt;/td&gt;&lt;td&gt;C&lt;/td&gt;&lt;td rowspan="3"&gt;II&lt;/td&gt;&lt;/tr&gt;
+    &lt;tr&gt;&lt;td rowspan="2"&gt;MBA&lt;/td&gt;&lt;td&gt;201&lt;/td&gt;&lt;td&gt;D&lt;/td&gt;&lt;/tr&gt;
+    &lt;tr&gt;&lt;td&gt;202&lt;/td&gt;&lt;td&gt;E&lt;/td&gt;&lt;/tr&gt;
+  &lt;/table&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre></div><div class="pane" data-name="04_class_timetable.html"><pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+  &lt;meta charset="UTF-8"&gt;
+  &lt;title&gt;Class Time Table&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;h2 align="center"&gt;BHARATI VIDYAPEETH (DEEMED TO BE) UNIVERSITY&lt;/h2&gt;
+  &lt;h3 align="center"&gt;INSTITUTE OF MANAGEMENT AND ENTREPRENEURSHIP DEVELOPMENT&lt;/h3&gt;
+  &lt;h4 align="center"&gt;Subject: Client-Side Web Technologies&lt;/h4&gt;
+  &lt;hr&gt;
+  &lt;h3&gt;Lab Session 2: Class Time Table&lt;/h3&gt;
+
+  &lt;table border="1" cellpadding="10" cellspacing="0" align="center"&gt;
+    &lt;caption&gt;&lt;b&gt;MCA II - Class Time Table&lt;/b&gt;&lt;/caption&gt;
+    &lt;tr bgcolor="#d9e2f3"&gt;
+      &lt;th&gt;Day / Time&lt;/th&gt;&lt;th&gt;9:00 - 10:00&lt;/th&gt;&lt;th&gt;10:00 - 11:00&lt;/th&gt;
+      &lt;th&gt;11:00 - 11:30&lt;/th&gt;&lt;th&gt;11:30 - 12:30&lt;/th&gt;&lt;th&gt;12:30 - 1:30&lt;/th&gt;
+    &lt;/tr&gt;
+    &lt;tr align="center"&gt;
+      &lt;th&gt;Monday&lt;/th&gt;&lt;td&gt;Software Engg.&lt;/td&gt;&lt;td&gt;Networking&lt;/td&gt;
+      &lt;td rowspan="5" bgcolor="#fff2cc"&gt;&lt;b&gt;B&lt;br&gt;R&lt;br&gt;E&lt;br&gt;A&lt;br&gt;K&lt;/b&gt;&lt;/td&gt;
+      &lt;td&gt;OOP&lt;/td&gt;&lt;td&gt;Internet Prog.&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr align="center"&gt;
+      &lt;th&gt;Tuesday&lt;/th&gt;&lt;td&gt;Networking&lt;/td&gt;&lt;td&gt;OOP&lt;/td&gt;
+      &lt;td colspan="2"&gt;Web Technology Lab&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr align="center"&gt;
+      &lt;th&gt;Wednesday&lt;/th&gt;&lt;td&gt;Internet Prog.&lt;/td&gt;&lt;td&gt;Software Engg.&lt;/td&gt;
+      &lt;td&gt;Networking&lt;/td&gt;&lt;td&gt;OOP&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr align="center"&gt;
+      &lt;th&gt;Thursday&lt;/th&gt;&lt;td&gt;OOP&lt;/td&gt;&lt;td&gt;Internet Prog.&lt;/td&gt;
+      &lt;td colspan="2"&gt;Python Lab&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr align="center"&gt;
+      &lt;th&gt;Friday&lt;/th&gt;&lt;td&gt;Software Engg.&lt;/td&gt;&lt;td&gt;Networking&lt;/td&gt;
+      &lt;td&gt;Seminar&lt;/td&gt;&lt;td&gt;Library&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/table&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre></div><div class="pane" data-name="05_department_wise_students.html"><pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+  &lt;meta charset="UTF-8"&gt;
+  &lt;title&gt;Students Grouped by Department&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;h2 align="center"&gt;BHARATI VIDYAPEETH (DEEMED TO BE) UNIVERSITY&lt;/h2&gt;
+  &lt;h3 align="center"&gt;INSTITUTE OF MANAGEMENT AND ENTREPRENEURSHIP DEVELOPMENT&lt;/h3&gt;
+  &lt;h4 align="center"&gt;Subject: Client-Side Web Technologies&lt;/h4&gt;
+  &lt;hr&gt;
+  &lt;h3&gt;Lab Session 2: Students Grouped by Department&lt;/h3&gt;
+
+  &lt;table border="1" cellpadding="8" cellspacing="0"&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Department&lt;/th&gt;&lt;th&gt;Student ID&lt;/th&gt;&lt;th&gt;Student Name&lt;/th&gt;&lt;th&gt;Semester&lt;/th&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;&lt;td rowspan="3"&gt;MCA&lt;/td&gt;&lt;td&gt;101&lt;/td&gt;&lt;td&gt;A&lt;/td&gt;&lt;td&gt;II&lt;/td&gt;&lt;/tr&gt;
+    &lt;tr&gt;&lt;td&gt;102&lt;/td&gt;&lt;td&gt;B&lt;/td&gt;&lt;td&gt;II&lt;/td&gt;&lt;/tr&gt;
+    &lt;tr&gt;&lt;td&gt;103&lt;/td&gt;&lt;td&gt;C&lt;/td&gt;&lt;td&gt;II&lt;/td&gt;&lt;/tr&gt;
+    &lt;tr&gt;&lt;td rowspan="2"&gt;MBA&lt;/td&gt;&lt;td&gt;201&lt;/td&gt;&lt;td&gt;D&lt;/td&gt;&lt;td&gt;II&lt;/td&gt;&lt;/tr&gt;
+    &lt;tr&gt;&lt;td&gt;202&lt;/td&gt;&lt;td&gt;E&lt;/td&gt;&lt;td&gt;II&lt;/td&gt;&lt;/tr&gt;
+  &lt;/table&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre></div><div class="pane" data-name="06_marks_table_colspan.html"><pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+  &lt;meta charset="UTF-8"&gt;
+  &lt;title&gt;Student Marks (colspan)&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;h2 align="center"&gt;BHARATI VIDYAPEETH (DEEMED TO BE) UNIVERSITY&lt;/h2&gt;
+  &lt;h3 align="center"&gt;INSTITUTE OF MANAGEMENT AND ENTREPRENEURSHIP DEVELOPMENT&lt;/h3&gt;
+  &lt;h4 align="center"&gt;Subject: Client-Side Web Technologies&lt;/h4&gt;
+  &lt;hr&gt;
+  &lt;h3&gt;Lab Session 2: Student Marks (colspan)&lt;/h3&gt;
+
+  &lt;table border="1" cellpadding="8" cellspacing="0" align="center"&gt;
+    &lt;tr align="center"&gt;
+      &lt;th colspan="2"&gt;Student Details&lt;/th&gt;
+      &lt;th colspan="2"&gt;Semester I&lt;/th&gt;
+      &lt;th colspan="2"&gt;Semester II&lt;/th&gt;
+    &lt;/tr&gt;
+    &lt;tr align="center"&gt;
+      &lt;th&gt;Roll No.&lt;/th&gt;&lt;th&gt;Name&lt;/th&gt;
+      &lt;th&gt;Theory&lt;/th&gt;&lt;th&gt;Practical&lt;/th&gt;
+      &lt;th&gt;Theory&lt;/th&gt;&lt;th&gt;Practical&lt;/th&gt;
+    &lt;/tr&gt;
+    &lt;tr align="center"&gt;&lt;td&gt;101&lt;/td&gt;&lt;td&gt;Amit&lt;/td&gt;&lt;td&gt;78&lt;/td&gt;&lt;td&gt;85&lt;/td&gt;&lt;td&gt;82&lt;/td&gt;&lt;td&gt;88&lt;/td&gt;&lt;/tr&gt;
+    &lt;tr align="center"&gt;&lt;td&gt;102&lt;/td&gt;&lt;td&gt;Neha&lt;/td&gt;&lt;td&gt;89&lt;/td&gt;&lt;td&gt;92&lt;/td&gt;&lt;td&gt;91&lt;/td&gt;&lt;td&gt;94&lt;/td&gt;&lt;/tr&gt;
+  &lt;/table&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre></div><div class="pane" data-name="07_table_with_hyperlinks.html"><pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+  &lt;meta charset="UTF-8"&gt;
+  &lt;title&gt;Table with Hyperlinks&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;h2 align="center"&gt;BHARATI VIDYAPEETH (DEEMED TO BE) UNIVERSITY&lt;/h2&gt;
+  &lt;h3 align="center"&gt;INSTITUTE OF MANAGEMENT AND ENTREPRENEURSHIP DEVELOPMENT&lt;/h3&gt;
+  &lt;h4 align="center"&gt;Subject: Client-Side Web Technologies&lt;/h4&gt;
+  &lt;hr&gt;
+  &lt;h3&gt;Lab Session 2: Table with Hyperlinks&lt;/h3&gt;
+
+  &lt;table border="1" cellpadding="8" cellspacing="0"&gt;
+    &lt;tr&gt;&lt;th&gt;Resource&lt;/th&gt;&lt;th&gt;Description&lt;/th&gt;&lt;th&gt;Website&lt;/th&gt;&lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;HTML Tutorial&lt;/td&gt;&lt;td&gt;Learn HTML&lt;/td&gt;
+      &lt;td&gt;&lt;a href="https://www.w3schools.com/html/" target="_blank"&gt;Visit&lt;/a&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;CSS Tutorial&lt;/td&gt;&lt;td&gt;Learn CSS&lt;/td&gt;
+      &lt;td&gt;&lt;a href="https://www.w3schools.com/css/" target="_blank"&gt;Visit&lt;/a&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;JavaScript&lt;/td&gt;&lt;td&gt;Learn JS&lt;/td&gt;
+      &lt;td&gt;&lt;a href="https://www.w3schools.com/js/" target="_blank"&gt;Visit&lt;/a&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/table&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre></div><div class="pane" data-name="08_patient_table.html"><pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+  &lt;meta charset="UTF-8"&gt;
+  &lt;title&gt;Patient Table (rowspan on Doctor)&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;h2 align="center"&gt;BHARATI VIDYAPEETH (DEEMED TO BE) UNIVERSITY&lt;/h2&gt;
+  &lt;h3 align="center"&gt;INSTITUTE OF MANAGEMENT AND ENTREPRENEURSHIP DEVELOPMENT&lt;/h3&gt;
+  &lt;h4 align="center"&gt;Subject: Client-Side Web Technologies&lt;/h4&gt;
+  &lt;hr&gt;
+  &lt;h3&gt;Lab Session 2: Patient Table (rowspan on Doctor)&lt;/h3&gt;
+
+  &lt;table border="1" cellpadding="8" cellspacing="0"&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Patient ID&lt;/th&gt;&lt;th&gt;Patient Name&lt;/th&gt;&lt;th&gt;Age&lt;/th&gt;&lt;th&gt;Gender&lt;/th&gt;
+      &lt;th&gt;Doctor&lt;/th&gt;&lt;th&gt;Room No.&lt;/th&gt;&lt;th&gt;Status&lt;/th&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;P101&lt;/td&gt;&lt;td&gt;Rahul&lt;/td&gt;&lt;td&gt;35&lt;/td&gt;&lt;td&gt;M&lt;/td&gt;
+      &lt;td rowspan="3"&gt;Dr. Sharma&lt;/td&gt;&lt;td&gt;201&lt;/td&gt;&lt;td&gt;Admitted&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;&lt;td&gt;P102&lt;/td&gt;&lt;td&gt;Akash&lt;/td&gt;&lt;td&gt;55&lt;/td&gt;&lt;td&gt;M&lt;/td&gt;&lt;td&gt;207&lt;/td&gt;&lt;td&gt;Admitted&lt;/td&gt;&lt;/tr&gt;
+    &lt;tr&gt;&lt;td&gt;P103&lt;/td&gt;&lt;td&gt;Reena&lt;/td&gt;&lt;td&gt;41&lt;/td&gt;&lt;td&gt;F&lt;/td&gt;&lt;td&gt;402&lt;/td&gt;&lt;td&gt;Discharged&lt;/td&gt;&lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;P104&lt;/td&gt;&lt;td&gt;Sneha&lt;/td&gt;&lt;td&gt;42&lt;/td&gt;&lt;td&gt;F&lt;/td&gt;
+      &lt;td rowspan="2"&gt;Dr. Patil&lt;/td&gt;&lt;td&gt;205&lt;/td&gt;&lt;td&gt;Discharged&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;&lt;td&gt;P105&lt;/td&gt;&lt;td&gt;Prakash&lt;/td&gt;&lt;td&gt;87&lt;/td&gt;&lt;td&gt;M&lt;/td&gt;&lt;td&gt;310&lt;/td&gt;&lt;td&gt;Admitted&lt;/td&gt;&lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;P106&lt;/td&gt;&lt;td&gt;Amit&lt;/td&gt;&lt;td&gt;28&lt;/td&gt;&lt;td&gt;M&lt;/td&gt;
+      &lt;td&gt;Dr. Joshi&lt;/td&gt;&lt;td&gt;210&lt;/td&gt;&lt;td&gt;Admitted&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/table&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre></div><div class="pane" data-name="09_image_and_link_in_table.html"><pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+  &lt;meta charset="UTF-8"&gt;
+  &lt;title&gt;Image and Hyperlink inside Table Cells&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;h2 align="center"&gt;BHARATI VIDYAPEETH (DEEMED TO BE) UNIVERSITY&lt;/h2&gt;
+  &lt;h3 align="center"&gt;INSTITUTE OF MANAGEMENT AND ENTREPRENEURSHIP DEVELOPMENT&lt;/h3&gt;
+  &lt;h4 align="center"&gt;Subject: Client-Side Web Technologies&lt;/h4&gt;
+  &lt;hr&gt;
+  &lt;h3&gt;Lab Session 2: Image and Hyperlink inside Table Cells&lt;/h3&gt;
+
+  &lt;table border="1" cellpadding="10" cellspacing="0" align="center"&gt;
+    &lt;tr&gt;&lt;th&gt;Photo&lt;/th&gt;&lt;th&gt;Name&lt;/th&gt;&lt;th&gt;Profile&lt;/th&gt;&lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;img src="images/photo.jpg" alt="Student photo" width="100" height="100"&gt;&lt;/td&gt;
+      &lt;td&gt;Aarav Sharma&lt;/td&gt;
+      &lt;td&gt;&lt;a href="https://www.google.com" target="_blank"&gt;View Profile&lt;/a&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;
+        &lt;a href="https://www.wikipedia.org" target="_blank"&gt;
+          &lt;img src="images/photo.jpg" alt="Click image to open Wikipedia" width="100" height="100"&gt;
+        &lt;/a&gt;
+      &lt;/td&gt;
+      &lt;td&gt;Ananya Patil&lt;/td&gt;
+      &lt;td&gt;&lt;a href="mailto:ananya@example.com"&gt;Send Email&lt;/a&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/table&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre></div><div class="pane" data-name="10_all_table_attributes.html"><pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+  &lt;meta charset="UTF-8"&gt;
+  &lt;title&gt;Practice of All Table Attributes&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;h2 align="center"&gt;BHARATI VIDYAPEETH (DEEMED TO BE) UNIVERSITY&lt;/h2&gt;
+  &lt;h3 align="center"&gt;INSTITUTE OF MANAGEMENT AND ENTREPRENEURSHIP DEVELOPMENT&lt;/h3&gt;
+  &lt;h4 align="center"&gt;Subject: Client-Side Web Technologies&lt;/h4&gt;
+  &lt;hr&gt;
+  &lt;h3&gt;Lab Session 2: Practice of All Table Attributes&lt;/h3&gt;
+
+  &lt;table border="2" width="80%" align="center" bgcolor="#f2f2f2"
+         cellpadding="10" cellspacing="4" bordercolor="blue"&gt;
+    &lt;caption&gt;&lt;b&gt;Marks Report (all table tags and attributes)&lt;/b&gt;&lt;/caption&gt;
+    &lt;colgroup&gt;
+      &lt;col span="1" style="background-color:#e6f2ff"&gt;
+      &lt;col span="3"&gt;
+    &lt;/colgroup&gt;
+    &lt;thead bgcolor="#cce5ff"&gt;
+      &lt;tr&gt;&lt;th&gt;Name&lt;/th&gt;&lt;th&gt;Subject&lt;/th&gt;&lt;th&gt;Marks&lt;/th&gt;&lt;th&gt;Result&lt;/th&gt;&lt;/tr&gt;
+    &lt;/thead&gt;
+    &lt;tbody&gt;
+      &lt;tr align="center" valign="middle"&gt;
+        &lt;td&gt;Amit&lt;/td&gt;&lt;td&gt;Web Tech&lt;/td&gt;&lt;td&gt;85&lt;/td&gt;&lt;td bgcolor="#c6efce"&gt;Pass&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr align="center"&gt;
+        &lt;td rowspan="2"&gt;Neha&lt;/td&gt;&lt;td&gt;Web Tech&lt;/td&gt;&lt;td&gt;92&lt;/td&gt;&lt;td bgcolor="#c6efce"&gt;Pass&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr align="center"&gt;
+        &lt;td&gt;Python&lt;/td&gt;&lt;td&gt;30&lt;/td&gt;&lt;td bgcolor="#ffc7ce"&gt;Fail&lt;/td&gt;
+      &lt;/tr&gt;
+    &lt;/tbody&gt;
+    &lt;tfoot bgcolor="#ffe699"&gt;
+      &lt;tr&gt;&lt;td colspan="2" align="right"&gt;&lt;b&gt;Total&lt;/b&gt;&lt;/td&gt;&lt;td align="center"&gt;&lt;b&gt;207&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;/tr&gt;
+    &lt;/tfoot&gt;
+  &lt;/table&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre></div>
+        </div>
+    </div>
+
+    <!-- Assignment 3 -->
+    <div class="asg-panel" id="asg3">
+      <div class="card">
+        <h3>Assignment 3: HTML Forms</h3>
+        <p>50 questions on HTML forms in three levels: basic (Q1 to Q20), intermediate (Q21 to Q40) and advanced (Q41 to Q50), with a shared stylesheet and script.</p>
+        <div class="tags"><span class="tag">HTML forms</span><span class="tag">CSS</span><span class="tag">JavaScript</span></div>
+      </div>
+      <div class="viewer" id="v-a3">
+          <div class="ftabs" role="tablist"><button type="button" class="ftab active" data-i="0">README.md</button><button type="button" class="ftab" data-i="1">basic.html</button><button type="button" class="ftab" data-i="2">intermediate.html</button><button type="button" class="ftab" data-i="3">advanced.html</button><button type="button" class="ftab" data-i="4">style.css</button><button type="button" class="ftab" data-i="5">script.js</button></div>
+          <div class="vbar"><span class="vname"></span>
+            <span><button type="button" class="vbtn" data-act="copy">Copy code</button>
+            <button type="button" class="vbtn" data-act="download">Download</button></span></div>
+          <div class="pane active" data-name="README.md"><pre><code># HTML Assignment 3 – Forms
+
+- `basic.html` – Basic Questions (Q1–Q20)
+- `intermediate.html` – Intermediate Questions (Q21–Q40)
+- `advanced.html` – Advanced Questions (Q41–Q50)
+- `style.css`, `script.js` – shared styling and JavaScript
+</code></pre></div><div class="pane" data-name="basic.html"><pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+  &lt;meta charset="UTF-8"&gt;
+  &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+  &lt;title&gt;HTML Assignment 3 - Basic&lt;/title&gt;
+  &lt;link rel="stylesheet" href="style.css"&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;header&gt;
+    &lt;h1&gt;HTML Assignment – 3&lt;/h1&gt;
+    &lt;p&gt;Topic: Forms – Basic Questions (Q1–Q20)&lt;/p&gt;
+  &lt;/header&gt;
+
+  &lt;nav class="nav"&gt;&lt;a href="basic.html"&gt;Basic&lt;/a&gt; | &lt;a href="intermediate.html"&gt;Intermediate&lt;/a&gt; | &lt;a href="advanced.html"&gt;Advanced&lt;/a&gt;&lt;/nav&gt;
+&lt;main&gt;
+
+
+  &lt;section&gt;
+    &lt;h3&gt;Q1. Single text input for username&lt;/h3&gt;
+    &lt;form action="#" method="post"&gt;
+      &lt;input type="text" name="username" placeholder="Username"&gt;
+    &lt;/form&gt;
+  &lt;/section&gt;
+
+  &lt;section&gt;
+    &lt;h3&gt;Q2. Password input (hides typed characters)&lt;/h3&gt;
+    &lt;form action="#" method="post"&gt;
+      &lt;input type="password" name="password" placeholder="Password"&gt;
+    &lt;/form&gt;
+  &lt;/section&gt;
+
+  &lt;section&gt;
+    &lt;h3&gt;Q3. First Name and Last Name&lt;/h3&gt;
+    &lt;form action="#" method="post"&gt;
+      &lt;input type="text" name="firstname" placeholder="First Name"&gt;
+      &lt;input type="text" name="lastname" placeholder="Last Name"&gt;
+    &lt;/form&gt;
+  &lt;/section&gt;
+
+  &lt;section&gt;
+    &lt;h3&gt;Q4. Submit button that sends data&lt;/h3&gt;
+    &lt;form action="#" method="post"&gt;
+      &lt;input type="text" name="data" placeholder="Enter something"&gt;
+      &lt;button type="submit"&gt;Submit&lt;/button&gt;
+    &lt;/form&gt;
+  &lt;/section&gt;
+
+  &lt;section&gt;
+    &lt;h3&gt;Q5. Reset button that clears inputs&lt;/h3&gt;
+    &lt;form action="#" method="post"&gt;
+      &lt;input type="text" name="name" placeholder="Name"&gt;
+      &lt;input type="text" name="city" placeholder="City"&gt;
+      &lt;button type="reset"&gt;Reset&lt;/button&gt;
+    &lt;/form&gt;
+  &lt;/section&gt;
+
+  &lt;section&gt;
+    &lt;h3&gt;Q6. Radio buttons for gender&lt;/h3&gt;
+    &lt;form action="#" method="post"&gt;
+      &lt;label&gt;&lt;input type="radio" name="gender" value="male"&gt; Male&lt;/label&gt;
+      &lt;label&gt;&lt;input type="radio" name="gender" value="female"&gt; Female&lt;/label&gt;
+    &lt;/form&gt;
+  &lt;/section&gt;
+
+  &lt;section&gt;
+    &lt;h3&gt;Q7. Checkboxes for hobbies&lt;/h3&gt;
+    &lt;form action="#" method="post"&gt;
+      &lt;label&gt;&lt;input type="checkbox" name="hobby" value="reading"&gt; Reading&lt;/label&gt;
+      &lt;label&gt;&lt;input type="checkbox" name="hobby" value="sports"&gt; Sports&lt;/label&gt;
+      &lt;label&gt;&lt;input type="checkbox" name="hobby" value="coding"&gt; Coding&lt;/label&gt;
+    &lt;/form&gt;
+  &lt;/section&gt;
+
+  &lt;section&gt;
+    &lt;h3&gt;Q8. File upload for profile picture&lt;/h3&gt;
+    &lt;form action="#" method="post" enctype="multipart/form-data"&gt;
+      &lt;label for="q8pic"&gt;Upload profile picture:&lt;/label&gt;
+      &lt;input type="file" id="q8pic" name="profilepic" accept="image/*"&gt;
+    &lt;/form&gt;
+  &lt;/section&gt;
+
+  &lt;section&gt;
+    &lt;h3&gt;Q9. &amp;lt;label&amp;gt; tag with a text input&lt;/h3&gt;
+    &lt;form action="#" method="post"&gt;
+      &lt;label for="q9name"&gt;Full Name:&lt;/label&gt;
+      &lt;input type="text" id="q9name" name="fullname"&gt;
+    &lt;/form&gt;
+  &lt;/section&gt;
+
+  &lt;section&gt;
+    &lt;h3&gt;Q10. Dropdown for country&lt;/h3&gt;
+    &lt;form action="#" method="post"&gt;
+      &lt;label for="q10country"&gt;Country:&lt;/label&gt;
+      &lt;select id="q10country" name="country"&gt;
+        &lt;option value=""&gt;-- Select Country --&lt;/option&gt;
+        &lt;option value="india"&gt;India&lt;/option&gt;
+        &lt;option value="usa"&gt;USA&lt;/option&gt;
+        &lt;option value="uk"&gt;UK&lt;/option&gt;
+        &lt;option value="canada"&gt;Canada&lt;/option&gt;
+        &lt;option value="australia"&gt;Australia&lt;/option&gt;
+      &lt;/select&gt;
+    &lt;/form&gt;
+  &lt;/section&gt;
+
+  &lt;section&gt;
+    &lt;h3&gt;Q11. Textarea for comments&lt;/h3&gt;
+    &lt;form action="#" method="post"&gt;
+      &lt;label for="q11comments"&gt;Comments:&lt;/label&gt;
+      &lt;textarea id="q11comments" name="comments" rows="4" cols="40" placeholder="Write your comments here..."&gt;&lt;/textarea&gt;
+    &lt;/form&gt;
+  &lt;/section&gt;
+
+  &lt;section&gt;
+    &lt;h3&gt;Q12. Button labelled "Click Me"&lt;/h3&gt;
+    &lt;form action="#" method="post"&gt;
+      &lt;button type="button" onclick="alert('Button clicked!')"&gt;Click Me&lt;/button&gt;
+    &lt;/form&gt;
+  &lt;/section&gt;
+
+  &lt;section&gt;
+    &lt;h3&gt;Q13. Required attribute on a name field&lt;/h3&gt;
+    &lt;form action="#" method="post"&gt;
+      &lt;label for="q13name"&gt;Name:&lt;/label&gt;
+      &lt;input type="text" id="q13name" name="name" required&gt;
+      &lt;button type="submit"&gt;Submit&lt;/button&gt;
+    &lt;/form&gt;
+  &lt;/section&gt;
+
+  &lt;section&gt;
+    &lt;h3&gt;Q14. Email input with validation&lt;/h3&gt;
+    &lt;form action="#" method="post"&gt;
+      &lt;label for="q14email"&gt;Email:&lt;/label&gt;
+      &lt;input type="email" id="q14email" name="email" required&gt;
+      &lt;button type="submit"&gt;Validate&lt;/button&gt;
+    &lt;/form&gt;
+  &lt;/section&gt;
+
+  &lt;section&gt;
+    &lt;h3&gt;Q15. Number input for age&lt;/h3&gt;
+    &lt;form action="#" method="post"&gt;
+      &lt;label for="q15age"&gt;Age:&lt;/label&gt;
+      &lt;input type="number" id="q15age" name="age"&gt;
+    &lt;/form&gt;
+  &lt;/section&gt;
+
+  &lt;section&gt;
+    &lt;h3&gt;Q16. Date picker for birthdate&lt;/h3&gt;
+    &lt;form action="#" method="post"&gt;
+      &lt;label for="q16dob"&gt;Birthdate:&lt;/label&gt;
+      &lt;input type="date" id="q16dob" name="dob"&gt;
+    &lt;/form&gt;
+  &lt;/section&gt;
+
+  &lt;section&gt;
+    &lt;h3&gt;Q17. Time input for appointment&lt;/h3&gt;
+    &lt;form action="#" method="post"&gt;
+      &lt;label for="q17time"&gt;Appointment Time:&lt;/label&gt;
+      &lt;input type="time" id="q17time" name="appointment"&gt;
+    &lt;/form&gt;
+  &lt;/section&gt;
+
+  &lt;section&gt;
+    &lt;h3&gt;Q18. Colour input for favourite colour&lt;/h3&gt;
+    &lt;form action="#" method="post"&gt;
+      &lt;label for="q18color"&gt;Favourite Colour:&lt;/label&gt;
+      &lt;input type="color" id="q18color" name="color" value="#4f46e5"&gt;
+    &lt;/form&gt;
+  &lt;/section&gt;
+
+  &lt;section&gt;
+    &lt;h3&gt;Q19. Range input for volume (1-100)&lt;/h3&gt;
+    &lt;form action="#" method="post"&gt;
+      &lt;label for="q19vol"&gt;Volume:&lt;/label&gt;
+      &lt;input type="range" id="q19vol" name="volume" min="1" max="100" value="50"
+             oninput="document.getElementById('q19out').textContent = this.value"&gt;
+      &lt;output id="q19out"&gt;50&lt;/output&gt;
+    &lt;/form&gt;
+  &lt;/section&gt;
+
+  &lt;section&gt;
+    &lt;h3&gt;Q20. &amp;lt;fieldset&amp;gt; and &amp;lt;legend&amp;gt; for personal details&lt;/h3&gt;
+    &lt;form action="#" method="post"&gt;
+      &lt;fieldset&gt;
+        &lt;legend&gt;Personal Details&lt;/legend&gt;
+        &lt;label for="q20name"&gt;Name:&lt;/label&gt;
+        &lt;input type="text" id="q20name" name="name"&gt;
+        &lt;label for="q20email"&gt;Email:&lt;/label&gt;
+        &lt;input type="email" id="q20email" name="email"&gt;
+      &lt;/fieldset&gt;
+    &lt;/form&gt;
+  &lt;/section&gt;
+
+  &lt;!-- ===================== INTERMEDIATE QUESTIONS ===================== --&gt;
+  &lt;/main&gt;
+
+&lt;footer&gt;&lt;p&gt;HTML Assignment 3 – Forms&lt;/p&gt;&lt;/footer&gt;
+
+&lt;script src="script.js"&gt;&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre></div><div class="pane" data-name="intermediate.html"><pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+  &lt;meta charset="UTF-8"&gt;
+  &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+  &lt;title&gt;HTML Assignment 3 - Intermediate&lt;/title&gt;
+  &lt;link rel="stylesheet" href="style.css"&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;header&gt;
+    &lt;h1&gt;HTML Assignment – 3&lt;/h1&gt;
+    &lt;p&gt;Topic: Forms – Intermediate Questions (Q21–Q40)&lt;/p&gt;
+  &lt;/header&gt;
+
+  &lt;nav class="nav"&gt;&lt;a href="basic.html"&gt;Basic&lt;/a&gt; | &lt;a href="intermediate.html"&gt;Intermediate&lt;/a&gt; | &lt;a href="advanced.html"&gt;Advanced&lt;/a&gt;&lt;/nav&gt;
+&lt;main&gt;
+
+
+  &lt;section&gt;
+    &lt;h3&gt;Q21. Login form&lt;/h3&gt;
+    &lt;form action="#" method="post"&gt;
+      &lt;label for="q21user"&gt;Username:&lt;/label&gt;
+      &lt;input type="text" id="q21user" name="username" required&gt;
+      &lt;label for="q21pass"&gt;Password:&lt;/label&gt;
+      &lt;input type="password" id="q21pass" name="password" required&gt;
+      &lt;button type="submit"&gt;Login&lt;/button&gt;
+    &lt;/form&gt;
+  &lt;/section&gt;
+
+  &lt;section&gt;
+    &lt;h3&gt;Q22. Contact form (Name, Email, Phone, Message)&lt;/h3&gt;
+    &lt;form action="#" method="post"&gt;
+      &lt;label for="q22name"&gt;Name:&lt;/label&gt;
+      &lt;input type="text" id="q22name" name="name" required&gt;
+      &lt;label for="q22email"&gt;Email:&lt;/label&gt;
+      &lt;input type="email" id="q22email" name="email" required&gt;
+      &lt;label for="q22phone"&gt;Phone:&lt;/label&gt;
+      &lt;input type="tel" id="q22phone" name="phone"&gt;
+      &lt;label for="q22msg"&gt;Message:&lt;/label&gt;
+      &lt;textarea id="q22msg" name="message" rows="4"&gt;&lt;/textarea&gt;
+      &lt;button type="submit"&gt;Send&lt;/button&gt;
+    &lt;/form&gt;
+  &lt;/section&gt;
+
+  &lt;section&gt;
+    &lt;h3&gt;Q23. Payment Method radio buttons&lt;/h3&gt;
+    &lt;form action="#" method="post"&gt;
+      &lt;fieldset&gt;
+        &lt;legend&gt;Payment Method&lt;/legend&gt;
+        &lt;label&gt;&lt;input type="radio" name="payment" value="card" required&gt; Credit Card&lt;/label&gt;
+        &lt;label&gt;&lt;input type="radio" name="payment" value="upi"&gt; UPI&lt;/label&gt;
+        &lt;label&gt;&lt;input type="radio" name="payment" value="cod"&gt; Cash on Delivery&lt;/label&gt;
+      &lt;/fieldset&gt;
+      &lt;button type="submit"&gt;Pay&lt;/button&gt;
+    &lt;/form&gt;
+  &lt;/section&gt;
+
+  &lt;section&gt;
+    &lt;h3&gt;Q24. Checkboxes for multiple languages&lt;/h3&gt;
+    &lt;form action="#" method="post"&gt;
+      &lt;fieldset&gt;
+        &lt;legend&gt;Languages Known&lt;/legend&gt;
+        &lt;label&gt;&lt;input type="checkbox" name="lang" value="english"&gt; English&lt;/label&gt;
+        &lt;label&gt;&lt;input type="checkbox" name="lang" value="hindi"&gt; Hindi&lt;/label&gt;
+        &lt;label&gt;&lt;input type="checkbox" name="lang" value="french"&gt; French&lt;/label&gt;
+        &lt;label&gt;&lt;input type="checkbox" name="lang" value="spanish"&gt; Spanish&lt;/label&gt;
+      &lt;/fieldset&gt;
+    &lt;/form&gt;
+  &lt;/section&gt;
+
+  &lt;section&gt;
+    &lt;h3&gt;Q25. Age restricted between 18-60 (min / max)&lt;/h3&gt;
+    &lt;form action="#" method="post"&gt;
+      &lt;label for="q25age"&gt;Age (18-60):&lt;/label&gt;
+      &lt;input type="number" id="q25age" name="age" min="18" max="60" required&gt;
+      &lt;button type="submit"&gt;Submit&lt;/button&gt;
+    &lt;/form&gt;
+  &lt;/section&gt;
+
+  &lt;section&gt;
+    &lt;h3&gt;Q26. Pattern validation for 10-digit phone number&lt;/h3&gt;
+    &lt;form action="#" method="post"&gt;
+      &lt;label for="q26phone"&gt;Phone Number:&lt;/label&gt;
+      &lt;input type="text" id="q26phone" name="phone" pattern="[0-9]{10}"
+             title="Enter exactly 10 digits" placeholder="9876543210" required&gt;
+      &lt;button type="submit"&gt;Submit&lt;/button&gt;
+    &lt;/form&gt;
+  &lt;/section&gt;
+
+  &lt;section&gt;
+    &lt;h3&gt;Q27. File upload - only PDF allowed (accept)&lt;/h3&gt;
+    &lt;form action="#" method="post" enctype="multipart/form-data"&gt;
+      &lt;label for="q27file"&gt;Upload PDF:&lt;/label&gt;
+      &lt;input type="file" id="q27file" name="pdf" accept=".pdf,application/pdf" required&gt;
+      &lt;button type="submit"&gt;Upload&lt;/button&gt;
+    &lt;/form&gt;
+  &lt;/section&gt;
+
+  &lt;section&gt;
+    &lt;h3&gt;Q28. Dropdown for profession&lt;/h3&gt;
+    &lt;form action="#" method="post"&gt;
+      &lt;label for="q28prof"&gt;Profession:&lt;/label&gt;
+      &lt;select id="q28prof" name="profession"&gt;
+        &lt;option value=""&gt;-- Select --&lt;/option&gt;
+        &lt;option value="student"&gt;Student&lt;/option&gt;
+        &lt;option value="teacher"&gt;Teacher&lt;/option&gt;
+        &lt;option value="developer"&gt;Developer&lt;/option&gt;
+        &lt;option value="designer"&gt;Designer&lt;/option&gt;
+      &lt;/select&gt;
+    &lt;/form&gt;
+  &lt;/section&gt;
+
+  &lt;section&gt;
+    &lt;h3&gt;Q29. Submit disabled until Terms &amp;amp; Conditions are checked&lt;/h3&gt;
+    &lt;form action="#" method="post"&gt;
+      &lt;label for="q29name"&gt;Name:&lt;/label&gt;
+      &lt;input type="text" id="q29name" name="name"&gt;
+      &lt;label&gt;&lt;input type="checkbox" id="q29terms"&gt; I accept the Terms &amp;amp; Conditions&lt;/label&gt;
+      &lt;button type="submit" id="q29btn" disabled&gt;Submit&lt;/button&gt;
+    &lt;/form&gt;
+  &lt;/section&gt;
+
+  &lt;section&gt;
+    &lt;h3&gt;Q30. &amp;lt;fieldset&amp;gt; and &amp;lt;legend&amp;gt; for address details&lt;/h3&gt;
+    &lt;form action="#" method="post"&gt;
+      &lt;fieldset&gt;
+        &lt;legend&gt;Address Details&lt;/legend&gt;
+        &lt;label for="q30street"&gt;Street:&lt;/label&gt;
+        &lt;input type="text" id="q30street" name="street"&gt;
+        &lt;label for="q30city"&gt;City:&lt;/label&gt;
+        &lt;input type="text" id="q30city" name="city"&gt;
+        &lt;label for="q30state"&gt;State:&lt;/label&gt;
+        &lt;input type="text" id="q30state" name="state"&gt;
+        &lt;label for="q30pin"&gt;PIN Code:&lt;/label&gt;
+        &lt;input type="text" id="q30pin" name="pin" pattern="[0-9]{6}" title="6-digit PIN code"&gt;
+      &lt;/fieldset&gt;
+    &lt;/form&gt;
+  &lt;/section&gt;
+
+  &lt;section&gt;
+    &lt;h3&gt;Q31. Email must follow correct format (abc@mail.com)&lt;/h3&gt;
+    &lt;form action="#" method="post"&gt;
+      &lt;label for="q31email"&gt;Email:&lt;/label&gt;
+      &lt;input type="email" id="q31email" name="email" placeholder="abc@mail.com"
+             pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}" title="Format: abc@mail.com" required&gt;
+      &lt;button type="submit"&gt;Submit&lt;/button&gt;
+    &lt;/form&gt;
+  &lt;/section&gt;
+
+  &lt;section&gt;
+    &lt;h3&gt;Q32. Placeholder attribute in inputs&lt;/h3&gt;
+    &lt;form action="#" method="post"&gt;
+      &lt;input type="text" name="name" placeholder="Enter your full name"&gt;
+      &lt;input type="email" name="email" placeholder="Enter your email address"&gt;
+      &lt;input type="text" name="city" placeholder="Enter your city"&gt;
+    &lt;/form&gt;
+  &lt;/section&gt;
+
+  &lt;section&gt;
+    &lt;h3&gt;Q33. Password with Confirm Password&lt;/h3&gt;
+    &lt;form action="#" method="post" id="q33form"&gt;
+      &lt;label for="q33pass"&gt;Password:&lt;/label&gt;
+      &lt;input type="password" id="q33pass" name="password" required&gt;
+      &lt;label for="q33confirm"&gt;Confirm Password:&lt;/label&gt;
+      &lt;input type="password" id="q33confirm" name="confirm" required&gt;
+      &lt;button type="submit"&gt;Submit&lt;/button&gt;
+    &lt;/form&gt;
+  &lt;/section&gt;
+
+  &lt;section&gt;
+    &lt;h3&gt;Q34. Reset button - test clearing inputs&lt;/h3&gt;
+    &lt;form action="#" method="post"&gt;
+      &lt;input type="text" name="name" placeholder="Name"&gt;
+      &lt;input type="email" name="email" placeholder="Email"&gt;
+      &lt;textarea name="note" rows="3" placeholder="Note"&gt;&lt;/textarea&gt;
+      &lt;button type="submit"&gt;Submit&lt;/button&gt;
+      &lt;button type="reset"&gt;Reset&lt;/button&gt;
+    &lt;/form&gt;
+  &lt;/section&gt;
+
+  &lt;section&gt;
+    &lt;h3&gt;Q35. Newsletter signup form&lt;/h3&gt;
+    &lt;form action="#" method="post"&gt;
+      &lt;label for="q35name"&gt;Name:&lt;/label&gt;
+      &lt;input type="text" id="q35name" name="name" required&gt;
+      &lt;label for="q35email"&gt;Email:&lt;/label&gt;
+      &lt;input type="email" id="q35email" name="email" required&gt;
+      &lt;button type="submit"&gt;Subscribe&lt;/button&gt;
+    &lt;/form&gt;
+  &lt;/section&gt;
+
+  &lt;section&gt;
+    &lt;h3&gt;Q36. Disabled / readonly input field&lt;/h3&gt;
+    &lt;form action="#" method="post"&gt;
+      &lt;label for="q36dis"&gt;Disabled field:&lt;/label&gt;
+      &lt;input type="text" id="q36dis" name="disabled" value="Cannot edit (disabled)" disabled&gt;
+      &lt;label for="q36ro"&gt;Readonly field:&lt;/label&gt;
+      &lt;input type="text" id="q36ro" name="readonly" value="Cannot edit (readonly)" readonly&gt;
+      &lt;label for="q36ed"&gt;Editable field:&lt;/label&gt;
+      &lt;input type="text" id="q36ed" name="editable" value="You can edit this"&gt;
+    &lt;/form&gt;
+  &lt;/section&gt;
+
+  &lt;section&gt;
+    &lt;h3&gt;Q37. Hidden input field (user ID)&lt;/h3&gt;
+    &lt;form action="#" method="post"&gt;
+      &lt;input type="hidden" name="user_id" value="USR1001"&gt;
+      &lt;label for="q37name"&gt;Name:&lt;/label&gt;
+      &lt;input type="text" id="q37name" name="name"&gt;
+      &lt;button type="submit"&gt;Submit&lt;/button&gt;
+      &lt;p class="note"&gt;A hidden field "user_id" with value USR1001 is sent along with the form (not visible).&lt;/p&gt;
+    &lt;/form&gt;
+  &lt;/section&gt;
+
+  &lt;section&gt;
+    &lt;h3&gt;Q38. Range input 1 to 10 for rating experience&lt;/h3&gt;
+    &lt;form action="#" method="post"&gt;
+      &lt;label for="q38rate"&gt;Rate your experience:&lt;/label&gt;
+      &lt;input type="range" id="q38rate" name="rating" min="1" max="10" value="5"
+             oninput="document.getElementById('q38out').textContent = this.value"&gt;
+      &lt;output id="q38out"&gt;5&lt;/output&gt; / 10
+    &lt;/form&gt;
+  &lt;/section&gt;
+
+  &lt;section&gt;
+    &lt;h3&gt;Q39. Colour picker to set background colour&lt;/h3&gt;
+    &lt;form action="#" method="post"&gt;
+      &lt;label for="q39color"&gt;Choose background colour:&lt;/label&gt;
+      &lt;input type="color" id="q39color" name="bgcolor" value="#ffffff"&gt;
+      &lt;div id="q39box" class="colorbox"&gt;This box changes colour&lt;/div&gt;
+    &lt;/form&gt;
+  &lt;/section&gt;
+
+  &lt;section&gt;
+    &lt;h3&gt;Q40. tel input type for phone number&lt;/h3&gt;
+    &lt;form action="#" method="post"&gt;
+      &lt;label for="q40tel"&gt;Phone:&lt;/label&gt;
+      &lt;input type="tel" id="q40tel" name="phone" placeholder="123-456-7890"
+             pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" title="Format: 123-456-7890"&gt;
+      &lt;button type="submit"&gt;Submit&lt;/button&gt;
+    &lt;/form&gt;
+  &lt;/section&gt;
+
+  &lt;!-- ===================== ADVANCED QUESTIONS ===================== --&gt;
+  &lt;/main&gt;
+
+&lt;footer&gt;&lt;p&gt;HTML Assignment 3 – Forms&lt;/p&gt;&lt;/footer&gt;
+
+&lt;script src="script.js"&gt;&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre></div><div class="pane" data-name="advanced.html"><pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+  &lt;meta charset="UTF-8"&gt;
+  &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+  &lt;title&gt;HTML Assignment 3 - Advanced&lt;/title&gt;
+  &lt;link rel="stylesheet" href="style.css"&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;header&gt;
+    &lt;h1&gt;HTML Assignment – 3&lt;/h1&gt;
+    &lt;p&gt;Topic: Forms – Advanced Questions (Q41–Q50)&lt;/p&gt;
+  &lt;/header&gt;
+
+  &lt;nav class="nav"&gt;&lt;a href="basic.html"&gt;Basic&lt;/a&gt; | &lt;a href="intermediate.html"&gt;Intermediate&lt;/a&gt; | &lt;a href="advanced.html"&gt;Advanced&lt;/a&gt;&lt;/nav&gt;
+&lt;main&gt;
+
+
+  &lt;section&gt;
+    &lt;h3&gt;Q41. Registration form with full validation&lt;/h3&gt;
+    &lt;form action="#" method="post" id="q41form"&gt;
+      &lt;label for="q41name"&gt;Name:&lt;/label&gt;
+      &lt;input type="text" id="q41name" name="name" minlength="3" required&gt;
+      &lt;label for="q41email"&gt;Email:&lt;/label&gt;
+      &lt;input type="email" id="q41email" name="email" required&gt;
+      &lt;label for="q41pass"&gt;Password:&lt;/label&gt;
+      &lt;input type="password" id="q41pass" name="password" minlength="6" required&gt;
+      &lt;label for="q41confirm"&gt;Confirm Password:&lt;/label&gt;
+      &lt;input type="password" id="q41confirm" name="confirm" required&gt;
+      &lt;fieldset&gt;
+        &lt;legend&gt;Gender&lt;/legend&gt;
+        &lt;label&gt;&lt;input type="radio" name="gender" value="male" required&gt; Male&lt;/label&gt;
+        &lt;label&gt;&lt;input type="radio" name="gender" value="female"&gt; Female&lt;/label&gt;
+        &lt;label&gt;&lt;input type="radio" name="gender" value="other"&gt; Other&lt;/label&gt;
+      &lt;/fieldset&gt;
+      &lt;label for="q41country"&gt;Country:&lt;/label&gt;
+      &lt;select id="q41country" name="country" required&gt;
+        &lt;option value=""&gt;-- Select Country --&lt;/option&gt;
+        &lt;option value="india"&gt;India&lt;/option&gt;
+        &lt;option value="usa"&gt;USA&lt;/option&gt;
+        &lt;option value="uk"&gt;UK&lt;/option&gt;
+      &lt;/select&gt;
+      &lt;button type="submit"&gt;Register&lt;/button&gt;
+    &lt;/form&gt;
+  &lt;/section&gt;
+
+  &lt;section&gt;
+    &lt;h3&gt;Q42. Password pattern (8+ chars, 1 capital, 1 number)&lt;/h3&gt;
+    &lt;form action="#" method="post"&gt;
+      &lt;label for="q42pass"&gt;Password:&lt;/label&gt;
+      &lt;input type="password" id="q42pass" name="password"
+             pattern="(?=.*\d)(?=.*[A-Z]).{8,}"
+             title="At least 8 characters, with at least 1 capital letter and 1 number" required&gt;
+      &lt;button type="submit"&gt;Submit&lt;/button&gt;
+      &lt;p class="note"&gt;Example of a valid password: Hello1234&lt;/p&gt;
+    &lt;/form&gt;
+  &lt;/section&gt;
+
+  &lt;section&gt;
+    &lt;h3&gt;Q43. Multi-step form&lt;/h3&gt;
+    &lt;form action="#" method="post" id="q43form"&gt;
+      &lt;div class="step" id="q43s1"&gt;
+        &lt;h4&gt;Step 1: Personal Info&lt;/h4&gt;
+        &lt;label for="q43name"&gt;Name:&lt;/label&gt;
+        &lt;input type="text" id="q43name" name="name" required&gt;
+        &lt;label for="q43dob"&gt;Date of Birth:&lt;/label&gt;
+        &lt;input type="date" id="q43dob" name="dob" required&gt;
+        &lt;button type="button" data-next="q43s2"&gt;Next&lt;/button&gt;
+      &lt;/div&gt;
+      &lt;div class="step" id="q43s2" hidden&gt;
+        &lt;h4&gt;Step 2: Contact Info&lt;/h4&gt;
+        &lt;label for="q43email"&gt;Email:&lt;/label&gt;
+        &lt;input type="email" id="q43email" name="email" required&gt;
+        &lt;label for="q43phone"&gt;Phone:&lt;/label&gt;
+        &lt;input type="tel" id="q43phone" name="phone" pattern="[0-9]{10}" title="10 digits" required&gt;
+        &lt;button type="button" data-prev="q43s1"&gt;Back&lt;/button&gt;
+        &lt;button type="button" data-next="q43s3"&gt;Next&lt;/button&gt;
+      &lt;/div&gt;
+      &lt;div class="step" id="q43s3" hidden&gt;
+        &lt;h4&gt;Step 3: Submit&lt;/h4&gt;
+        &lt;p&gt;Review your details and click Submit.&lt;/p&gt;
+        &lt;button type="button" data-prev="q43s2"&gt;Back&lt;/button&gt;
+        &lt;button type="submit"&gt;Submit&lt;/button&gt;
+      &lt;/div&gt;
+    &lt;/form&gt;
+  &lt;/section&gt;
+
+  &lt;section&gt;
+    &lt;h3&gt;Q44. Survey form (text, radio, checkbox, dropdown, textarea)&lt;/h3&gt;
+    &lt;form action="#" method="post"&gt;
+      &lt;label for="q44name"&gt;Your Name:&lt;/label&gt;
+      &lt;input type="text" id="q44name" name="name"&gt;
+      &lt;fieldset&gt;
+        &lt;legend&gt;How often do you use the internet?&lt;/legend&gt;
+        &lt;label&gt;&lt;input type="radio" name="usage" value="daily"&gt; Daily&lt;/label&gt;
+        &lt;label&gt;&lt;input type="radio" name="usage" value="weekly"&gt; Weekly&lt;/label&gt;
+        &lt;label&gt;&lt;input type="radio" name="usage" value="rarely"&gt; Rarely&lt;/label&gt;
+      &lt;/fieldset&gt;
+      &lt;fieldset&gt;
+        &lt;legend&gt;What do you use it for?&lt;/legend&gt;
+        &lt;label&gt;&lt;input type="checkbox" name="purpose" value="study"&gt; Study&lt;/label&gt;
+        &lt;label&gt;&lt;input type="checkbox" name="purpose" value="entertainment"&gt; Entertainment&lt;/label&gt;
+        &lt;label&gt;&lt;input type="checkbox" name="purpose" value="work"&gt; Work&lt;/label&gt;
+        &lt;label&gt;&lt;input type="checkbox" name="purpose" value="shopping"&gt; Shopping&lt;/label&gt;
+      &lt;/fieldset&gt;
+      &lt;label for="q44device"&gt;Favourite device:&lt;/label&gt;
+      &lt;select id="q44device" name="device"&gt;
+        &lt;option value=""&gt;-- Select --&lt;/option&gt;
+        &lt;option value="mobile"&gt;Mobile&lt;/option&gt;
+        &lt;option value="laptop"&gt;Laptop&lt;/option&gt;
+        &lt;option value="tablet"&gt;Tablet&lt;/option&gt;
+      &lt;/select&gt;
+      &lt;label for="q44sug"&gt;Suggestions:&lt;/label&gt;
+      &lt;textarea id="q44sug" name="suggestions" rows="4"&gt;&lt;/textarea&gt;
+      &lt;button type="submit"&gt;Submit Survey&lt;/button&gt;
+    &lt;/form&gt;
+  &lt;/section&gt;
+
+  &lt;section&gt;
+    &lt;h3&gt;Q45. Job application form (PDF or DOC upload only)&lt;/h3&gt;
+    &lt;form action="#" method="post" enctype="multipart/form-data"&gt;
+      &lt;label for="q45name"&gt;Full Name:&lt;/label&gt;
+      &lt;input type="text" id="q45name" name="name" required&gt;
+      &lt;label for="q45email"&gt;Email:&lt;/label&gt;
+      &lt;input type="email" id="q45email" name="email" required&gt;
+      &lt;label for="q45pos"&gt;Position:&lt;/label&gt;
+      &lt;select id="q45pos" name="position" required&gt;
+        &lt;option value=""&gt;-- Select --&lt;/option&gt;
+        &lt;option&gt;Web Developer&lt;/option&gt;
+        &lt;option&gt;Software Tester&lt;/option&gt;
+        &lt;option&gt;UI/UX Designer&lt;/option&gt;
+      &lt;/select&gt;
+      &lt;label for="q45resume"&gt;Resume (PDF or DOC):&lt;/label&gt;
+      &lt;input type="file" id="q45resume" name="resume"
+             accept=".pdf,.doc,.docx,application/pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document" required&gt;
+      &lt;button type="submit"&gt;Apply&lt;/button&gt;
+    &lt;/form&gt;
+  &lt;/section&gt;
+
+  &lt;section&gt;
+    &lt;h3&gt;Q46. Submit disabled if required fields are empty&lt;/h3&gt;
+    &lt;form action="#" method="post" id="q46form"&gt;
+      &lt;label for="q46name"&gt;Name:&lt;/label&gt;
+      &lt;input type="text" id="q46name" name="name" required&gt;
+      &lt;label for="q46email"&gt;Email:&lt;/label&gt;
+      &lt;input type="email" id="q46email" name="email" required&gt;
+      &lt;label for="q46city"&gt;City:&lt;/label&gt;
+      &lt;input type="text" id="q46city" name="city" required&gt;
+      &lt;button type="submit" id="q46btn" disabled&gt;Submit&lt;/button&gt;
+    &lt;/form&gt;
+  &lt;/section&gt;
+
+  &lt;section&gt;
+    &lt;h3&gt;Q47. ARIA labels and roles for accessibility&lt;/h3&gt;
+    &lt;form action="#" method="post" role="form" aria-label="Accessible sign up form"&gt;
+      &lt;label for="q47name"&gt;Name:&lt;/label&gt;
+      &lt;input type="text" id="q47name" name="name" aria-required="true" aria-describedby="q47hint"&gt;
+      &lt;span id="q47hint" class="note"&gt;Enter your full legal name.&lt;/span&gt;
+      &lt;label for="q47email"&gt;Email:&lt;/label&gt;
+      &lt;input type="email" id="q47email" name="email" aria-required="true"&gt;
+      &lt;div role="radiogroup" aria-labelledby="q47genderlbl"&gt;
+        &lt;span id="q47genderlbl"&gt;Gender:&lt;/span&gt;
+        &lt;label&gt;&lt;input type="radio" name="gender" value="male"&gt; Male&lt;/label&gt;
+        &lt;label&gt;&lt;input type="radio" name="gender" value="female"&gt; Female&lt;/label&gt;
+      &lt;/div&gt;
+      &lt;label for="q47country"&gt;Country:&lt;/label&gt;
+      &lt;select id="q47country" name="country" aria-label="Select your country"&gt;
+        &lt;option value="india"&gt;India&lt;/option&gt;
+        &lt;option value="usa"&gt;USA&lt;/option&gt;
+      &lt;/select&gt;
+      &lt;label for="q47msg"&gt;Message:&lt;/label&gt;
+      &lt;textarea id="q47msg" name="message" rows="3" aria-label="Your message"&gt;&lt;/textarea&gt;
+      &lt;button type="submit" aria-label="Submit the form"&gt;Submit&lt;/button&gt;
+    &lt;/form&gt;
+  &lt;/section&gt;
+
+  &lt;section&gt;
+    &lt;h3&gt;Q48. Date must be today or later (booking)&lt;/h3&gt;
+    &lt;form action="#" method="post"&gt;
+      &lt;label for="q48date"&gt;Booking Date:&lt;/label&gt;
+      &lt;input type="date" id="q48date" name="booking" required&gt;
+      &lt;button type="submit"&gt;Book Now&lt;/button&gt;
+    &lt;/form&gt;
+  &lt;/section&gt;
+
+  &lt;section&gt;
+    &lt;h3&gt;Q49. Profile settings form&lt;/h3&gt;
+    &lt;form action="#" method="post" enctype="multipart/form-data"&gt;
+      &lt;label for="q49name"&gt;Name:&lt;/label&gt;
+      &lt;input type="text" id="q49name" name="name" required&gt;
+      &lt;label for="q49pic"&gt;Profile Picture:&lt;/label&gt;
+      &lt;input type="file" id="q49pic" name="picture" accept="image/*"&gt;
+      &lt;label for="q49theme"&gt;Colour Theme:&lt;/label&gt;
+      &lt;input type="color" id="q49theme" name="theme" value="#4f46e5"&gt;
+      &lt;button type="submit"&gt;Save&lt;/button&gt;
+    &lt;/form&gt;
+  &lt;/section&gt;
+
+  &lt;section&gt;
+    &lt;h3&gt;Q50. Feedback form with star rating&lt;/h3&gt;
+    &lt;form action="#" method="post"&gt;
+      &lt;label for="q50name"&gt;Name:&lt;/label&gt;
+      &lt;input type="text" id="q50name" name="name"&gt;
+      &lt;fieldset class="stars-set"&gt;
+        &lt;legend&gt;Rating&lt;/legend&gt;
+        &lt;div class="stars"&gt;
+          &lt;input type="radio" id="q50s5" name="rating" value="5" required&gt;&lt;label for="q50s5" title="5 stars"&gt;★&lt;/label&gt;
+          &lt;input type="radio" id="q50s4" name="rating" value="4"&gt;&lt;label for="q50s4" title="4 stars"&gt;★&lt;/label&gt;
+          &lt;input type="radio" id="q50s3" name="rating" value="3"&gt;&lt;label for="q50s3" title="3 stars"&gt;★&lt;/label&gt;
+          &lt;input type="radio" id="q50s2" name="rating" value="2"&gt;&lt;label for="q50s2" title="2 stars"&gt;★&lt;/label&gt;
+          &lt;input type="radio" id="q50s1" name="rating" value="1"&gt;&lt;label for="q50s1" title="1 star"&gt;★&lt;/label&gt;
+        &lt;/div&gt;
+      &lt;/fieldset&gt;
+      &lt;label for="q50comment"&gt;Comments:&lt;/label&gt;
+      &lt;textarea id="q50comment" name="comment" rows="4"&gt;&lt;/textarea&gt;
+      &lt;button type="submit"&gt;Submit Feedback&lt;/button&gt;
+    &lt;/form&gt;
+  &lt;/section&gt;
+
+  &lt;/main&gt;
+
+&lt;footer&gt;&lt;p&gt;HTML Assignment 3 – Forms&lt;/p&gt;&lt;/footer&gt;
+
+&lt;script src="script.js"&gt;&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre></div><div class="pane" data-name="style.css"><pre><code>* { box-sizing: border-box; }
+body { font-family: Arial, Helvetica, sans-serif; background: #f3f4f6; color: #1f2937; margin: 0; line-height: 1.5; }
+header { background: #4f46e5; color: #fff; text-align: center; padding: 24px 16px; }
+header h1 { margin: 0 0 4px; }
+header p { margin: 0; }
+main { max-width: 760px; margin: 0 auto; padding: 16px; }
+h2.level { margin: 36px 0 8px; padding-bottom: 6px; border-bottom: 3px solid #4f46e5; color: #4f46e5; }
+section { background: #fff; border-radius: 8px; padding: 16px 20px; margin: 16px 0; box-shadow: 0 1px 3px rgba(0,0,0,.1); }
+section h3 { margin: 0 0 12px; font-size: 1rem; }
+form label { display: block; margin: 10px 0 4px; font-weight: 600; }
+form label input[type=radio], form label input[type=checkbox] { margin-right: 6px; }
+fieldset label { font-weight: 400; display: inline-block; margin-right: 16px; }
+input[type=text], input[type=password], input[type=email], input[type=number], input[type=tel],
+input[type=date], input[type=time], input[type=file], select, textarea {
+  width: 100%; padding: 8px; border: 1px solid #9ca3af; border-radius: 4px; font: inherit; margin-bottom: 4px;
+}
+input:invalid:not(:placeholder-shown):not([type=file]) { border-color: #dc2626; }
+fieldset { border: 1px solid #9ca3af; border-radius: 6px; margin: 10px 0; padding: 8px 14px; }
+legend { font-weight: 700; padding: 0 6px; }
+button { background: #4f46e5; color: #fff; border: 0; padding: 8px 16px; margin: 12px 8px 0 0; border-radius: 4px; cursor: pointer; font: inherit; }
+button[type=reset] { background: #6b7280; }
+button:disabled { background: #c7c9d1; cursor: not-allowed; }
+.note { font-size: .85rem; color: #6b7280; }
+.colorbox { margin-top: 10px; padding: 24px; border: 1px solid #9ca3af; border-radius: 6px; text-align: center; background: #fff; }
+.step h4 { margin: 0 0 6px; }
+.stars { display: inline-flex; flex-direction: row-reverse; }
+.stars input { display: none; }
+.stars label { font-size: 2rem; color: #d1d5db; cursor: pointer; margin: 0 2px; display: inline-block; }
+.stars input:checked ~ label, .stars label:hover, .stars label:hover ~ label { color: #f59e0b; }
+footer { text-align: center; padding: 20px; color: #6b7280; }
+.nav { text-align: center; padding: 10px; background: #e0e7ff; }
+.nav a { color: #4f46e5; font-weight: 700; text-decoration: none; margin: 0 8px; }
+</code></pre></div><div class="pane" data-name="script.js"><pre><code>// Show a message instead of leaving the page when a valid form is submitted
+document.querySelectorAll('form').forEach(function (form) {
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    alert('Form submitted successfully!');
+  });
+});
+
+// Q29: enable submit only when Terms &amp; Conditions is checked
+var terms = document.getElementById('q29terms');
+var q29btn = document.getElementById('q29btn');
+if (terms) terms.addEventListener('change', function () { q29btn.disabled = !terms.checked; });
+
+// Q33: confirm password must match
+var q33 = document.getElementById('q33form');
+var q33confirm = document.getElementById('q33confirm');
+function checkQ33() {
+  if (!q33confirm) return;
+  q33confirm.setCustomValidity(
+    q33confirm.value !== document.getElementById('q33pass').value ? 'Passwords do not match' : '');
+}
+if (q33confirm) {
+  document.getElementById('q33pass').addEventListener('input', checkQ33);
+  q33confirm.addEventListener('input', checkQ33);
+}
+
+// Q39: colour picker changes background colour of the box
+var q39color = document.getElementById('q39color');
+if (q39color) q39color.addEventListener('input', function () {
+  document.getElementById('q39box').style.backgroundColor = q39color.value;
+});
+
+// Q41: confirm password must match
+var q41pass = document.getElementById('q41pass');
+var q41confirm = document.getElementById('q41confirm');
+function checkQ41() {
+  if (!q41confirm) return;
+  q41confirm.setCustomValidity(q41confirm.value !== q41pass.value ? 'Passwords do not match' : '');
+}
+if (q41pass) {
+  q41pass.addEventListener('input', checkQ41);
+  q41confirm.addEventListener('input', checkQ41);
+}
+
+// Q43: multi-step form
+document.querySelectorAll('#q43form [data-next]').forEach(function (btn) {
+  btn.addEventListener('click', function () {
+    var step = btn.closest('.step');
+    var fields = step.querySelectorAll('input');
+    for (var i = 0; i &lt; fields.length; i++) {
+      if (!fields[i].reportValidity()) return;
+    }
+    step.hidden = true;
+    document.getElementById(btn.dataset.next).hidden = false;
+  });
+});
+document.querySelectorAll('#q43form [data-prev]').forEach(function (btn) {
+  btn.addEventListener('click', function () {
+    btn.closest('.step').hidden = true;
+    document.getElementById(btn.dataset.prev).hidden = false;
+  });
+});
+
+// Q46: disable submit while any required field is empty
+var q46 = document.getElementById('q46form');
+var q46btn = document.getElementById('q46btn');
+function checkQ46() {
+  if (!q46) return;
+  q46btn.disabled = !q46.checkValidity();
+}
+if (q46) {
+  q46.addEventListener('input', checkQ46);
+  checkQ46();
+}
+
+// Q48: date must be today or later
+var q48 = document.getElementById('q48date');
+if (q48) {
+  var today = new Date();
+  today.setMinutes(today.getMinutes() - today.getTimezoneOffset());
+  q48.min = today.toISOString().split('T')[0];
+}
+</code></pre></div>
+        </div>
+    </div>
+
+    <!-- Assignment 4 -->
+    <div class="asg-panel" id="asg4">
+      <div class="card">
+        <h3>Assignment 4: HTML5</h3>
+        <p>50 questions on HTML5 in three levels: basic (Q1 to Q20), intermediate (Q21 to Q40) and advanced (Q41 to Q50), plus the sample SVG images used in the figure questions.</p>
+        <div class="tags"><span class="tag">HTML5</span><span class="tag">Figures</span><span class="tag">SVG</span></div>
+      </div>
+      <div class="viewer" id="v-a4">
+          <div class="ftabs" role="tablist"><button type="button" class="ftab active" data-i="0">README.md</button><button type="button" class="ftab" data-i="1">basic.html</button><button type="button" class="ftab" data-i="2">intermediate.html</button><button type="button" class="ftab" data-i="3">advanced.html</button><button type="button" class="ftab" data-i="4">images/city.svg</button><button type="button" class="ftab" data-i="5">images/mountain.svg</button><button type="button" class="ftab" data-i="6">images/nature.svg</button><button type="button" class="ftab" data-i="7">images/sea.svg</button></div>
+          <div class="vbar"><span class="vname"></span>
+            <span><button type="button" class="vbtn" data-act="copy">Copy code</button>
+            <button type="button" class="vbtn" data-act="download">Download</button></span></div>
+          <div class="pane active" data-name="README.md"><pre><code># HTML Assignment 4 – HTML5
+
+- `basic.html` – Basic Questions (Q1–Q20)
+- `intermediate.html` – Intermediate Questions (Q21–Q40)
+- `advanced.html` – Advanced Questions (Q41–Q50)
+- `images/` – sample images used in figure questions
+</code></pre></div><div class="pane" data-name="basic.html"><pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+  &lt;meta charset="UTF-8"&gt;
+  &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+  &lt;title&gt;HTML Assignment 4 - Basic&lt;/title&gt;
+  &lt;style&gt;
+* { box-sizing: border-box; }
+body { font-family: Arial, Helvetica, sans-serif; background: #f3f4f6; color: #1f2937; margin: 0; line-height: 1.5; }
+.page-header { background: #0f766e; color: #fff; text-align: center; padding: 22px 16px; }
+.page-header h1 { margin: 0 0 4px; }
+.page-header p { margin: 0; }
+.nav { text-align: center; padding: 10px; background: #ccfbf1; }
+.nav a { color: #0f766e; font-weight: 700; text-decoration: none; margin: 0 8px; }
+.container { max-width: 900px; margin: 0 auto; padding: 16px; }
+.q { background: #fff; border-radius: 8px; padding: 16px 20px; margin: 18px 0; box-shadow: 0 1px 3px rgba(0,0,0,.1); }
+.q &gt; h3 { margin: 0 0 12px; font-size: 1rem; color: #0f766e; }
+.demo { border: 2px dashed #99f6e4; border-radius: 6px; padding: 12px; }
+.demo header, .demo footer { background: #134e4a; color: #fff; padding: 10px 14px; border-radius: 4px; }
+.demo header h1, .demo header h2 { margin: 0; font-size: 1.2rem; }
+.demo footer { margin-top: 10px; font-size: .9rem; }
+.demo nav { background: #e2e8f0; padding: 8px 12px; border-radius: 4px; margin: 8px 0; }
+.demo nav a { color: #0f766e; margin-right: 14px; font-weight: 600; text-decoration: none; }
+.demo nav.horizontal ul { display: flex; gap: 18px; list-style: none; margin: 0; padding: 0; }
+.demo main { padding: 8px 4px; }
+.demo aside { background: #fef3c7; padding: 10px 14px; border-radius: 4px; }
+.demo article { background: #f8fafc; border: 1px solid #e2e8f0; padding: 10px 14px; border-radius: 4px; margin: 8px 0; }
+.demo section { margin: 8px 0; }
+.demo figure { margin: 8px 0; display: inline-block; text-align: center; }
+.demo figure img { width: 220px; max-width: 100%; border-radius: 4px; display: block; }
+.demo figcaption { font-size: .85rem; color: #475569; }
+.demo address { font-style: normal; background: #f1f5f9; padding: 8px 12px; border-radius: 4px; }
+.layout { display: grid; grid-template-columns: 2fr 1fr; gap: 10px; }
+.layout &gt; header, .layout &gt; nav, .layout &gt; footer { grid-column: 1 / -1; }
+.gallery { display: flex; flex-wrap: wrap; gap: 14px; }
+.gallery figure img { width: 160px; }
+.newspaper { display: grid; grid-template-columns: 2fr 1fr; gap: 10px; }
+.newspaper .lead { grid-column: 1 / -1; }
+.columns { column-count: 2; column-gap: 20px; }
+canvas { max-width: 100%; background: #fff; }
+.bordered { border: 3px solid #0f766e; }
+.stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+.stat { background: #ccfbf1; border-radius: 6px; padding: 10px; text-align: center; }
+.stat strong { display: block; font-size: 1.4rem; }
+.note { font-size: .85rem; color: #6b7280; }
+@media (max-width: 640px) { .layout, .newspaper, .stats { grid-template-columns: 1fr; } .columns { column-count: 1; } }
+  &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;div class="page-header"&gt;
+    &lt;h1&gt;HTML Assignment – 4&lt;/h1&gt;
+    &lt;p&gt;Topic: HTML5 – Basic Questions (Q1–Q20)&lt;/p&gt;
+  &lt;/div&gt;
+  &lt;div class="nav"&gt;&lt;a href="basic.html"&gt;Basic&lt;/a&gt; | &lt;a href="intermediate.html"&gt;Intermediate&lt;/a&gt; | &lt;a href="advanced.html"&gt;Advanced&lt;/a&gt;&lt;/div&gt;
+
+  &lt;div class="container"&gt;
+
+    &lt;section class="q"&gt;
+      &lt;h3&gt;Q1. Simple webpage with &amp;lt;header&amp;gt; and &amp;lt;footer&amp;gt;&lt;/h3&gt;
+      &lt;div class="demo"&gt;
+&lt;header&gt;&lt;h2&gt;My Webpage&lt;/h2&gt;&lt;/header&gt;
+&lt;p&gt;Some page content goes here.&lt;/p&gt;
+&lt;footer&gt;&amp;copy; 2026 My Webpage&lt;/footer&gt;
+      &lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;section class="q"&gt;
+      &lt;h3&gt;Q2. Website title inside &amp;lt;header&amp;gt;&lt;/h3&gt;
+      &lt;div class="demo"&gt;
+&lt;header&gt;&lt;h1&gt;Vishwajeet's Learning Website&lt;/h1&gt;&lt;/header&gt;
+      &lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;section class="q"&gt;
+      &lt;h3&gt;Q3. &amp;lt;nav&amp;gt; with 3 links: Home, About, Contact&lt;/h3&gt;
+      &lt;div class="demo"&gt;
+&lt;nav&gt;
+  &lt;a href="#"&gt;Home&lt;/a&gt;
+  &lt;a href="#"&gt;About&lt;/a&gt;
+  &lt;a href="#"&gt;Contact&lt;/a&gt;
+&lt;/nav&gt;
+      &lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;section class="q"&gt;
+      &lt;h3&gt;Q4. Paragraph inside &amp;lt;main&amp;gt;&lt;/h3&gt;
+      &lt;div class="demo"&gt;
+&lt;main&gt;
+  &lt;p&gt;HTML5 introduced semantic elements such as header, main, section and footer, which describe the meaning of the content they hold.&lt;/p&gt;
+&lt;/main&gt;
+      &lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;section class="q"&gt;
+      &lt;h3&gt;Q5. &amp;lt;section&amp;gt; for two different topics&lt;/h3&gt;
+      &lt;div class="demo"&gt;
+&lt;section&gt;
+  &lt;h3&gt;Topic 1: HTML&lt;/h3&gt;
+  &lt;p&gt;HTML is the standard markup language used to create web pages.&lt;/p&gt;
+&lt;/section&gt;
+&lt;section&gt;
+  &lt;h3&gt;Topic 2: CSS&lt;/h3&gt;
+  &lt;p&gt;CSS is used to style and lay out web pages.&lt;/p&gt;
+&lt;/section&gt;
+      &lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;section class="q"&gt;
+      &lt;h3&gt;Q6. &amp;lt;article&amp;gt; as a blog post&lt;/h3&gt;
+      &lt;div class="demo"&gt;
+&lt;article&gt;
+  &lt;h3&gt;Why Learn HTML5?&lt;/h3&gt;
+  &lt;p&gt;HTML5 is the foundation of every website. Learning it first makes CSS and JavaScript much easier to understand.&lt;/p&gt;
+&lt;/article&gt;
+      &lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;section class="q"&gt;
+      &lt;h3&gt;Q7. &amp;lt;aside&amp;gt; showing related links&lt;/h3&gt;
+      &lt;div class="demo"&gt;
+&lt;aside&gt;
+  &lt;h4&gt;Related Links&lt;/h4&gt;
+  &lt;ul&gt;
+    &lt;li&gt;&lt;a href="#"&gt;HTML Basics&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="#"&gt;CSS Basics&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="#"&gt;JavaScript Basics&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/aside&gt;
+      &lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;section class="q"&gt;
+      &lt;h3&gt;Q8. Image inside &amp;lt;figure&amp;gt; with &amp;lt;figcaption&amp;gt;&lt;/h3&gt;
+      &lt;div class="demo"&gt;
+&lt;figure&gt;
+  &lt;img src="images/nature.svg" alt="Green hills under a blue sky"&gt;
+  &lt;figcaption&gt;Fig 1: Green hills under a blue sky&lt;/figcaption&gt;
+&lt;/figure&gt;
+      &lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;section class="q"&gt;
+      &lt;h3&gt;Q9. &amp;lt;time&amp;gt; tag for today's date in an event description&lt;/h3&gt;
+      &lt;div class="demo"&gt;
+&lt;p&gt;The workshop will be held on &lt;time id="q9time" datetime="2026-11-18"&gt;18 November 2026&lt;/time&gt;.&lt;/p&gt;
+&lt;p class="note"&gt;Today's date (set by JavaScript): &lt;time id="q9today"&gt;&lt;/time&gt;&lt;/p&gt;
+      &lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;section class="q"&gt;
+      &lt;h3&gt;Q10. Contact info using &amp;lt;address&amp;gt;&lt;/h3&gt;
+      &lt;div class="demo"&gt;
+&lt;address&gt;
+  Vishwajeet Jadhav&lt;br&gt;
+  IMED, Pune, Maharashtra, India&lt;br&gt;
+  Email: &lt;a href="mailto:student@example.com"&gt;student@example.com&lt;/a&gt;&lt;br&gt;
+  Phone: &lt;a href="tel:+910000000000"&gt;+91 00000 00000&lt;/a&gt;
+&lt;/address&gt;
+      &lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;section class="q"&gt;
+      &lt;h3&gt;Q11. Layout with &amp;lt;header&amp;gt;, &amp;lt;main&amp;gt;, &amp;lt;footer&amp;gt;&lt;/h3&gt;
+      &lt;div class="demo"&gt;
+&lt;header&gt;&lt;h2&gt;My Site&lt;/h2&gt;&lt;/header&gt;
+&lt;main&gt;
+  &lt;p&gt;This is the main content area of the page.&lt;/p&gt;
+&lt;/main&gt;
+&lt;footer&gt;&amp;copy; 2026 My Site&lt;/footer&gt;
+      &lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;section class="q"&gt;
+      &lt;h3&gt;Q12. &amp;lt;nav&amp;gt; with links displayed horizontally&lt;/h3&gt;
+      &lt;div class="demo"&gt;
+&lt;nav class="horizontal"&gt;
+  &lt;ul&gt;
+    &lt;li&gt;&lt;a href="#"&gt;Home&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="#"&gt;Courses&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="#"&gt;Blog&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="#"&gt;Contact&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/nav&gt;
+      &lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;section class="q"&gt;
+      &lt;h3&gt;Q13. Publication date of an article using &amp;lt;time&amp;gt;&lt;/h3&gt;
+      &lt;div class="demo"&gt;
+&lt;article&gt;
+  &lt;h3&gt;Introduction to Semantic HTML&lt;/h3&gt;
+  &lt;p&gt;Published on &lt;time datetime="2026-08-20"&gt;20 August 2026&lt;/time&gt;&lt;/p&gt;
+  &lt;p&gt;Semantic tags make code easier to read and better for search engines.&lt;/p&gt;
+&lt;/article&gt;
+      &lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;section class="q"&gt;
+      &lt;h3&gt;Q14. Simple blog page with one &amp;lt;article&amp;gt; inside &amp;lt;main&amp;gt;&lt;/h3&gt;
+      &lt;div class="demo"&gt;
+&lt;main&gt;
+  &lt;article&gt;
+    &lt;h3&gt;My First Blog Post&lt;/h3&gt;
+    &lt;p&gt;Today I learned how to structure a webpage using HTML5 semantic elements.&lt;/p&gt;
+  &lt;/article&gt;
+&lt;/main&gt;
+      &lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;section class="q"&gt;
+      &lt;h3&gt;Q15. Two images with captions using &amp;lt;figure&amp;gt; and &amp;lt;figcaption&amp;gt;&lt;/h3&gt;
+      &lt;div class="demo"&gt;
+&lt;figure&gt;
+  &lt;img src="images/mountain.svg" alt="Mountains at sunrise"&gt;
+  &lt;figcaption&gt;Fig 1: Mountains at sunrise&lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;figure&gt;
+  &lt;img src="images/sea.svg" alt="A calm sea"&gt;
+  &lt;figcaption&gt;Fig 2: A calm sea&lt;/figcaption&gt;
+&lt;/figure&gt;
+      &lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;section class="q"&gt;
+      &lt;h3&gt;Q16. Developer's email address using &amp;lt;address&amp;gt;&lt;/h3&gt;
+      &lt;div class="demo"&gt;
+&lt;address&gt;
+  Developer: &lt;a href="mailto:developer@example.com"&gt;developer@example.com&lt;/a&gt;
+&lt;/address&gt;
+      &lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;section class="q"&gt;
+      &lt;h3&gt;Q17. Rectangle using inline &amp;lt;svg&amp;gt;&lt;/h3&gt;
+      &lt;div class="demo"&gt;
+&lt;svg width="220" height="120" xmlns="http://www.w3.org/2000/svg"&gt;
+  &lt;rect x="20" y="20" width="180" height="80" fill="orange" stroke="black" stroke-width="3"/&gt;
+&lt;/svg&gt;
+      &lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;section class="q"&gt;
+      &lt;h3&gt;Q18. Circle using &amp;lt;svg&amp;gt;&lt;/h3&gt;
+      &lt;div class="demo"&gt;
+&lt;svg width="140" height="140" xmlns="http://www.w3.org/2000/svg"&gt;
+  &lt;circle cx="70" cy="70" r="50" fill="tomato" stroke="black" stroke-width="3"/&gt;
+&lt;/svg&gt;
+      &lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;section class="q"&gt;
+      &lt;h3&gt;Q19. Line using SVG between two points&lt;/h3&gt;
+      &lt;div class="demo"&gt;
+&lt;svg width="220" height="120" xmlns="http://www.w3.org/2000/svg"&gt;
+  &lt;line x1="20" y1="20" x2="200" y2="100" stroke="purple" stroke-width="4"/&gt;
+&lt;/svg&gt;
+      &lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;section class="q"&gt;
+      &lt;h3&gt;Q20. Simple &amp;lt;canvas&amp;gt; with a border&lt;/h3&gt;
+      &lt;div class="demo"&gt;
+&lt;canvas class="bordered" width="300" height="150"&gt;&lt;/canvas&gt;
+      &lt;/div&gt;
+    &lt;/section&gt;
+
+  &lt;/div&gt;
+
+  &lt;script&gt;
+document.getElementById('q9today').textContent = new Date().toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' });
+document.getElementById('q9today').setAttribute('datetime', new Date().toISOString().split('T')[0]);
+  &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre></div><div class="pane" data-name="intermediate.html"><pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+  &lt;meta charset="UTF-8"&gt;
+  &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+  &lt;title&gt;HTML Assignment 4 - Intermediate&lt;/title&gt;
+  &lt;style&gt;
+* { box-sizing: border-box; }
+body { font-family: Arial, Helvetica, sans-serif; background: #f3f4f6; color: #1f2937; margin: 0; line-height: 1.5; }
+.page-header { background: #0f766e; color: #fff; text-align: center; padding: 22px 16px; }
+.page-header h1 { margin: 0 0 4px; }
+.page-header p { margin: 0; }
+.nav { text-align: center; padding: 10px; background: #ccfbf1; }
+.nav a { color: #0f766e; font-weight: 700; text-decoration: none; margin: 0 8px; }
+.container { max-width: 900px; margin: 0 auto; padding: 16px; }
+.q { background: #fff; border-radius: 8px; padding: 16px 20px; margin: 18px 0; box-shadow: 0 1px 3px rgba(0,0,0,.1); }
+.q &gt; h3 { margin: 0 0 12px; font-size: 1rem; color: #0f766e; }
+.demo { border: 2px dashed #99f6e4; border-radius: 6px; padding: 12px; }
+.demo header, .demo footer { background: #134e4a; color: #fff; padding: 10px 14px; border-radius: 4px; }
+.demo header h1, .demo header h2 { margin: 0; font-size: 1.2rem; }
+.demo footer { margin-top: 10px; font-size: .9rem; }
+.demo nav { background: #e2e8f0; padding: 8px 12px; border-radius: 4px; margin: 8px 0; }
+.demo nav a { color: #0f766e; margin-right: 14px; font-weight: 600; text-decoration: none; }
+.demo nav.horizontal ul { display: flex; gap: 18px; list-style: none; margin: 0; padding: 0; }
+.demo main { padding: 8px 4px; }
+.demo aside { background: #fef3c7; padding: 10px 14px; border-radius: 4px; }
+.demo article { background: #f8fafc; border: 1px solid #e2e8f0; padding: 10px 14px; border-radius: 4px; margin: 8px 0; }
+.demo section { margin: 8px 0; }
+.demo figure { margin: 8px 0; display: inline-block; text-align: center; }
+.demo figure img { width: 220px; max-width: 100%; border-radius: 4px; display: block; }
+.demo figcaption { font-size: .85rem; color: #475569; }
+.demo address { font-style: normal; background: #f1f5f9; padding: 8px 12px; border-radius: 4px; }
+.layout { display: grid; grid-template-columns: 2fr 1fr; gap: 10px; }
+.layout &gt; header, .layout &gt; nav, .layout &gt; footer { grid-column: 1 / -1; }
+.gallery { display: flex; flex-wrap: wrap; gap: 14px; }
+.gallery figure img { width: 160px; }
+.newspaper { display: grid; grid-template-columns: 2fr 1fr; gap: 10px; }
+.newspaper .lead { grid-column: 1 / -1; }
+.columns { column-count: 2; column-gap: 20px; }
+canvas { max-width: 100%; background: #fff; }
+.bordered { border: 3px solid #0f766e; }
+.stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+.stat { background: #ccfbf1; border-radius: 6px; padding: 10px; text-align: center; }
+.stat strong { display: block; font-size: 1.4rem; }
+.note { font-size: .85rem; color: #6b7280; }
+@media (max-width: 640px) { .layout, .newspaper, .stats { grid-template-columns: 1fr; } .columns { column-count: 1; } }
+  &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;div class="page-header"&gt;
+    &lt;h1&gt;HTML Assignment – 4&lt;/h1&gt;
+    &lt;p&gt;Topic: HTML5 – Intermediate Questions (Q21–Q40)&lt;/p&gt;
+  &lt;/div&gt;
+  &lt;div class="nav"&gt;&lt;a href="basic.html"&gt;Basic&lt;/a&gt; | &lt;a href="intermediate.html"&gt;Intermediate&lt;/a&gt; | &lt;a href="advanced.html"&gt;Advanced&lt;/a&gt;&lt;/div&gt;
+
+  &lt;div class="container"&gt;
+
+    &lt;section class="q"&gt;
+      &lt;h3&gt;Q21. Layout with &amp;lt;header&amp;gt;, &amp;lt;nav&amp;gt;, &amp;lt;main&amp;gt;, &amp;lt;aside&amp;gt;, &amp;lt;footer&amp;gt;&lt;/h3&gt;
+      &lt;div class="demo"&gt;
+&lt;div class="layout"&gt;
+  &lt;header&gt;&lt;h2&gt;My Website&lt;/h2&gt;&lt;/header&gt;
+  &lt;nav&gt;&lt;a href="#"&gt;Home&lt;/a&gt; &lt;a href="#"&gt;About&lt;/a&gt; &lt;a href="#"&gt;Contact&lt;/a&gt;&lt;/nav&gt;
+  &lt;main&gt;&lt;p&gt;Main content of the page is shown here.&lt;/p&gt;&lt;/main&gt;
+  &lt;aside&gt;&lt;p&gt;Sidebar content: ads, links or notes.&lt;/p&gt;&lt;/aside&gt;
+  &lt;footer&gt;&amp;copy; 2026 My Website&lt;/footer&gt;
+&lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;section class="q"&gt;
+      &lt;h3&gt;Q22. Multiple &amp;lt;section&amp;gt; elements under &amp;lt;main&amp;gt; (categories)&lt;/h3&gt;
+      &lt;div class="demo"&gt;
+&lt;main&gt;
+  &lt;section&gt;&lt;h3&gt;Technology&lt;/h3&gt;&lt;p&gt;Latest news about gadgets, software and the internet.&lt;/p&gt;&lt;/section&gt;
+  &lt;section&gt;&lt;h3&gt;Sports&lt;/h3&gt;&lt;p&gt;Scores, match reports and player updates.&lt;/p&gt;&lt;/section&gt;
+  &lt;section&gt;&lt;h3&gt;Education&lt;/h3&gt;&lt;p&gt;Exam results, courses and career guidance.&lt;/p&gt;&lt;/section&gt;
+&lt;/main&gt;
+      &lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;section class="q"&gt;
+      &lt;h3&gt;Q23. Blog post with &amp;lt;article&amp;gt; and author info in &amp;lt;address&amp;gt;&lt;/h3&gt;
+      &lt;div class="demo"&gt;
+&lt;article&gt;
+  &lt;h3&gt;Getting Started with Web Development&lt;/h3&gt;
+  &lt;p&gt;Start with HTML, then CSS, and finally JavaScript.&lt;/p&gt;
+  &lt;address&gt;
+    Written by &lt;strong&gt;Vishwajeet Jadhav&lt;/strong&gt;&lt;br&gt;
+    &lt;a href="mailto:author@example.com"&gt;author@example.com&lt;/a&gt;
+  &lt;/address&gt;
+&lt;/article&gt;
+      &lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;section class="q"&gt;
+      &lt;h3&gt;Q24. &amp;lt;header&amp;gt; for navigation and &amp;lt;footer&amp;gt; for copyright&lt;/h3&gt;
+      &lt;div class="demo"&gt;
+&lt;header&gt;
+  &lt;nav style="background:transparent;margin:0;padding:0"&gt;
+    &lt;a href="#" style="color:#fff"&gt;Home&lt;/a&gt;
+    &lt;a href="#" style="color:#fff"&gt;Services&lt;/a&gt;
+    &lt;a href="#" style="color:#fff"&gt;Contact&lt;/a&gt;
+  &lt;/nav&gt;
+&lt;/header&gt;
+&lt;p&gt;Page content goes here.&lt;/p&gt;
+&lt;footer&gt;&amp;copy; 2026 Vishwajeet Jadhav. All rights reserved.&lt;/footer&gt;
+      &lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;section class="q"&gt;
+      &lt;h3&gt;Q25. Two &amp;lt;article&amp;gt; blog posts inside &amp;lt;main&amp;gt;&lt;/h3&gt;
+      &lt;div class="demo"&gt;
+&lt;main&gt;
+  &lt;article&gt;&lt;h3&gt;Post 1: What is HTML5?&lt;/h3&gt;&lt;p&gt;HTML5 is the latest version of HTML with new semantic tags, audio, video, canvas and SVG.&lt;/p&gt;&lt;/article&gt;
+  &lt;article&gt;&lt;h3&gt;Post 2: Why Semantic Tags?&lt;/h3&gt;&lt;p&gt;They give meaning to the page structure and improve accessibility.&lt;/p&gt;&lt;/article&gt;
+&lt;/main&gt;
+      &lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;section class="q"&gt;
+      &lt;h3&gt;Q26. Blog page with an &amp;lt;aside&amp;gt; of related articles&lt;/h3&gt;
+      &lt;div class="demo"&gt;
+&lt;div class="layout"&gt;
+  &lt;main&gt;&lt;article&gt;&lt;h3&gt;Learning HTML5&lt;/h3&gt;&lt;p&gt;HTML5 makes it easy to build structured pages.&lt;/p&gt;&lt;/article&gt;&lt;/main&gt;
+  &lt;aside&gt;
+    &lt;h4&gt;Related Articles&lt;/h4&gt;
+    &lt;ul&gt;&lt;li&gt;&lt;a href="#"&gt;CSS Flexbox Guide&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href="#"&gt;JavaScript for Beginners&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href="#"&gt;Responsive Design&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;
+  &lt;/aside&gt;
+&lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;section class="q"&gt;
+      &lt;h3&gt;Q27. Image with title using &amp;lt;figure&amp;gt; and &amp;lt;figcaption&amp;gt; inside &amp;lt;section&amp;gt;&lt;/h3&gt;
+      &lt;div class="demo"&gt;
+&lt;section&gt;
+  &lt;h3&gt;Photo of the Day&lt;/h3&gt;
+  &lt;figure&gt;
+    &lt;img src="images/city.svg" alt="City skyline at dusk"&gt;
+    &lt;figcaption&gt;City skyline at dusk&lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/section&gt;
+      &lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;section class="q"&gt;
+      &lt;h3&gt;Q28. &amp;lt;time&amp;gt; for date and time of an event&lt;/h3&gt;
+      &lt;div class="demo"&gt;
+&lt;p&gt;Published on &lt;time datetime="2025-08-20T17:00"&gt;20 August 2025, 5:00 PM&lt;/time&gt;&lt;/p&gt;
+      &lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;section class="q"&gt;
+      &lt;h3&gt;Q29. Company contact page using &amp;lt;address&amp;gt;&lt;/h3&gt;
+      &lt;div class="demo"&gt;
+&lt;h3&gt;Contact Us – TechNova Pvt. Ltd.&lt;/h3&gt;
+&lt;address&gt;
+  &lt;strong&gt;Location:&lt;/strong&gt; 5th Floor, Tech Park, Baner Road, Pune 411045&lt;br&gt;
+  &lt;strong&gt;Phone:&lt;/strong&gt; &lt;a href="tel:+910000000000"&gt;+91 00000 00000&lt;/a&gt;&lt;br&gt;
+  &lt;strong&gt;Email:&lt;/strong&gt; &lt;a href="mailto:contact@technova.example"&gt;contact@technova.example&lt;/a&gt;
+&lt;/address&gt;
+      &lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;section class="q"&gt;
+      &lt;h3&gt;Q30. Magazine-like layout using &amp;lt;section&amp;gt; and &amp;lt;article&amp;gt;&lt;/h3&gt;
+      &lt;div class="demo"&gt;
+&lt;section&gt;
+  &lt;h3&gt;Cover Story&lt;/h3&gt;
+  &lt;article&gt;&lt;h4&gt;The Rise of Artificial Intelligence&lt;/h4&gt;&lt;p&gt;AI is changing how we study, work and create.&lt;/p&gt;&lt;/article&gt;
+&lt;/section&gt;
+&lt;section&gt;
+  &lt;h3&gt;Lifestyle&lt;/h3&gt;
+  &lt;article&gt;&lt;h4&gt;Healthy Habits for Students&lt;/h4&gt;&lt;p&gt;Sleep, exercise and planning help you perform better.&lt;/p&gt;&lt;/article&gt;
+  &lt;article&gt;&lt;h4&gt;Budget Travel Tips&lt;/h4&gt;&lt;p&gt;Plan early and travel light to save money.&lt;/p&gt;&lt;/article&gt;
+&lt;/section&gt;
+      &lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;section class="q"&gt;
+      &lt;h3&gt;Q31. Blue rectangle inside an SVG&lt;/h3&gt;
+      &lt;div class="demo"&gt;
+&lt;svg width="220" height="120" xmlns="http://www.w3.org/2000/svg"&gt;
+  &lt;rect x="20" y="20" width="180" height="80" fill="blue"/&gt;
+&lt;/svg&gt;
+      &lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;section class="q"&gt;
+      &lt;h3&gt;Q32. SVG with both a circle and a rectangle&lt;/h3&gt;
+      &lt;div class="demo"&gt;
+&lt;svg width="320" height="130" xmlns="http://www.w3.org/2000/svg"&gt;
+  &lt;rect x="20" y="25" width="120" height="80" fill="teal"/&gt;
+  &lt;circle cx="230" cy="65" r="45" fill="crimson"/&gt;
+&lt;/svg&gt;
+      &lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;section class="q"&gt;
+      &lt;h3&gt;Q33. Triangle using &amp;lt;polygon&amp;gt; in SVG&lt;/h3&gt;
+      &lt;div class="demo"&gt;
+&lt;svg width="220" height="140" xmlns="http://www.w3.org/2000/svg"&gt;
+  &lt;polygon points="110,15 200,125 20,125" fill="gold" stroke="black" stroke-width="3"/&gt;
+&lt;/svg&gt;
+      &lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;section class="q"&gt;
+      &lt;h3&gt;Q34. Inline SVG with a line connecting two circles&lt;/h3&gt;
+      &lt;div class="demo"&gt;
+&lt;svg width="320" height="120" xmlns="http://www.w3.org/2000/svg"&gt;
+  &lt;line x1="60" y1="60" x2="260" y2="60" stroke="black" stroke-width="4"/&gt;
+  &lt;circle cx="60" cy="60" r="30" fill="dodgerblue"/&gt;
+  &lt;circle cx="260" cy="60" r="30" fill="tomato"/&gt;
+&lt;/svg&gt;
+      &lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;section class="q"&gt;
+      &lt;h3&gt;Q35. Canvas with a red filled rectangle&lt;/h3&gt;
+      &lt;div class="demo"&gt;
+&lt;canvas id="c35" class="bordered" width="300" height="150"&gt;&lt;/canvas&gt;
+      &lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;section class="q"&gt;
+      &lt;h3&gt;Q36. Diagonal line on canvas (top-left to bottom-right)&lt;/h3&gt;
+      &lt;div class="demo"&gt;
+&lt;canvas id="c36" class="bordered" width="300" height="150"&gt;&lt;/canvas&gt;
+      &lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;section class="q"&gt;
+      &lt;h3&gt;Q37. Filled blue circle on canvas&lt;/h3&gt;
+      &lt;div class="demo"&gt;
+&lt;canvas id="c37" class="bordered" width="300" height="150"&gt;&lt;/canvas&gt;
+      &lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;section class="q"&gt;
+      &lt;h3&gt;Q38. Multiple shapes (circle, rectangle, line) inside one canvas&lt;/h3&gt;
+      &lt;div class="demo"&gt;
+&lt;canvas id="c38" class="bordered" width="360" height="160"&gt;&lt;/canvas&gt;
+      &lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;section class="q"&gt;
+      &lt;h3&gt;Q39. SVG ellipse styled with fill="green"&lt;/h3&gt;
+      &lt;div class="demo"&gt;
+&lt;svg width="260" height="140" xmlns="http://www.w3.org/2000/svg"&gt;
+  &lt;ellipse cx="130" cy="70" rx="100" ry="50" fill="green"/&gt;
+&lt;/svg&gt;
+      &lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;section class="q"&gt;
+      &lt;h3&gt;Q40. &amp;lt;header&amp;gt;, &amp;lt;main&amp;gt;, &amp;lt;aside&amp;gt;, &amp;lt;footer&amp;gt; plus an inline SVG below main&lt;/h3&gt;
+      &lt;div class="demo"&gt;
+&lt;header&gt;&lt;h2&gt;Shapes Gallery&lt;/h2&gt;&lt;/header&gt;
+&lt;div class="layout"&gt;
+  &lt;main&gt;
+    &lt;p&gt;The SVG graphic is placed below the main content.&lt;/p&gt;
+  &lt;/main&gt;
+  &lt;aside&gt;&lt;p&gt;Aside: SVG stands for Scalable Vector Graphics.&lt;/p&gt;&lt;/aside&gt;
+&lt;/div&gt;
+&lt;svg width="300" height="100" xmlns="http://www.w3.org/2000/svg"&gt;
+  &lt;rect x="10" y="10" width="80" height="80" fill="orange"/&gt;
+  &lt;circle cx="150" cy="50" r="40" fill="purple"/&gt;
+  &lt;polygon points="260,10 290,90 230,90" fill="seagreen"/&gt;
+&lt;/svg&gt;
+&lt;footer&gt;&amp;copy; 2026 Shapes Gallery&lt;/footer&gt;
+      &lt;/div&gt;
+    &lt;/section&gt;
+
+  &lt;/div&gt;
+
+  &lt;script&gt;
+
+    // Q35: red filled rectangle
+    var c = document.getElementById('c35').getContext('2d');
+    c.fillStyle = 'red';
+    c.fillRect(40, 30, 200, 90);
+
+    // Q36: diagonal line, top-left to bottom-right
+    var c2 = document.getElementById('c36');
+    var x2 = c2.getContext('2d');
+    x2.beginPath();
+    x2.moveTo(0, 0);
+    x2.lineTo(c2.width, c2.height);
+    x2.lineWidth = 3;
+    x2.strokeStyle = 'black';
+    x2.stroke();
+
+    // Q37: filled blue circle
+    var x3 = document.getElementById('c37').getContext('2d');
+    x3.beginPath();
+    x3.arc(150, 75, 55, 0, 2 * Math.PI);
+    x3.fillStyle = 'blue';
+    x3.fill();
+
+    // Q38: circle, rectangle and line in a single canvas
+    var x4 = document.getElementById('c38').getContext('2d');
+    x4.fillStyle = 'orange';
+    x4.fillRect(20, 30, 100, 80);
+    x4.beginPath();
+    x4.arc(220, 70, 40, 0, 2 * Math.PI);
+    x4.fillStyle = 'purple';
+    x4.fill();
+    x4.beginPath();
+    x4.moveTo(20, 140);
+    x4.lineTo(340, 140);
+    x4.lineWidth = 4;
+    x4.strokeStyle = 'green';
+    x4.stroke();
+  &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre></div><div class="pane" data-name="advanced.html"><pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+  &lt;meta charset="UTF-8"&gt;
+  &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+  &lt;title&gt;HTML Assignment 4 - Advanced&lt;/title&gt;
+  &lt;style&gt;
+* { box-sizing: border-box; }
+body { font-family: Arial, Helvetica, sans-serif; background: #f3f4f6; color: #1f2937; margin: 0; line-height: 1.5; }
+.page-header { background: #0f766e; color: #fff; text-align: center; padding: 22px 16px; }
+.page-header h1 { margin: 0 0 4px; }
+.page-header p { margin: 0; }
+.nav { text-align: center; padding: 10px; background: #ccfbf1; }
+.nav a { color: #0f766e; font-weight: 700; text-decoration: none; margin: 0 8px; }
+.container { max-width: 900px; margin: 0 auto; padding: 16px; }
+.q { background: #fff; border-radius: 8px; padding: 16px 20px; margin: 18px 0; box-shadow: 0 1px 3px rgba(0,0,0,.1); }
+.q &gt; h3 { margin: 0 0 12px; font-size: 1rem; color: #0f766e; }
+.demo { border: 2px dashed #99f6e4; border-radius: 6px; padding: 12px; }
+.demo header, .demo footer { background: #134e4a; color: #fff; padding: 10px 14px; border-radius: 4px; }
+.demo header h1, .demo header h2 { margin: 0; font-size: 1.2rem; }
+.demo footer { margin-top: 10px; font-size: .9rem; }
+.demo nav { background: #e2e8f0; padding: 8px 12px; border-radius: 4px; margin: 8px 0; }
+.demo nav a { color: #0f766e; margin-right: 14px; font-weight: 600; text-decoration: none; }
+.demo nav.horizontal ul { display: flex; gap: 18px; list-style: none; margin: 0; padding: 0; }
+.demo main { padding: 8px 4px; }
+.demo aside { background: #fef3c7; padding: 10px 14px; border-radius: 4px; }
+.demo article { background: #f8fafc; border: 1px solid #e2e8f0; padding: 10px 14px; border-radius: 4px; margin: 8px 0; }
+.demo section { margin: 8px 0; }
+.demo figure { margin: 8px 0; display: inline-block; text-align: center; }
+.demo figure img { width: 220px; max-width: 100%; border-radius: 4px; display: block; }
+.demo figcaption { font-size: .85rem; color: #475569; }
+.demo address { font-style: normal; background: #f1f5f9; padding: 8px 12px; border-radius: 4px; }
+.layout { display: grid; grid-template-columns: 2fr 1fr; gap: 10px; }
+.layout &gt; header, .layout &gt; nav, .layout &gt; footer { grid-column: 1 / -1; }
+.gallery { display: flex; flex-wrap: wrap; gap: 14px; }
+.gallery figure img { width: 160px; }
+.newspaper { display: grid; grid-template-columns: 2fr 1fr; gap: 10px; }
+.newspaper .lead { grid-column: 1 / -1; }
+.columns { column-count: 2; column-gap: 20px; }
+canvas { max-width: 100%; background: #fff; }
+.bordered { border: 3px solid #0f766e; }
+.stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+.stat { background: #ccfbf1; border-radius: 6px; padding: 10px; text-align: center; }
+.stat strong { display: block; font-size: 1.4rem; }
+.note { font-size: .85rem; color: #6b7280; }
+@media (max-width: 640px) { .layout, .newspaper, .stats { grid-template-columns: 1fr; } .columns { column-count: 1; } }
+  &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;div class="page-header"&gt;
+    &lt;h1&gt;HTML Assignment – 4&lt;/h1&gt;
+    &lt;p&gt;Topic: HTML5 – Advanced Questions (Q41–Q50)&lt;/p&gt;
+  &lt;/div&gt;
+  &lt;div class="nav"&gt;&lt;a href="basic.html"&gt;Basic&lt;/a&gt; | &lt;a href="intermediate.html"&gt;Intermediate&lt;/a&gt; | &lt;a href="advanced.html"&gt;Advanced&lt;/a&gt;&lt;/div&gt;
+
+  &lt;div class="container"&gt;
+
+    &lt;section class="q"&gt;
+      &lt;h3&gt;Q41. Complete semantic webpage layout with demo content&lt;/h3&gt;
+      &lt;div class="demo"&gt;
+&lt;div class="layout"&gt;
+  &lt;header&gt;&lt;h2&gt;Campus Daily&lt;/h2&gt;&lt;/header&gt;
+  &lt;nav&gt;&lt;a href="#"&gt;Home&lt;/a&gt; &lt;a href="#"&gt;News&lt;/a&gt; &lt;a href="#"&gt;Events&lt;/a&gt; &lt;a href="#"&gt;Contact&lt;/a&gt;&lt;/nav&gt;
+  &lt;main&gt;
+    &lt;article&gt;
+      &lt;h3&gt;Annual Tech Fest Announced&lt;/h3&gt;
+      &lt;p&gt;The annual technical festival will feature coding contests, project exhibitions and guest lectures from industry experts. Students from all departments are invited to participate.&lt;/p&gt;
+      &lt;p&gt;Registrations are open until the end of the month.&lt;/p&gt;
+    &lt;/article&gt;
+  &lt;/main&gt;
+  &lt;aside&gt;
+    &lt;h4&gt;Quick Links&lt;/h4&gt;
+    &lt;ul&gt;&lt;li&gt;&lt;a href="#"&gt;Time Table&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href="#"&gt;Results&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href="#"&gt;Library&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;
+  &lt;/aside&gt;
+  &lt;footer&gt;&amp;copy; 2026 Campus Daily. All rights reserved.&lt;/footer&gt;
+&lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;section class="q"&gt;
+      &lt;h3&gt;Q42. Blog with 3 &amp;lt;article&amp;gt; posts, each with &amp;lt;time&amp;gt; and &amp;lt;address&amp;gt;&lt;/h3&gt;
+      &lt;div class="demo"&gt;
+&lt;main&gt;&lt;article&gt;
+  &lt;h3&gt;Learning HTML5&lt;/h3&gt;
+  &lt;p&gt;Published on &lt;time datetime="2026-09-05"&gt;5 September 2026&lt;/time&gt;&lt;/p&gt;
+  &lt;p&gt;HTML5 adds semantic tags that make pages easier to understand.&lt;/p&gt;
+  &lt;address&gt;Author: Amit Patil, &lt;a href="mailto:amit@example.com"&gt;amit@example.com&lt;/a&gt;&lt;/address&gt;
+&lt;/article&gt;&lt;article&gt;
+  &lt;h3&gt;Styling with CSS&lt;/h3&gt;
+  &lt;p&gt;Published on &lt;time datetime="2026-09-12"&gt;12 September 2026&lt;/time&gt;&lt;/p&gt;
+  &lt;p&gt;CSS controls colours, spacing and layout of a webpage.&lt;/p&gt;
+  &lt;address&gt;Author: Neha Kulkarni, &lt;a href="mailto:neha@example.com"&gt;neha@example.com&lt;/a&gt;&lt;/address&gt;
+&lt;/article&gt;&lt;article&gt;
+  &lt;h3&gt;JavaScript Basics&lt;/h3&gt;
+  &lt;p&gt;Published on &lt;time datetime="2026-09-19"&gt;19 September 2026&lt;/time&gt;&lt;/p&gt;
+  &lt;p&gt;JavaScript adds interactivity such as animations and form checks.&lt;/p&gt;
+  &lt;address&gt;Author: Rahul Deshmukh, &lt;a href="mailto:rahul@example.com"&gt;rahul@example.com&lt;/a&gt;&lt;/address&gt;
+&lt;/article&gt;&lt;/main&gt;
+      &lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;section class="q"&gt;
+      &lt;h3&gt;Q43. Mini photo gallery using &amp;lt;figure&amp;gt; thumbnails with captions&lt;/h3&gt;
+      &lt;div class="demo"&gt;
+&lt;div class="gallery"&gt;
+  &lt;figure&gt;
+    &lt;img src="images/nature.svg" alt="Green Hills"&gt;
+    &lt;figcaption&gt;Green Hills&lt;/figcaption&gt;
+  &lt;/figure&gt;
+  &lt;figure&gt;
+    &lt;img src="images/mountain.svg" alt="Mountain Sunrise"&gt;
+    &lt;figcaption&gt;Mountain Sunrise&lt;/figcaption&gt;
+  &lt;/figure&gt;
+  &lt;figure&gt;
+    &lt;img src="images/sea.svg" alt="Calm Sea"&gt;
+    &lt;figcaption&gt;Calm Sea&lt;/figcaption&gt;
+  &lt;/figure&gt;
+  &lt;figure&gt;
+    &lt;img src="images/city.svg" alt="City at Dusk"&gt;
+    &lt;figcaption&gt;City at Dusk&lt;/figcaption&gt;
+  &lt;/figure&gt;&lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;section class="q"&gt;
+      &lt;h3&gt;Q44. Newspaper layout using &amp;lt;section&amp;gt;, &amp;lt;article&amp;gt; and &amp;lt;aside&amp;gt;&lt;/h3&gt;
+      &lt;div class="demo"&gt;
+&lt;header&gt;&lt;h2&gt;The Daily Pune&lt;/h2&gt;&lt;/header&gt;
+&lt;div class="newspaper"&gt;
+  &lt;section class="lead"&gt;
+    &lt;article&gt;
+      &lt;h3&gt;City Launches New Metro Line&lt;/h3&gt;
+      &lt;p&gt;The new metro line will cut travel time across the city and is expected to serve thousands of commuters every day.&lt;/p&gt;
+    &lt;/article&gt;
+  &lt;/section&gt;
+  &lt;section&gt;
+    &lt;article&gt;&lt;h4&gt;Sports: Local Team Wins Final&lt;/h4&gt;&lt;p&gt;The home team won the championship after a thrilling last-over finish.&lt;/p&gt;&lt;/article&gt;
+    &lt;article&gt;&lt;h4&gt;Business: Markets Close Higher&lt;/h4&gt;&lt;p&gt;Technology stocks led the gains on Tuesday.&lt;/p&gt;&lt;/article&gt;
+  &lt;/section&gt;
+  &lt;aside&gt;
+    &lt;h4&gt;Weather&lt;/h4&gt;
+    &lt;p&gt;Sunny, 29&amp;deg;C&lt;/p&gt;
+    &lt;h4&gt;Today's Quote&lt;/h4&gt;
+    &lt;p&gt;&lt;em&gt;"Practice makes perfect."&lt;/em&gt;&lt;/p&gt;
+  &lt;/aside&gt;
+&lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;section class="q"&gt;
+      &lt;h3&gt;Q45. Sunset scene in SVG (sun, ground, rays)&lt;/h3&gt;
+      &lt;div class="demo"&gt;
+&lt;svg width="360" height="220" viewBox="0 0 360 220" xmlns="http://www.w3.org/2000/svg"&gt;
+  &lt;rect width="360" height="220" fill="#ff9966"/&gt;
+  &lt;!-- rays --&gt;
+  &lt;g stroke="#ffe066" stroke-width="4" stroke-linecap="round"&gt;
+    &lt;line x1="180" y1="60" x2="180" y2="30"/&gt;
+    &lt;line x1="130" y1="80" x2="108" y2="58"/&gt;
+    &lt;line x1="230" y1="80" x2="252" y2="58"/&gt;
+    &lt;line x1="105" y1="115" x2="72" y2="105"/&gt;
+    &lt;line x1="255" y1="115" x2="288" y2="105"/&gt;
+  &lt;/g&gt;
+  &lt;!-- sun --&gt;
+  &lt;circle cx="180" cy="140" r="55" fill="#ffd633"/&gt;
+  &lt;!-- ground --&gt;
+  &lt;rect x="0" y="150" width="360" height="70" fill="#3b7a3b"/&gt;
+&lt;/svg&gt;
+      &lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;section class="q"&gt;
+      &lt;h3&gt;Q46. JavaScript to draw a house on canvas (rectangle, triangle roof, square window)&lt;/h3&gt;
+      &lt;div class="demo"&gt;
+&lt;canvas id="c46" class="bordered" width="320" height="240"&gt;&lt;/canvas&gt;
+      &lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;section class="q"&gt;
+      &lt;h3&gt;Q47. Canvas with two rectangles filled with linear gradients&lt;/h3&gt;
+      &lt;div class="demo"&gt;
+&lt;canvas id="c47" class="bordered" width="360" height="160"&gt;&lt;/canvas&gt;
+      &lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;section class="q"&gt;
+      &lt;h3&gt;Q48. Bouncing ball animation using canvas and JavaScript&lt;/h3&gt;
+      &lt;div class="demo"&gt;
+&lt;canvas id="c48" class="bordered" width="360" height="200"&gt;&lt;/canvas&gt;
+      &lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;section class="q"&gt;
+      &lt;h3&gt;Q49. Semantic page with an inline SVG bar chart&lt;/h3&gt;
+      &lt;div class="demo"&gt;
+&lt;header&gt;&lt;h2&gt;Marks Report&lt;/h2&gt;&lt;/header&gt;
+&lt;main&gt;
+  &lt;article&gt;
+    &lt;h3&gt;Subject-wise Marks&lt;/h3&gt;
+    &lt;p&gt;Bar chart drawn with SVG &amp;lt;rect&amp;gt; elements.&lt;/p&gt;
+    &lt;svg width="360" height="220" viewBox="0 0 360 220" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Bar chart of marks"&gt;
+      &lt;line x1="30" y1="10" x2="30" y2="180" stroke="black"/&gt;
+      &lt;line x1="30" y1="180" x2="350" y2="180" stroke="black"/&gt;
+      &lt;rect x="50"  y="60"  width="45" height="120" fill="#0f766e"/&gt;
+      &lt;rect x="120" y="30"  width="45" height="150" fill="#2563eb"/&gt;
+      &lt;rect x="190" y="90"  width="45" height="90"  fill="#d97706"/&gt;
+      &lt;rect x="260" y="45"  width="45" height="135" fill="#7c3aed"/&gt;
+      &lt;g font-size="12" text-anchor="middle" fill="#111"&gt;
+        &lt;text x="72"  y="198"&gt;HTML&lt;/text&gt;
+        &lt;text x="142" y="198"&gt;CSS&lt;/text&gt;
+        &lt;text x="212" y="198"&gt;JS&lt;/text&gt;
+        &lt;text x="282" y="198"&gt;SQL&lt;/text&gt;
+        &lt;text x="72"  y="54"&gt;80&lt;/text&gt;
+        &lt;text x="142" y="24"&gt;100&lt;/text&gt;
+        &lt;text x="212" y="84"&gt;60&lt;/text&gt;
+        &lt;text x="282" y="39"&gt;90&lt;/text&gt;
+      &lt;/g&gt;
+    &lt;/svg&gt;
+  &lt;/article&gt;
+&lt;/main&gt;
+&lt;footer&gt;&amp;copy; 2026 Marks Report&lt;/footer&gt;
+      &lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;section class="q"&gt;
+      &lt;h3&gt;Q50. Dashboard with semantic layout and an animated canvas graph&lt;/h3&gt;
+      &lt;div class="demo"&gt;
+&lt;div class="layout"&gt;
+  &lt;header&gt;&lt;h2&gt;Student Dashboard&lt;/h2&gt;&lt;/header&gt;
+  &lt;nav&gt;&lt;a href="#"&gt;Overview&lt;/a&gt; &lt;a href="#"&gt;Reports&lt;/a&gt; &lt;a href="#"&gt;Settings&lt;/a&gt;&lt;/nav&gt;
+  &lt;main&gt;
+    &lt;div class="stats"&gt;
+      &lt;div class="stat"&gt;&lt;strong&gt;120&lt;/strong&gt;Students&lt;/div&gt;
+      &lt;div class="stat"&gt;&lt;strong&gt;8&lt;/strong&gt;Courses&lt;/div&gt;
+      &lt;div class="stat"&gt;&lt;strong&gt;92%&lt;/strong&gt;Attendance&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;h3&gt;Weekly Activity (animated)&lt;/h3&gt;
+    &lt;canvas id="c50" class="bordered" width="460" height="200"&gt;&lt;/canvas&gt;
+  &lt;/main&gt;
+  &lt;aside&gt;
+    &lt;h4&gt;Notices&lt;/h4&gt;
+    &lt;ul&gt;&lt;li&gt;Exam form due Friday&lt;/li&gt;&lt;li&gt;Project demo on Monday&lt;/li&gt;&lt;/ul&gt;
+  &lt;/aside&gt;
+  &lt;footer&gt;&amp;copy; 2026 Student Dashboard&lt;/footer&gt;
+&lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/section&gt;
+
+  &lt;/div&gt;
+
+  &lt;script&gt;
+
+    // Q46: house on canvas
+    var h = document.getElementById('c46').getContext('2d');
+    h.fillStyle = '#e8c07d';           // house body (rectangle)
+    h.fillRect(80, 110, 160, 110);
+    h.fillStyle = '#b23a3a';           // roof (triangle)
+    h.beginPath();
+    h.moveTo(65, 110);
+    h.lineTo(160, 40);
+    h.lineTo(255, 110);
+    h.closePath();
+    h.fill();
+    h.fillStyle = '#7a4a21';           // door
+    h.fillRect(143, 160, 34, 60);
+    h.fillStyle = '#87ceeb';           // window (square)
+    h.fillRect(100, 130, 30, 30);
+    h.strokeStyle = '#333';
+    h.strokeRect(100, 130, 30, 30);
+
+    // Q47: two rectangles with linear gradients
+    var g = document.getElementById('c47').getContext('2d');
+    var g1 = g.createLinearGradient(20, 0, 170, 0);
+    g1.addColorStop(0, 'red');
+    g1.addColorStop(1, 'yellow');
+    g.fillStyle = g1;
+    g.fillRect(20, 20, 150, 120);
+    var g2 = g.createLinearGradient(0, 20, 0, 140);
+    g2.addColorStop(0, 'blue');
+    g2.addColorStop(1, 'lightgreen');
+    g.fillStyle = g2;
+    g.fillRect(190, 20, 150, 120);
+
+    // Q48: bouncing ball
+    var cv = document.getElementById('c48');
+    var b = cv.getContext('2d');
+    var x = 60, y = 50, dx = 3, dy = 2.5, r = 18;
+    function bounce() {
+      b.clearRect(0, 0, cv.width, cv.height);
+      b.beginPath();
+      b.arc(x, y, r, 0, 2 * Math.PI);
+      b.fillStyle = 'crimson';
+      b.fill();
+      if (x + r &gt; cv.width || x - r &lt; 0) dx = -dx;
+      if (y + r &gt; cv.height || y - r &lt; 0) dy = -dy;
+      x += dx;
+      y += dy;
+      requestAnimationFrame(bounce);
+    }
+    bounce();
+
+    // Q50: animated canvas graph (bars grow, then loop)
+    var dc = document.getElementById('c50');
+    var d = dc.getContext('2d');
+    var data = [40, 65, 50, 85, 70, 95, 60];
+    var days = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
+    var progress = 0;
+    function drawGraph() {
+      d.clearRect(0, 0, dc.width, dc.height);
+      var bw = 40, gap = 20, base = 170;
+      for (var i = 0; i &lt; data.length; i++) {
+        var hgt = data[i] * 1.5 * Math.min(progress, 1);
+        var bx = 25 + i * (bw + gap);
+        d.fillStyle = '#0f766e';
+        d.fillRect(bx, base - hgt, bw, hgt);
+        d.fillStyle = '#111';
+        d.font = '12px Arial';
+        d.fillText(days[i], bx + 8, 190);
+      }
+      d.strokeStyle = '#111';
+      d.beginPath();
+      d.moveTo(15, 10);
+      d.lineTo(15, base);
+      d.lineTo(dc.width - 10, base);
+      d.stroke();
+      progress += 0.02;
+      if (progress &gt; 1.6) progress = 0;   // pause briefly then restart
+      requestAnimationFrame(drawGraph);
+    }
+    drawGraph();
+  &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre></div><div class="pane" data-name="images/city.svg"><pre><code>&lt;svg xmlns="http://www.w3.org/2000/svg" width="300" height="200" viewBox="0 0 300 200"&gt;&lt;rect width="300" height="200" fill="#d1c4e9"/&gt;&lt;circle cx="220" cy="55" r="28" fill="#fff59d"/&gt;&lt;path d="M0 200 L90 90 L160 160 L210 110 L300 200 Z" fill="#4527a0"/&gt;&lt;/svg&gt;
+</code></pre></div><div class="pane" data-name="images/mountain.svg"><pre><code>&lt;svg xmlns="http://www.w3.org/2000/svg" width="300" height="200" viewBox="0 0 300 200"&gt;&lt;rect width="300" height="200" fill="#ffe0b2"/&gt;&lt;circle cx="220" cy="55" r="28" fill="#ff7043"/&gt;&lt;path d="M0 200 L90 90 L160 160 L210 110 L300 200 Z" fill="#5d4037"/&gt;&lt;/svg&gt;
+</code></pre></div><div class="pane" data-name="images/nature.svg"><pre><code>&lt;svg xmlns="http://www.w3.org/2000/svg" width="300" height="200" viewBox="0 0 300 200"&gt;&lt;rect width="300" height="200" fill="#bfe3ff"/&gt;&lt;circle cx="220" cy="55" r="28" fill="#ffd54a"/&gt;&lt;path d="M0 200 L90 90 L160 160 L210 110 L300 200 Z" fill="#2e7d32"/&gt;&lt;/svg&gt;
+</code></pre></div><div class="pane" data-name="images/sea.svg"><pre><code>&lt;svg xmlns="http://www.w3.org/2000/svg" width="300" height="200" viewBox="0 0 300 200"&gt;&lt;rect width="300" height="200" fill="#b2ebf2"/&gt;&lt;circle cx="220" cy="55" r="28" fill="#fff176"/&gt;&lt;path d="M0 200 L90 90 L160 160 L210 110 L300 200 Z" fill="#0277bd"/&gt;&lt;/svg&gt;
+</code></pre></div>
+        </div>
+    </div>
+
+    <!-- Assignment: e-portfolio modules -->
+    <div class="asg-panel" id="asg6">
+      <div class="card">
+        <h3>Web Dev e-Portfolio: module code</h3>
+        <p>The five course modules are built into this page. Below is the HTML and JavaScript behind each working demo (the AI builder module is a written process with no code). The shared styles are in the page's <code>&lt;style&gt;</code> block.</p>
+        <div class="tags"><span class="tag">HTML</span><span class="tag">JavaScript</span><span class="tag">localStorage</span><span class="tag">wa.me</span></div>
+      </div>
+      <div class="viewer" id="v-web">
+          <div class="ftabs" role="tablist"><button type="button" class="ftab active" data-i="0">2-database.html</button><button type="button" class="ftab" data-i="1">3-payment.html</button><button type="button" class="ftab" data-i="2">4-whatsapp.html</button><button type="button" class="ftab" data-i="3">5-chatbot.html</button></div>
+          <div class="vbar"><span class="vname"></span>
+            <span><button type="button" class="vbtn" data-act="copy">Copy code</button>
+            <button type="button" class="vbtn" data-act="download">Download</button></span></div>
+          <div class="pane active" data-name="2-database.html"><pre><code>&lt;!-- HTML --&gt;
+&lt;article class="module" id="database"&gt;
+      &lt;div&gt;&lt;h3&gt;2. Database integration&lt;/h3&gt;&lt;small&gt;Store and read data&lt;/small&gt;&lt;/div&gt;
+      &lt;div&gt;
+        &lt;p&gt;A web form sends data to a database table and the page reads it back. My bank and railway reservation databases in DBMS use the same ideas: tables, keys and queries.&lt;/p&gt;
+        &lt;div class="demo"&gt;
+          &lt;h4&gt;Demo: Guestbook (saved in your browser)&lt;/h4&gt;
+          &lt;form id="guest-form"&gt;
+            &lt;div class="row"&gt;
+              &lt;div&gt;&lt;label for="g-name"&gt;Name&lt;/label&gt;&lt;input id="g-name" required maxlength="40"&gt;&lt;/div&gt;
+              &lt;div&gt;&lt;label for="g-msg"&gt;Message&lt;/label&gt;&lt;input id="g-msg" required maxlength="120"&gt;&lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class="btns" style="margin-top:14px"&gt;
+              &lt;button class="btn primary" type="submit"&gt;Save entry&lt;/button&gt;
+              &lt;button class="btn ghost" type="button" id="g-clear"&gt;Clear all&lt;/button&gt;
+            &lt;/div&gt;
+          &lt;/form&gt;
+          &lt;ul class="entries" id="g-list"&gt;&lt;/ul&gt;
+          &lt;p class="note"&gt;This demo uses the browser's localStorage. A real site posts the form to a Flask backend that runs &lt;code&gt;INSERT INTO guestbook (name, message) VALUES (...)&lt;/code&gt; on MySQL.&lt;/p&gt;
+        &lt;/div&gt;
+        &lt;div class="tags"&gt;&lt;span class="tag"&gt;MySQL&lt;/span&gt;&lt;span class="tag"&gt;SQL&lt;/span&gt;&lt;span class="tag"&gt;Flask&lt;/span&gt;&lt;span class="tag"&gt;localStorage&lt;/span&gt;&lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/article&gt;
+
+&lt;script&gt;
+/* ===== 2. Database demo (localStorage) ===== */
+const KEY = "payal_guestbook";
+const gList = document.getElementById("g-list");
+function loadEntries(){ try { return JSON.parse(localStorage.getItem(KEY)) || []; } catch(e){ return []; } }
+function saveEntries(a){ try { localStorage.setItem(KEY, JSON.stringify(a)); } catch(e){} }
+function renderEntries(){
+  const items = loadEntries();
+  gList.innerHTML = "";
+  if(!items.length){ gList.innerHTML = "&lt;li&gt;No entries yet. Add the first one above.&lt;/li&gt;"; return; }
+  items.slice().reverse().forEach(it=&gt;{
+    const li = document.createElement("li");
+    const b = document.createElement("b"); b.textContent = it.name;
+    const t = document.createElement("span"); t.textContent = it.msg;
+    li.append(b, t); gList.appendChild(li);
+  });
+}
+document.getElementById("guest-form").addEventListener("submit", e=&gt;{
+  e.preventDefault();
+  const name = document.getElementById("g-name").value.trim();
+  const msg = document.getElementById("g-msg").value.trim();
+  if(!name || !msg) return;
+  const a = loadEntries(); a.push({name, msg}); saveEntries(a);
+  e.target.reset(); renderEntries();
+});
+document.getElementById("g-clear").addEventListener("click", ()=&gt;{ saveEntries([]); renderEntries(); });
+renderEntries();
+&lt;/script&gt;
+</code></pre></div><div class="pane" data-name="3-payment.html"><pre><code>&lt;!-- HTML --&gt;
+&lt;article class="module" id="payment"&gt;
+      &lt;div&gt;&lt;h3&gt;3. Payment gateway&lt;/h3&gt;&lt;small&gt;Accept online payments&lt;/small&gt;&lt;/div&gt;
+      &lt;div&gt;
+        &lt;p&gt;The standard checkout flow: the server creates an order, the gateway (for example Razorpay) opens a secure payment window, then the server verifies the payment signature before confirming.&lt;/p&gt;
+        &lt;div class="demo"&gt;
+          &lt;h4&gt;Demo: Checkout (no real money)&lt;/h4&gt;
+          &lt;div&gt;Project report (PDF)&lt;div class="price"&gt;₹199&lt;/div&gt;&lt;/div&gt;
+          &lt;label for="p-method"&gt;Payment method&lt;/label&gt;
+          &lt;select id="p-method"&gt;&lt;option&gt;UPI&lt;/option&gt;&lt;option&gt;Debit / credit card&lt;/option&gt;&lt;option&gt;Net banking&lt;/option&gt;&lt;/select&gt;
+          &lt;button class="btn primary" style="margin-top:14px" id="pay-btn" type="button"&gt;Pay ₹199&lt;/button&gt;
+          &lt;p class="msg" id="pay-msg" role="status"&gt;&lt;/p&gt;
+          &lt;p class="note"&gt;This is a simulation. To go live, replace the click handler with Razorpay Checkout and verify the signature on the server with your secret key.&lt;/p&gt;
+        &lt;/div&gt;
+        &lt;div class="tags"&gt;&lt;span class="tag"&gt;Razorpay&lt;/span&gt;&lt;span class="tag"&gt;Order flow&lt;/span&gt;&lt;span class="tag"&gt;Signature check&lt;/span&gt;&lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/article&gt;
+
+&lt;script&gt;
+/* ===== 3. Payment demo (simulation) ===== */
+document.getElementById("pay-btn").addEventListener("click", function(){
+  const out = document.getElementById("pay-msg");
+  const method = document.getElementById("p-method").value;
+  this.disabled = true; out.textContent = "Processing payment...";
+  setTimeout(()=&gt;{
+    const id = "ORD" + Math.floor(100000 + Math.random()*900000);
+    out.textContent = "Payment successful via " + method + ". Order ID: " + id + " (demo only).";
+    this.disabled = false;
+  }, 1200);
+});
+&lt;/script&gt;
+</code></pre></div><div class="pane" data-name="4-whatsapp.html"><pre><code>&lt;!-- HTML --&gt;
+&lt;article class="module" id="whatsapp"&gt;
+      &lt;div&gt;&lt;h3&gt;4. WhatsApp API&lt;/h3&gt;&lt;small&gt;Message customers&lt;/small&gt;&lt;/div&gt;
+      &lt;div&gt;
+        &lt;p&gt;Two levels: a click-to-chat link that needs no setup, and the WhatsApp Business Cloud API, which lets a server send template messages such as order confirmations.&lt;/p&gt;
+        &lt;div class="demo"&gt;
+          &lt;h4&gt;Demo: Click-to-chat link&lt;/h4&gt;
+          &lt;label for="wa-text"&gt;Your message&lt;/label&gt;
+          &lt;textarea id="wa-text"&gt;Hello Payal, I saw your portfolio and would like to connect.&lt;/textarea&gt;
+          &lt;a class="btn wa" style="margin-top:14px" id="wa-link" href="#" target="_blank" rel="noopener"&gt;Open WhatsApp&lt;/a&gt;
+          &lt;p class="note"&gt;The button opens a chat with Payal on WhatsApp with your message filled in.&lt;/p&gt;
+        &lt;/div&gt;
+        &lt;div class="tags"&gt;&lt;span class="tag"&gt;wa.me link&lt;/span&gt;&lt;span class="tag"&gt;Cloud API&lt;/span&gt;&lt;span class="tag"&gt;Templates&lt;/span&gt;&lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/article&gt;
+
+&lt;script&gt;
+const PHONE = "919856471235";   // country code + number
+
+/* ===== 4. WhatsApp click-to-chat ===== */
+const waText = document.getElementById("wa-text");
+const waLink = document.getElementById("wa-link");
+function updateWa(){ waLink.href = "https://wa.me/" + PHONE + "?text=" + encodeURIComponent(waText.value); }
+waText.addEventListener("input", updateWa); updateWa();
+&lt;/script&gt;
+</code></pre></div><div class="pane" data-name="5-chatbot.html"><pre><code>&lt;!-- HTML --&gt;
+&lt;article class="module" id="chatbot"&gt;
+      &lt;div&gt;&lt;h3&gt;5. Chatbot&lt;/h3&gt;&lt;small&gt;Answer questions automatically&lt;/small&gt;&lt;/div&gt;
+      &lt;div&gt;
+        &lt;p&gt;A rule-based chatbot matches keywords and replies with answers about me. A production version can call an AI model through an API to handle open questions.&lt;/p&gt;
+        &lt;div class="demo"&gt;
+          &lt;h4&gt;Demo&lt;/h4&gt;
+          &lt;p&gt;Open the chat and ask about my skills, projects or how to contact me.&lt;/p&gt;
+          &lt;button class="btn primary" style="margin-top:14px" type="button" id="open-chat"&gt;Open chatbot&lt;/button&gt;
+        &lt;/div&gt;
+        &lt;div class="tags"&gt;&lt;span class="tag"&gt;JavaScript&lt;/span&gt;&lt;span class="tag"&gt;Keyword matching&lt;/span&gt;&lt;span class="tag"&gt;AI API ready&lt;/span&gt;&lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/article&gt;
+
+&lt;!-- Chatbot widget --&gt;
+&lt;button id="chat-toggle" aria-label="Open chat" aria-expanded="false"&gt;💬&lt;/button&gt;
+&lt;div id="chat" role="dialog" aria-label="Portfolio chatbot"&gt;
+  &lt;div class="chat-head"&gt;Ask about Payal&lt;/div&gt;
+  &lt;div id="chat-log" aria-live="polite"&gt;&lt;/div&gt;
+  &lt;div class="chips"&gt;
+    &lt;button data-q="skills"&gt;Skills&lt;/button&gt;&lt;button data-q="projects"&gt;Projects&lt;/button&gt;&lt;button data-q="contact"&gt;Contact&lt;/button&gt;
+  &lt;/div&gt;
+  &lt;form id="chat-form"&gt;
+    &lt;input id="chat-input" placeholder="Type a message" aria-label="Your message" autocomplete="off"&gt;
+    &lt;button class="btn primary" type="submit"&gt;Send&lt;/button&gt;
+  &lt;/form&gt;
+&lt;/div&gt;
+
+&lt;script&gt;
+/* ===== 5. Chatbot ===== */
+const chat = document.getElementById("chat");
+const toggle = document.getElementById("chat-toggle");
+const log = document.getElementById("chat-log");
+const input = document.getElementById("chat-input");
+const replies = [
+  {k:["hi","hello","hey"], a:"Hello! I'm Payal's portfolio assistant. Ask me about her skills, projects or contact details."},
+  {k:["skill","tech","know","language"], a:"Payal works with Python, Flask, HTML, CSS, JavaScript, SQL/MySQL and ER design."},
+  {k:["project","work","built"], a:"Projects: Website Performance Tester, an Internet Cafe website, a bank database, a railway reservation database and Smart India Hackathon 2026 research."},
+  {k:["study","education","mca","college"], a:"Payal is in the first year of MCA (Master of Computer Applications)."},
+  {k:["pay","payment","razorpay"], a:"The payment section shows a checkout flow: create order, pay, verify. Try the demo in the Web Dev section."},
+  {k:["whatsapp"], a:"You can message Payal on WhatsApp at +91 98564 71235 or use the button in the Contact section."},
+  {k:["contact","email","hire","reach","phone","call","number"], a:"Phone/WhatsApp: +91 98564 71235. Email: payal34@gmail.com."},
+  {k:["assignment","lab","html","forms","table"], a:"See the Assignments section: HTML web labs, tables, forms, HTML5 and the portfolio module code, all with their full code."},
+  {k:["theme","color","colour","dark","mode"], a:"Use the Theme button in the top menu to switch between System, Mint, Mint dark, Purple, Sunset, Ocean, Rose and Midnight."},
+  {k:["github","source","repo"], a:"The code of this website is on GitHub. Use the 'View this website's code' link in the Contact section or the footer."},
+  {k:["bye","thanks","thank"], a:"You're welcome! Have a great day."}
+];
+function add(text, cls){
+  const d = document.createElement("div"); d.className = "bubble " + cls; d.textContent = text;
+  log.appendChild(d); log.scrollTop = log.scrollHeight;
+}
+function answer(q){
+  const s = q.toLowerCase();
+  const hit = replies.find(r =&gt; r.k.some(w =&gt; s.includes(w)));
+  return hit ? hit.a : "I can answer questions about skills, projects, education or contact. Try one of the buttons below.";
+}
+function ask(q){ add(q,"me"); setTimeout(()=&gt;add(answer(q),"bot"), 350); }
+function setOpen(o){ chat.classList.toggle("open", o); toggle.setAttribute("aria-expanded", o); if(o) input.focus(); }
+toggle.addEventListener("click", ()=&gt;setOpen(!chat.classList.contains("open")));
+document.getElementById("open-chat").addEventListener("click", ()=&gt;setOpen(true));
+document.getElementById("chat-form").addEventListener("submit", e=&gt;{
+  e.preventDefault(); const v = input.value.trim(); if(!v) return; input.value=""; ask(v);
+});
+document.querySelectorAll(".chips button").forEach(b=&gt;b.addEventListener("click", ()=&gt;ask(b.dataset.q)));
+add("Hi! Ask me about Payal's skills, projects or how to contact her.","bot");
+&lt;/script&gt;
+</code></pre></div>
+        </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="wrap">
+    <h2>Contact me</h2>
+    <p class="lead">Call, message me on WhatsApp, or send an email. I'll reply as soon as I can.</p>
+    <div class="contact-grid">
+      <div class="contact-list">
+        <div class="card"><div class="ico" aria-hidden="true">📞</div><div><h3>Phone</h3><a href="tel:+919856471235">+91 98564 71235</a></div></div>
+        <div class="card"><div class="ico" aria-hidden="true">💬</div><div><h3>WhatsApp</h3><a href="https://wa.me/919856471235" target="_blank" rel="noopener">Chat on WhatsApp</a></div></div>
+        <div class="card"><div class="ico" aria-hidden="true">✉️</div><div><h3>Email</h3><a href="mailto:payal34@gmail.com">payal34@gmail.com</a></div></div>
+        <div class="card"><div class="ico" aria-hidden="true">💻</div><div><h3>GitHub</h3><a href="https://github.com/kondalkarpayal79-coder/eportfolio/blob/main/index.html" target="_blank" rel="noopener">View this website's code</a></div></div>
+      </div>
+      <div class="card">
+        <h3>Send a message</h3>
+        <form id="contact-form">
+          <label for="c-name">Name</label><input id="c-name" required>
+          <label for="c-email">Your email</label><input id="c-email" type="email" required>
+          <label for="c-msg">Message</label><textarea id="c-msg" required></textarea>
+          <button class="btn primary" style="margin-top:14px" type="submit">Send message</button>
+          <p class="msg" id="c-status" role="status"></p>
+        </form>
+        <p class="note">Sending opens your email app with the message ready to send to payal34@gmail.com.</p>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer><div class="wrap">© <span id="yr"></span> Payal Kondalkar. Built for the Web Dev e-Portfolio assignment. <a href="https://github.com/kondalkarpayal79-coder/eportfolio/blob/main/index.html" target="_blank" rel="noopener">View code on GitHub</a></div></footer>
+
+<!-- Chatbot widget -->
+<button id="chat-toggle" aria-label="Open chat" aria-expanded="false">💬</button>
+<div id="chat" role="dialog" aria-label="Portfolio chatbot">
+  <div class="chat-head">Ask about Payal</div>
+  <div id="chat-log" aria-live="polite"></div>
+  <div class="chips">
+    <button data-q="skills">Skills</button><button data-q="projects">Projects</button><button data-q="contact">Contact</button>
+  </div>
+  <form id="chat-form">
+    <input id="chat-input" placeholder="Type a message" aria-label="Your message" autocomplete="off">
+    <button class="btn primary" type="submit">Send</button>
+  </form>
+</div>
+
+<script>
+/* ===== CONFIG ===== */
+const PHONE = "919856471235";        // country code + number
+const EMAIL = "payal34@gmail.com";
+
+document.getElementById("yr").textContent = new Date().getFullYear();
+
+/* ===== 2. Database demo (localStorage) ===== */
+const KEY = "payal_guestbook";
+const gList = document.getElementById("g-list");
+function loadEntries(){ try { return JSON.parse(localStorage.getItem(KEY)) || []; } catch(e){ return []; } }
+function saveEntries(a){ try { localStorage.setItem(KEY, JSON.stringify(a)); } catch(e){} }
+function renderEntries(){
+  const items = loadEntries();
+  gList.innerHTML = "";
+  if(!items.length){ gList.innerHTML = "<li>No entries yet. Add the first one above.</li>"; return; }
+  items.slice().reverse().forEach(it=>{
+    const li = document.createElement("li");
+    const b = document.createElement("b"); b.textContent = it.name;
+    const t = document.createElement("span"); t.textContent = it.msg;
+    li.append(b, t); gList.appendChild(li);
+  });
+}
+document.getElementById("guest-form").addEventListener("submit", e=>{
+  e.preventDefault();
+  const name = document.getElementById("g-name").value.trim();
+  const msg = document.getElementById("g-msg").value.trim();
+  if(!name || !msg) return;
+  const a = loadEntries(); a.push({name, msg}); saveEntries(a);
+  e.target.reset(); renderEntries();
+});
+document.getElementById("g-clear").addEventListener("click", ()=>{ saveEntries([]); renderEntries(); });
+renderEntries();
+
+/* ===== 3. Payment demo (simulation) ===== */
+document.getElementById("pay-btn").addEventListener("click", function(){
+  const out = document.getElementById("pay-msg");
+  const method = document.getElementById("p-method").value;
+  this.disabled = true; out.textContent = "Processing payment...";
+  setTimeout(()=>{
+    const id = "ORD" + Math.floor(100000 + Math.random()*900000);
+    out.textContent = "Payment successful via " + method + ". Order ID: " + id + " (demo only).";
+    this.disabled = false;
+  }, 1200);
+});
+
+/* ===== 4. WhatsApp click-to-chat ===== */
+const waText = document.getElementById("wa-text");
+const waLink = document.getElementById("wa-link");
+function updateWa(){ waLink.href = "https://wa.me/" + PHONE + "?text=" + encodeURIComponent(waText.value); }
+waText.addEventListener("input", updateWa); updateWa();
+
+/* ===== Contact form: opens the visitor's email app ===== */
+document.getElementById("contact-form").addEventListener("submit", e=>{
+  e.preventDefault();
+  const n = document.getElementById("c-name").value.trim();
+  const em = document.getElementById("c-email").value.trim();
+  const m = document.getElementById("c-msg").value.trim();
+  const subject = "Portfolio message from " + n;
+  const body = m + "\n\nFrom: " + n + " (" + em + ")";
+  window.location.href = "mailto:" + EMAIL + "?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(body);
+  document.getElementById("c-status").textContent = "Opening your email app...";
+});
+
+/* ===== 5. Chatbot ===== */
+const chat = document.getElementById("chat");
+const toggle = document.getElementById("chat-toggle");
+const log = document.getElementById("chat-log");
+const input = document.getElementById("chat-input");
+const replies = [
+  {k:["hi","hello","hey"], a:"Hello! I'm Payal's portfolio assistant. Ask me about her skills, projects or contact details."},
+  {k:["skill","tech","know","language"], a:"Payal works with Python, Flask, HTML, CSS, JavaScript, SQL/MySQL and ER design."},
+  {k:["project","work","built"], a:"Projects: Website Performance Tester, an Internet Cafe website, a bank database, a railway reservation database and Smart India Hackathon 2026 research."},
+  {k:["study","education","mca","college"], a:"Payal is in the first year of MCA (Master of Computer Applications)."},
+  {k:["pay","payment","razorpay"], a:"The payment section shows a checkout flow: create order, pay, verify. Try the demo in the Web Dev section."},
+  {k:["whatsapp"], a:"You can message Payal on WhatsApp at +91 98564 71235 or use the button in the Contact section."},
+  {k:["contact","email","hire","reach","phone","call","number"], a:"Phone/WhatsApp: +91 98564 71235. Email: payal34@gmail.com."},
+  {k:["bye","thanks","thank"], a:"You're welcome! Have a great day."}
+];
+function add(text, cls){
+  const d = document.createElement("div"); d.className = "bubble " + cls; d.textContent = text;
+  log.appendChild(d); log.scrollTop = log.scrollHeight;
+}
+function answer(q){
+  const s = q.toLowerCase();
+  const hit = replies.find(r => r.k.some(w => s.includes(w)));
+  return hit ? hit.a : "I can answer questions about skills, projects, education or contact. Try one of the buttons below.";
+}
+function ask(q){ add(q,"me"); setTimeout(()=>add(answer(q),"bot"), 350); }
+function setOpen(o){ chat.classList.toggle("open", o); toggle.setAttribute("aria-expanded", o); if(o) input.focus(); }
+toggle.addEventListener("click", ()=>setOpen(!chat.classList.contains("open")));
+document.getElementById("open-chat").addEventListener("click", ()=>setOpen(true));
+document.getElementById("chat-form").addEventListener("submit", e=>{
+  e.preventDefault(); const v = input.value.trim(); if(!v) return; input.value=""; ask(v);
+});
+document.querySelectorAll(".chips button").forEach(b=>b.addEventListener("click", ()=>ask(b.dataset.q)));
+add("Hi! Ask me about Payal's skills, projects or how to contact her.","bot");
+
+/* ===== Assignments menu and code viewers ===== */
+document.querySelectorAll(".asg-tab").forEach(btn => btn.addEventListener("click", () => {
+  document.querySelectorAll(".asg-tab").forEach(b => b.classList.toggle("active", b === btn));
+  document.querySelectorAll(".asg-panel").forEach(p => p.classList.toggle("active", p.id === btn.dataset.p));
+}));
+document.querySelectorAll(".viewer").forEach(v => {
+  const sel = v.querySelector(".fsel"), tabs = v.querySelectorAll(".ftab"), panes = v.querySelectorAll(".pane"), label = v.querySelector(".vname");
+  function show(i){
+    tabs.forEach((t,k) => t.classList.toggle("active", k === i));
+    if (sel) sel.value = i;
+    panes.forEach((p,k) => p.classList.toggle("active", k === i));
+    label.textContent = panes[i].dataset.name;
+  }
+  tabs.forEach((t,i) => t.addEventListener("click", () => show(i)));
+  if (sel) sel.addEventListener("change", () => show(+sel.value));
+  show(0);
+  v.querySelectorAll(".vbtn").forEach(b => b.addEventListener("click", () => {
+    const pane = v.querySelector(".pane.active"), text = pane.textContent, name = pane.dataset.name;
+    if (b.dataset.act === "copy") {
+      const done = () => { b.textContent = "Copied!"; setTimeout(() => b.textContent = "Copy code", 1500); };
+      if (navigator.clipboard) navigator.clipboard.writeText(text).then(done, done);
+      else { const ta = document.createElement("textarea"); ta.value = text; document.body.appendChild(ta); ta.select(); document.execCommand("copy"); ta.remove(); done(); }
+    } else {
+      const a = document.createElement("a");
+      a.href = URL.createObjectURL(new Blob([text], {type:"text/plain"}));
+      a.download = name.replace(/\//g, "_"); document.body.appendChild(a); a.click(); a.remove();
+    }
+  }));
+});
+
+/* ===== Theme switcher ===== */
+(function(){
+  const THEMES = ["auto","light","dark","purple","sunset","ocean","rose","midnight"];
+  const root = document.documentElement;
+  const btn = document.getElementById("theme-btn");
+  const panel = document.getElementById("theme-panel");
+  const opts = panel.querySelectorAll(".sw");
+  function current(){
+    let t = null;
+    try { t = localStorage.getItem("payal_theme"); } catch(e){}
+    return THEMES.includes(t) ? t : "auto";
+  }
+  function apply(t, save){
+    root.setAttribute("data-theme", t);
+    opts.forEach(o => o.setAttribute("aria-pressed", o.dataset.t === t));
+    if (save) { try { localStorage.setItem("payal_theme", t); } catch(e){} }
+  }
+  function setOpen(o){ panel.hidden = !o; btn.setAttribute("aria-expanded", o); }
+  apply(current(), false);
+  btn.addEventListener("click", e => { e.stopPropagation(); setOpen(panel.hidden); });
+  opts.forEach(o => o.addEventListener("click", () => apply(o.dataset.t, true)));
+  document.addEventListener("click", e => { if (!panel.hidden && !panel.contains(e.target) && e.target !== btn) setOpen(false); });
+  document.addEventListener("keydown", e => { if (e.key === "Escape" && !panel.hidden) { setOpen(false); btn.focus(); } });
+})();
+</script>
+</body>
+</html>
